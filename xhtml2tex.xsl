@@ -5,4 +5,7 @@
     xmlns="http://www.w3.org/1999/xhtml"
     version="1.0"
     >
+
+  <xsl:output method="text" version="1.0" encoding="UTF-8" />
+
 </xsl:stylesheet>
