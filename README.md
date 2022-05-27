@@ -1,12 +1,15 @@
-# Code to transform Flex dictionary output in xhtml format to LaTeX via XSLT
+# xhtml2tex
+
+This repository provides code and documentation to transform Flex dictionary output in xhtml format to LaTeX via XSLT.
+The project is carried out by [Beth Mardutho](bethmardutho.org).
 
 ## Content of Repository
 
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
 - Folders for each sample entry of the dictionary in xhtml and derivatives
-- XSLT file
-- Simple markdown file containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
+- XSLT file `xhtml2tex.xsl`
+- Simple markdown file `xslt_structure.md` containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes
 
 ## Workflow for Using _git_(_hub_)
