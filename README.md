@@ -11,6 +11,7 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - XSLT file `xhtml2tex.xsl`
 - Simple markdown file `xslt_structure.md` containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes
+- Bash script `prettyxhtml.sh` for easy prettifying of Flex xhtml output 
 
 ## Workflow for Using _git_(_hub_)
 
