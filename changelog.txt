@@ -1,3 +1,11 @@
 2022-05-27
 
-Created repository. Added README.md, .gitignore, and changelog.txt.
+- Create repository.
+- Add `README.md`, `.gitignore`, `changelog.txt`.
+- Add rudimentary `xslt_structure.md` to facilitate navigation of long XSLT
+file.
+- Add folder `sample-entries` with 5 empty subfolders.
+- Add script `prettyxhtml.sh` for prettifying Flex xhtml files.
+- Add `xhtml2tex.xsl` with basic structure (declaration, root element, output
+instruction).
+- Update `README.md`, `.gitignore`, `changelog.txt`.
