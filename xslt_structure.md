@@ -1,6 +1,14 @@
-# root node with general LaTeX frame
+# preliminaries
 
-# divs for separate subsections of each entry
+# general LaTeX frame matching root node
 
 # handling of non-Latin scripts
+
+## Syriac
+
+## Arabic
+
+## Hebrew
+
+## Geez
 
