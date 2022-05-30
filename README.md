@@ -11,9 +11,9 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - XSLT file `xhtml2tex.xsl`
 - Simple markdown file `xslt_structure.md` containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes
-- Bash script `prettyxhtml.sh` for easy prettifying of Flex xhtml output 
+- Bash script `prettyxhtml.sh` for easy prettifying/formatting of Flex xhtml output 
 
-## Workflow for Using _git_(_hub_)
+## Workflow for Using _git(hub)_
 
 For the time being, we follow a [simple feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 This means:
@@ -36,6 +36,6 @@ To facilitate working in (Linux) terminal, certain naming conventions regarding 
 - Do not use spaces; use `-` and `_` instead separating logical units of two levels, respectively.
 - Try to put the part of the name that distinguishes one file/folder from another up front.
 E.g., use
-- Use transliteration instead of Syriac script: ʾ, b, g, d, h, w, z, ḥ, ṭ, y, k, l, m, n, s, ʿ, p, ṣ, q, r, š, t; o, a, e, i, u
+- Use transliteration instead of Syriac script: A, b, g, d, h, w, z, ḥ, ṭ, y, k, l, m, n, s, c, p, ṣ, q, r, š, t; o, a, e, i, u
 - Avoid using dates in filenames: git is there to handle versions.
 (For sample files exported from Flex, the date of adding the file to the repository is assumed to be the date it was exported.)
