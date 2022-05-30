@@ -7,7 +7,7 @@
 #
 # redirect to file if needed (e.g. "... > prettier-file.xml")
 #
-# explanation of tidy flags: -i = indent, -q = quiet/surpress non-essential output
+# uses xmllint (available via package libxml2-utils)
 #
 
-cat "$1" | tidy -xml -iq
+xmllint -format "$1"
