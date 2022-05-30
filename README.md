@@ -38,3 +38,4 @@ To facilitate working in (Linux) terminal, certain naming conventions regarding 
 E.g., use
 - Use transliteration instead of Syriac script: ʾ, b, g, d, h, w, z, ḥ, ṭ, y, k, l, m, n, s, ʿ, p, ṣ, q, r, š, t; o, a, e, i, u
 - Avoid using dates in filenames: git is there to handle versions.
+(For sample files exported from Flex, the date of adding the file to the repository is assumed to be the date it was exported.)
