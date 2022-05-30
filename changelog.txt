@@ -9,3 +9,17 @@ file.
 - Add `xhtml2tex.xsl` with basic structure (declaration, root element, output
 instruction).
 - Update `README.md`, `.gitignore`, `changelog.txt`.
+
+2022-05-30
+
+- Add and prettify sample entries:
+  - ܘ 2
+  - ܐܡܬܐ
+  - ܒܝܬܐ
+  - ܒܬܪ
+  - ܐܓܪ 
+- Add (Xe)LaTeX main frame
+- Fix !DOCTYPE error using tidy in script `prettyxhtml.sh` by using xmllint instead
+- Replace prettified files using fixed script
+- Rename some files because of issues with ʾ for hamzah in filenames, use A instead
+- Update `README.md`, `changelog.txt`
