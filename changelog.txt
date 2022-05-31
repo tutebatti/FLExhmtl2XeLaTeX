@@ -23,3 +23,11 @@ instruction).
 - Replace prettified files using fixed script
 - Rename some files because of issues with ʾ for hamzah in filenames, use A instead
 - Update `README.md`, `changelog.txt`
+
+2022-05-31
+
+- **Add XSLT to transform xhtml to xml**
+- Add handling for letter headings
+- Improve handling of non-Latin scripts
+- Update `README.md` (with instruction for generally simpler workflow)
+- Update `changelog.txt`
