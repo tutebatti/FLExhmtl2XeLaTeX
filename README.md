@@ -15,10 +15,12 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 
 ## Workflow for Using _git(hub)_
 
-For the time being, we follow a [simple feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
-This means:
+For the time being, we mostly follow a very basic versioning with only one main branch.
 
-- There is the _main branch_ with the current stable code (mainly the XSLT file).
+If necessary, a [simple feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) can be used.
+This would imply:
+
+- There is the _main branch_ with the current code.
 - For each new feature and development, a branch is created.
 - The name of each such branch should start with `feature/`.
 (Note that the slash (`/`) is simply part of the name, it does not imply a folder structure.
