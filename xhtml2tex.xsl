@@ -42,6 +42,14 @@
     </xsl:text>
   </xsl:template>
   
+  <!-- ############### -->
+  <!-- Letter headings -->
+  <!-- ############### -->
+  
+  <xsl:template match="xhtml:div[@class='letHead']">
+    <!-- avoid for now <xsl:text>\chapter{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text> -->
+  </xsl:template>
+  
   <!-- ########################## -->
   <!-- Handling non-Latin scripts -->
   <!-- ########################## -->
