@@ -8,6 +8,7 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
+- XSLT file `xhtml2xml.xsl`
 - XSLT file `xhtml2tex.xsl`
 - Simple markdown file `xslt_structure.md` containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes
