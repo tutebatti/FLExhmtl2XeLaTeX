@@ -23,11 +23,11 @@
 \usepackage{polyglossia, xunicode}
 
 \setdefaultlanguage{english}
-\setmainfont{Linux Libertine}
+\setmainfont{Charis SIL}
 
 \setotherlanguages{syriac,arabic,hebrew,geez}
-\newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Urhoy}
-\newfontfamily\serto[Script=Syriac, Scale=1.1]{Serto Urhoy}
+\newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
+\newfontfamily\serto[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
 \newfontfamily\estrangela[Script=Syriac, Scale=1.1]{Estrangelo Edessa}
 \newfontfamily\madnhaya[Script=Syriac, Scale=1.1]{East Syriac Adiabene}
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Amiri}
@@ -48,32 +48,38 @@
   
   <!-- Syriac -->
   
-<!--  <xsl:template match="xhtml:span[@lang='syc-Syrj']">
+  <xsl:template match="xhtml:span[@lang='syc-Syrj']/*">
     <xsl:choose>
-      <xsl:when test="not(../@class='orth-estrangela') and not(../@class='orth-madnḥaya') and not(../@class='orth-serto')">
+      <xsl:when test="not(../@class='orth-estrangela')
+      and not(../@class='orth-madnḥaya')
+      and not(../@class='orth-serto')
+      and not(@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;'))
+      and not(@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;'))
+      and not(@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;'))">
         <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+        <xsl:apply-templates/>
+        <!--<xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>-->
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template> -->
+  </xsl:template>
   
   <!-- Arabic -->
   
-  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Amiri',$apo,',serif;')]">
+  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;')]">
     <xsl:text> \textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- Hebrew -->
   
-  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;')]">
+  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;')]">
     <xsl:text> \texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- Geez -->
     
-  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;')]">
+  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')]">
     <xsl:text> \textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
