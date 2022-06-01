@@ -2,7 +2,7 @@
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xmlns="http://www.w3.org/1999/xml"
+    xmlns="http://www.w3.org/1999/xhtml"
     version="1.0"
     >
     
@@ -56,36 +56,36 @@
   ]">
     <xsl:element name="{@class}"><xsl:apply-templates/></xsl:element>
   </xsl:template>
-  
+
   <!-- Syriac -->
    
   <xsl:template match="xhtml:span[@lang='syc-Syrj']">
-    <xsl:choose>
-      <xsl:when test="
+    <!-- 1) omit nested Syriac: ancestor::span[@lang='syc-Syrj'] and -->
+    <!-- 2) omit Arabic, Hebrew, and Geez -->
+      <xsl:if test="
+
       not(@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;'))
       and not(@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;'))
       and not(@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;'))
       ">
-        <syriac><xsl:apply-templates/></syriac>
-      </xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
+        <xsl:element name="syriac"><xsl:apply-templates/></xsl:element>
+      </xsl:if>
   </xsl:template>
-  
-    <!-- Arabic -->
-  
+
+  <!-- Arabic -->
+
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;')]">
     <arabic><xsl:apply-templates/></arabic>
   </xsl:template>
-  
+
   <!-- Hebrew -->
-  
+
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;')]">
     <hebrew><xsl:apply-templates/></hebrew>
   </xsl:template>
-  
+
   <!-- Geez -->
-    
+
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')]">
     <geez><xsl:apply-templates/></geez>
   </xsl:template>
