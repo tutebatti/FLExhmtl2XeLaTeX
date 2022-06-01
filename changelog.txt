@@ -31,3 +31,9 @@ instruction).
 - Improve handling of non-Latin scripts
 - Update `README.md` (with instruction for generally simpler workflow)
 - Update `changelog.txt`
+
+2022-06-01
+
+- **Add XSLT to transform xml to tex**
+- Tidy `xhtml2xml.xsl`
+- Update `README.md` and `changelog.txt`
