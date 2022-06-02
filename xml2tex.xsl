@@ -93,4 +93,14 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
+  <!-- ###### -->
+  <!-- Senses -->
+  <!-- ###### -->
+  
+  <xsl:template match="sensenumber">
+    <xsl:text>
+    
+    \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
