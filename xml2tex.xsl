@@ -37,9 +37,17 @@
     </xsl:text>
   </xsl:template>
   
-  <!-- ########################## -->
-  <!-- Handling non-Latin scripts -->
-  <!-- ########################## -->
+  <!-- ######################### -->
+  <!-- Homograph entry numbering -->
+  <!-- ######################### -->
+  
+  <xsl:template match="homographentrynumber">
+    <xsl:text> \textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <!-- ################# -->
+  <!-- non-Latin scripts -->
+  <!-- ################# -->
   
   <!-- Syriac -->
   
