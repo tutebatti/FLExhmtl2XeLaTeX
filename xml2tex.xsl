@@ -115,7 +115,7 @@
   <xsl:template match="sensenumber">
     <xsl:text>
     
-    \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    \textbf{</xsl:text><xsl:apply-templates/><xsl:text>)} </xsl:text>
   </xsl:template>
   
   <!-- ############### -->
@@ -147,7 +147,7 @@
   </xsl:template>
 
   <xsl:template match="translationcontent">
-    <xsl:text> \footnotesize{``</xsl:text><xsl:apply-templates/><xsl:text>''}</xsl:text>
+    <xsl:text> \begin{footnotesize}``</xsl:text><xsl:apply-templates/><xsl:text>''\end{footnotesize}</xsl:text>
   </xsl:template>
   
 </xsl:stylesheet>
