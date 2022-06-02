@@ -111,4 +111,16 @@
     <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
   </xsl:template>
   
+  <!-- ######## -->
+  <!-- Examples -->
+  <!-- ######## -->
+  
+  <xsl:template match="examplescontent">
+    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="translationcontent">
+    <xsl:text> \footnotesize{``</xsl:text><xsl:apply-templates/><xsl:text>''}</xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
