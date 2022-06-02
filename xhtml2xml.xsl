@@ -95,5 +95,18 @@
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')]">
     <xsl:element name="geez"><xsl:apply-templates/></xsl:element>
   </xsl:template>
+  
+  <!-- handle multiple verb stems of etymology entries -->
+  
+  <xsl:template match="xhtml:span[@class='gloss']/xhtml:span/xhtml:span">
+    <xsl:choose>
+      <xsl:when test="@style='color:#F0F;'">
+        <xsl:element name="etymologyglossverbstem"><xsl:apply-templates/></xsl:element>
+      </xsl:when>
+      <xsl:otherwise> 
+        <xsl:element name="etymologyglossverbstemgloss"><xsl:apply-templates/></xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 
 </xsl:stylesheet>
