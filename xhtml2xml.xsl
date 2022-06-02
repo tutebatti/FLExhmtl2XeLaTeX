@@ -39,6 +39,7 @@
   @class='gloss' or
   @class='sharedgrammaticalinfo' or
   @class='morphosyntaxanalysis' or
+  @class='partofspeech' or
   @class='sensecontent' or
   @class='sensenumber' or
   @class='sense' or
