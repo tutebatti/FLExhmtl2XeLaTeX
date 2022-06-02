@@ -52,7 +52,7 @@
   <!-- Syriac -->
   
   <xsl:template match="syriac">
-        <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- Arabic -->
