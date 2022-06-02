@@ -75,19 +75,19 @@
   <!-- Arabic -->
 
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;')]">
-    <arabic><xsl:apply-templates/></arabic>
+    <xsl:element name="arabic"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
   <!-- Hebrew -->
 
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;')]">
-    <hebrew><xsl:apply-templates/></hebrew>
+    <xsl:element name="hebrew"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
   <!-- Geez -->
 
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')]">
-    <geez><xsl:apply-templates/></geez>
+    <xsl:element name="geez"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
 </xsl:stylesheet>
