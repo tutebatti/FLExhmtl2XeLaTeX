@@ -48,12 +48,18 @@
   @class='example' or
   @class='translationcontents' or
   @class='translationcontent' or
-  @class='subentries' or
-  @class='subentry' or
   @class='complexformtypes' or
   @class='complexformtype'
   ]">
     <xsl:element name="{@class}"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="xhtml:span[contains(@class, 'subentries')]">
+    <xsl:element name="subentries"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="xhtml:span[contains(@class, 'subentry')]">
+    <xsl:element name="subentry"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
   <!-- Syriac -->
