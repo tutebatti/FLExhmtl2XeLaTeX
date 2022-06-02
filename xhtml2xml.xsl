@@ -72,6 +72,12 @@
   ]">
     <xsl:element name="syriac"><xsl:apply-templates/></xsl:element>
   </xsl:template>
+  
+  <!-- handle homograph entry numbering [is that a good term for this?] -->
+  <xsl:template match="xhtml:span[@style='font-size:10pt;font-weight:bold;font-size:58%;position:relative;top:0.3em;']">
+    <xsl:element name="homographentrynumber"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
+
  
   <!-- Arabic -->
 
