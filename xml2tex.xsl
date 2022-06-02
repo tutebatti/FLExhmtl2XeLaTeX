@@ -17,6 +17,8 @@
 
 \usepackage{polyglossia, xunicode}
 
+\usepackage[dvipsnames]{xcolor}
+
 \setdefaultlanguage{english}
 \setmainfont{Charis SIL}
 
@@ -129,7 +131,11 @@
   <!-- ######## -->
   
   <xsl:template match="examplescontent">
-    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+    <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="highlightedsyriac">
+    <xsl:text> \textsyriac{\textcolor{BrickRed}{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <xsl:template match="translationcontent">
