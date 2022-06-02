@@ -37,3 +37,16 @@ instruction).
 - **Add XSLT to transform xml to tex**
 - Tidy `xhtml2xml.xsl`
 - Update `README.md` and `changelog.txt`
+
+2022-06-02
+
+- Omit namespace declaration when transforming Arabic, Hebrew, and Geez elements from xhtml to custom xml
+- Fix handling of <span> elements for Syriac when transforming xhtml to xml
+- Add handling of homograph entry numbering
+- Add basic handling of etymologies and senses
+- Add basic handling of subentries
+- Add handling of highlighted Syriac in examples
+- Add handling of part-of-speech
+- Improve formating of tex output
+- Update `README.md` with instructions not to use result of prettifying script for further processing
+- Update `changelog.txt`
