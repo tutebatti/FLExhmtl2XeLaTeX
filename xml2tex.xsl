@@ -73,4 +73,24 @@
     <xsl:text> \textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <!-- ########### -->
+  <!-- Etymologies -->
+  <!-- ########### -->
+  
+  <xsl:template match="etymologies">
+    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="etymology//abbreviation">
+    <xsl:text> | </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="form">
+    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="gloss">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
