@@ -82,7 +82,20 @@
   </xsl:template>
   
   <xsl:template match="etymology//abbreviation">
-    <xsl:text> | </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:choose>
+      <xsl:when test="./ancestor::etymology[position() != [0]] and
+      not(normalize-space(.)='&lt;SEM&gt;') and
+      not(normalize-space(ancestor::etymology/preceding-sibling::etymology//abbreviation) = '&lt;SEM&gt;') and
+      not(normalize-space(ancestor::etymology/following-sibling::etymology//abbreviation) = '&lt;SEM&gt;')
+      ">
+        <xsl:text> | </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:when test="normalize-space(.)='&lt;SEM&gt;'">
+        <xsl:text>
+        
+        </xsl:text>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match="form">
