@@ -103,4 +103,12 @@
     \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <!-- ############### -->
+  <!-- Variant entries -->
+  <!-- ############### -->
+  
+  <xsl:template match="variantformentrybackrefs">
+    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
