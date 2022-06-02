@@ -126,6 +126,14 @@
     <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
   </xsl:template>
   
+  <!-- ############## -->
+  <!-- Part of Speech -->
+  <!-- ############## -->
+  
+  <xsl:template match="partofspeech">
+    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <!-- ######## -->
   <!-- Examples -->
   <!-- ######## -->
