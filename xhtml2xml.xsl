@@ -76,7 +76,14 @@
   not(descendant::xhtml:span[@style=concat('font-family:',$apo,'SBL Hebrew',$apo,',serif;font-size:10pt;')]) and
   not(descendant::xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')])
   ]">
-    <xsl:element name="syriac"><xsl:apply-templates/></xsl:element>
+    <xsl:choose>
+      <xsl:when test="@style='background-color:#CFC;'">
+        <xsl:element name="highlightedsyriac"><xsl:apply-templates/></xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element name="syriac"><xsl:apply-templates/></xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <!-- handle homograph entry numbering [is that a good term for this?] -->
