@@ -3,6 +3,8 @@
 - Update `xslt_structure.md`
 - Add `xhtml_structure.md` to document xhtml output of FLEx
 - Minor correction in `xml2tex.xsl`
+- Add 6 new sample entries and create prettified xhtml versions thereof
+- Delete all unneeded CSS files
 - Update, reformat dates/headings, and reverse order of `changelog.txt`
 - Update `README.md`
 
