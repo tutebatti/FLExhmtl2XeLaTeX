@@ -10,10 +10,11 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
 - XSLT file `xhtml2xml.xsl` (for current approach using two transformation steps)
 - XSLT file `xml2tex.xsl` (for current approach using two transformation steps)
-(- XSLT file `xhtml2tex.xsl`, for former/first approach)
-- Simple markdown file `xslt_structure.md` containing structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
-- `changelog.txt` to document changes
-- Bash script `prettyxhtml.sh` for easy prettifying/formatting of Flex xhtml output (do not use this file for further processing: spaces cause problems; it is mainly meant for better readability)
+- XSLT file `xhtml2tex.xsl` (for former/first approach)
+- Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx 
+- Simple markdown file `xslt_structure.md` documenting structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
+- `changelog.txt` to document changes (in markdown format, but stored as TXT)
+- Bash script `prettyxhtml.sh` for easy prettifying/formatting of Flex xhtml output (do not use this file for further processing: spaces cause problems; it is mainly meant for better readability when studying FLEx output)
 
 ## Workflow for Using _git(hub)_
 

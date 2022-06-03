@@ -1,8 +1,10 @@
 # 2022-06-03
 
 - Update `xslt_structure.md`
+- Add `xhtml_structure.md` to document xhtml output of FLEx
 - Minor correction in `xml2tex.xsl`
 - Update, reformat dates/headings, and reverse order of `changelog.txt`
+- Update `README.md`
 
 # 2022-06-02
 
