@@ -131,7 +131,7 @@
   </xsl:template>
   
   <!-- ############## -->
-  <!-- Part of Speech -->
+  <!-- Part-of-speech -->
   <!-- ############## -->
   
   <xsl:template match="partofspeech">
