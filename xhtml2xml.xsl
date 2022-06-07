@@ -50,7 +50,11 @@
   @class='translationcontents' or
   @class='translationcontent' or
   @class='complexformtypes' or
-  @class='complexformtype'
+  @class='complexformtype' or
+  @class='minimallexreferences' or
+  @class='minimallexreference' or
+  @class='ownertype_abbreviation' or
+  @class='configtargets'
   ]">
     <xsl:element name="{@class}"><xsl:apply-templates/></xsl:element>
   </xsl:template>
