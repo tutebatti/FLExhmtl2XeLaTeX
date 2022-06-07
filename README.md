@@ -41,6 +41,37 @@ To facilitate working in (Linux) terminal, certain naming conventions regarding 
 - Do not use spaces; use `-` and `_` instead separating logical units of two levels, respectively.
 - Try to put the part of the name that distinguishes one file/folder from another up front.
 E.g., use
-- Use transliteration instead of Syriac script: A, b, g, d, h, w, z, ḥ, ṭ, y, k, l, m, n, s, c, p, ṣ, q, r, š, t; o, a, e, i, u
 - Avoid using dates in filenames: git is there to handle versions.
 (For sample files exported from Flex, the date of adding the file to the repository is assumed to be the date it was exported.)
+- Use transliteration instead of Syriac script:
+
+|Syriac|Latin|
+|---|---|
+|ܐ|A|
+|ܒ|b|
+|ܓ|g|
+|ܕ|d|
+|ܗ|h|
+|ܘ|w|
+|ܙ|z|
+|ܚ|H|
+|ܛ|T|
+|ܝ|y|
+|ܟ|k|
+|ܠ|l|
+|ܡ|m|
+|ܢ|n|
+|ܣ|s|
+|ܥ|c|
+|ܦ|p|
+|ܨ|S|
+|ܩ|q|
+|ܪ|r|
+|ܫ|x|
+|ܬ|t|
+|---|---|
+|ـܳ|o|
+|ـܰ|a|
+|ـܶ|e|
+|ـܺ|i|
+|ـܽ|u|
