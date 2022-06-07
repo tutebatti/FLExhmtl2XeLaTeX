@@ -28,7 +28,9 @@ while getopts 'osh' flag; do
 
 		o) xmllint -format "$2" ;;
 		s) xmllint -format "$2" > "pretty_${2}" ;;
-		h) print_help
+		h) print_help ;;
+		*) print_help
+		   exit 1 ;;
 
 	esac
 done
