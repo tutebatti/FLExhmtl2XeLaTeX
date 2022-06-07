@@ -40,7 +40,12 @@ keywords:
           2) complexformtypes
               1) complexformtype
                   1) abbreviation
-          3) senses
+          3)minimallexreferences
+              1) minimallexreference
+                  1) ownertype_abbreviation
+                  2) configtargets
+                      1) headword
+          4) senses
               1) sensecontent
               2) examplescontents
                   1) examplescontent
