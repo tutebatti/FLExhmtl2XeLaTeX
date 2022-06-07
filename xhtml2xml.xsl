@@ -44,6 +44,7 @@
   @class='sensenumber' or
   @class='sense' or
   @class='definitionorgloss' or
+  @class='restrictions' or
   @class='examplescontents' or
   @class='examplescontent' or
   @class='example' or
