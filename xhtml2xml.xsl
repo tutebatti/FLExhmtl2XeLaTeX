@@ -125,10 +125,10 @@
   <xsl:template match="xhtml:span[@class='gloss']//xhtml:span">
     <xsl:choose>
       <xsl:when test="@style='color:#F0F;'">
-        <xsl:element name="etymologyglossverbstem"><xsl:apply-templates/></xsl:element>
+        <xsl:element name="etymology-gloss_verbstem"><xsl:apply-templates/></xsl:element>
       </xsl:when>
       <xsl:otherwise> 
-        <xsl:element name="etymologyglossverbstemgloss"><xsl:apply-templates/></xsl:element>
+        <xsl:element name="etymology-gloss_gloss"><xsl:apply-templates/></xsl:element>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
