@@ -75,6 +75,12 @@
     <xsl:text> \textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <!-- RTL -->
+    
+  <xsl:template match="rtl">
+    <xsl:text> \RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <!-- ########### -->
   <!-- Etymologies -->
   <!-- ########### -->
