@@ -113,6 +113,12 @@
   <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')]">
     <xsl:element name="geez"><xsl:apply-templates/></xsl:element>
   </xsl:template>
+
+  <!-- Greek -->
+
+  <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'SBL Greek',$apo,',serif;')]">
+    <xsl:element name="greek"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
   
   <!-- handle multiple verb stems of etymology entries -->
   
