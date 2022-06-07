@@ -2,7 +2,7 @@
 
 - Add handling of Greek script
 - Add handling of short rtl sections
-- Add handling of (min-)lexreferences
+- Add handling of `(min-)lexreferences` and `restrictions`
 - Specify tag names of etymology glosses
 - Add 11 new sample entries and create prettified xhtml versions thereof
 - Improve `prettyxhtml.sh` for usage with flags/options
