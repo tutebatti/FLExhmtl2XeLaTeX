@@ -25,18 +25,27 @@
 
   <xsl:template match="xhtml:span[
   @class='mainheadword' or
+  @class='sedra-id' or
+  @class='gender-inflection' or
   @class='variantformentrybackrefs' or
   @class='variantentrytypes' or
   @class='variantentrytype' or
   @class='abbreviation' or
   @class='variantformentrybackref' or
+  @class='etymaramaicbefore' or
+  @class='etymsemiticbefore' or
+  @class='etymaramaicafter' or
+  @class='etymsemiticafter' or
   @class='etymologies' or
   @class='etymology' or
   @class='preccomment' or
   @class='languages' or
   @class='language' or
   @class='form' or
+  @class='comment' or
   @class='gloss' or
+  @class='languagenotes' or
+  @class='bibliography' or
   @class='sharedgrammaticalinfo' or
   @class='morphosyntaxanalysis' or
   @class='partofspeech' or
@@ -44,7 +53,14 @@
   @class='sensenumber' or
   @class='sense' or
   @class='definitionorgloss' or
+  @class='simtho-sense-created-by' or
+  @class='simtho-period' or
+  @class='simtho-reference-century' or
+  @class='simtho-reference-page' or
+  @class='simtho-ex-created by' or
   @class='restrictions' or
+  @class='subentries_verbal-stems-measures' or
+  @class='subentry_verbal-stems-measures' or
   @class='examplescontents' or
   @class='examplescontent' or
   @class='example' or
@@ -54,8 +70,23 @@
   @class='complexformtype' or
   @class='minimallexreferences' or
   @class='minimallexreference' or
+  @class='minimallexreferences_derivatives-adjs-etc-' or
+  @class='minimallexreference_derivatives-adjs-etc-' or
+  @class='ownertype_name' or
   @class='ownertype_abbreviation' or
-  @class='configtargets'
+  @class='configtargets' or
+  @class='configtarget' or
+  @class='primaryentryrefs' or
+  @class='primaryentryref' or
+  @class='entrytypes' or
+  @class='entrytype' or
+  @class='reverseabbr' or
+  @class='referencedentries' or
+  @class='referencedentry' or
+  @class='datecreated' or
+  @class='datemodified' or
+  @class='simtho-contributors' or
+  @class='simtho-contributor'
   ]">
     <xsl:element name="{@class}"><xsl:apply-templates/></xsl:element>
   </xsl:template>
