@@ -1,3 +1,12 @@
+# 2022-06-08
+
+- Add 1 new sample entry and create prettified xhtml version thereof
+- Replace all sample entries (including prettified versions) with correct
+xhtml export based on custom FLEx dictionary view
+- Adapt `xhtml2xml.xsl` to correct xhtml export
+- Fix ambigious rules for `<span>` elements with rtl
+- Update `changelog.txt`
+
 # 2022-06-07
 
 - Add handling of Greek script
