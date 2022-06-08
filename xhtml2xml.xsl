@@ -70,7 +70,7 @@
 
   <!-- rtl -->
 
-  <xsl:template match="xhtml:span[@dir='rtl']">
+  <xsl:template match="xhtml:span[@dir='rtl' and not(@class='letter' or @style)]">
     <xsl:element name="rtl"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
@@ -101,7 +101,6 @@
   <xsl:template match="xhtml:span[@style='font-size:10pt;font-weight:bold;font-size:58%;position:relative;top:0.3em;']">
     <xsl:element name="homographentrynumber"><xsl:apply-templates/></xsl:element>
   </xsl:template>
-
 
   <!-- Arabic -->
 
