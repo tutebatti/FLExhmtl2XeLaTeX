@@ -232,7 +232,12 @@
   <xsl:template match="subentry">
     <xsl:text>
     
+    \medskip{}
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="subentry/headword">
+    <xsl:text>\begin{large}</xsl:text><xsl:apply-templates/><xsl:text>\end{large}</xsl:text>
   </xsl:template>
   
   <xsl:template match="complexformtype/abbreviation">
