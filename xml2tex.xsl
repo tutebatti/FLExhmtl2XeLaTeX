@@ -54,7 +54,7 @@
   <!-- Arabic -->
   
   <xsl:template match="arabic">
-    <xsl:text> \textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textup{\textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
   
   <!-- Hebrew -->
