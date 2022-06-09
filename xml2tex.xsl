@@ -108,7 +108,7 @@
   <!-- Homograph entry numbering -->
   
   <xsl:template match="homographentrynumber">
-    <xsl:text> \textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- Variant entries -->
