@@ -71,7 +71,7 @@
   
   <!-- Greek -->
     
-  <xsl:template match="geez">
+  <xsl:template match="greek">
     <xsl:text> \textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
