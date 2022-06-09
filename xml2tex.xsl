@@ -41,14 +41,6 @@
     </xsl:text>
   </xsl:template>
   
-  <!-- ######################### -->
-  <!-- Homograph entry numbering -->
-  <!-- ######################### -->
-  
-  <xsl:template match="homographentrynumber">
-    <xsl:text> \textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
-  </xsl:template>
-  
   <!-- ################# -->
   <!-- non-Latin scripts -->
   <!-- ################# -->
@@ -87,6 +79,16 @@
     
   <xsl:template match="rtl">
     <xsl:text> \RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <!-- ############### -->
+  <!-- Headword matter -->
+  <!-- ############### -->
+  
+  <!-- Homograph entry numbering -->
+  
+  <xsl:template match="homographentrynumber">
+    <xsl:text> \textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- ########### -->
