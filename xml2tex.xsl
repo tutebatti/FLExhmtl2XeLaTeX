@@ -188,6 +188,10 @@
     <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <xsl:template match="superscript">
+    <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <xsl:template match="gloss">
     <xsl:text> ``</xsl:text><xsl:apply-templates/><xsl:text>''</xsl:text>
   </xsl:template>
