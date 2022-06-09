@@ -1,3 +1,17 @@
+# 2022-06-09
+
+- Delete `xhtml2tex.xsl` (not needed anymore)
+- Add formatting for Greek
+- Add formatting of headword 
+- Improve formatting of examples 
+- Add placeholder formatting for picture
+- Add formatting of sidebar
+- Fix formatting of etymologies
+- Further minor fixes and changes
+- Refactor code
+- Update `README.md`
+- Update `changelog.txt`
+
 # 2022-06-08
 
 - Add 1 new sample entry and create prettified xhtml version thereof
