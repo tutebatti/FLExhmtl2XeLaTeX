@@ -93,10 +93,10 @@
     \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
   </xsl:template>
   
-  <!-- SEDRA-ID -->
+  <!-- Sedra ID -->
   
   <xsl:template match='sedra-id'>
-    <xsl:text> (Sedra-ID: </xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+    <xsl:text> [Sedra-ID </xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
   </xsl:template>
   
   <!-- gender inflection -->
