@@ -244,6 +244,25 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
+  <!-- ######## -->
+  <!-- Sidebars -->
+  <!-- ######## -->  
+  
+  <xsl:template match="sidebar-title">
+    <xsl:text>
+    
+    \subsection*{Brock-Kiraz Sidebar}
+    \begin{footnotesize}\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}\end{footnotesize} </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="sidebar-text">
+    <xsl:text>\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="sidebar-text/text()">
+    <xsl:text></xsl:text><xsl:value-of select="replace(current(), '▪', '\\textbullet{}')"/><xsl:text></xsl:text>
+  </xsl:template>
+
   <!-- ################ -->
   <!-- Simtho Meta data -->
   <!-- ################ -->
