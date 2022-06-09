@@ -330,7 +330,7 @@
   <xsl:template match="simtho-contributor/abbreviation">
     <xsl:text>
     
-    \textcolor{Dandelion}{(</xsl:text><xsl:apply-templates/><xsl:text>)}</xsl:text>
+    \textcolor{Dandelion}{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <xsl:template match="entry/datecreated">
