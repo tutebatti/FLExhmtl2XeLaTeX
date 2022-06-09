@@ -111,6 +111,18 @@
     <xsl:text> \textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <!-- Variant entries -->
+  
+  <xsl:template match="variantformentrybackrefs">
+    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+  
+  <!-- Part-of-speech -->
+  
+  <xsl:template match="partofspeech">
+    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <!-- ########### -->
   <!-- Etymologies -->
   <!-- ########### -->
@@ -156,22 +168,6 @@
   
   <xsl:template match="definitionorgloss">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-  </xsl:template>
-  
-  <!-- ############### -->
-  <!-- Variant entries -->
-  <!-- ############### -->
-  
-  <xsl:template match="variantformentrybackrefs">
-    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
-  </xsl:template>
-  
-  <!-- ############## -->
-  <!-- Part-of-speech -->
-  <!-- ############## -->
-  
-  <xsl:template match="partofspeech">
-    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- ######## -->
