@@ -252,4 +252,34 @@
     <xsl:text> \textcolor{Dandelion}{(</xsl:text><xsl:apply-templates/><xsl:text>)}</xsl:text>
   </xsl:template>
   
+  <xsl:template match="simtho-ex-created-by/abbreviation">
+    <xsl:text> \textcolor{Dandelion}{(</xsl:text><xsl:apply-templates/><xsl:text>)}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="simtho-contributor/abbreviation">
+    <xsl:text>
+    
+    \textcolor{Dandelion}{(</xsl:text><xsl:apply-templates/><xsl:text>)}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="entry/datecreated">
+    <xsl:text>
+    
+    \begin{scriptsize}\textcolor{Dandelion}{(entry created: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="entry/datemodified">
+    <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(entry modified: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="subentry/datecreated">
+    <xsl:text>
+    
+    \begin{scriptsize}\textcolor{Dandelion}{(subentry created: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="subentry/datemodified">
+    <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(subentry modified: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
