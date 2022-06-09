@@ -179,7 +179,29 @@
   <!-- ######## -->
   
   <xsl:template match="examplescontent">
-    <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text>
+    
+    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="simtho-period">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="simtho-reference-century">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="examplescontent/abbreviation">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="examplescontent/text()">
+    <xsl:text> </xsl:text><xsl:value-of select="."/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="simtho-reference-page">
+    <xsl:text> p.\,</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <xsl:template match="highlightedsyriac">
