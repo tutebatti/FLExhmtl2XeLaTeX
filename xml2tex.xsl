@@ -193,7 +193,15 @@
   </xsl:template>
   
   <xsl:template match="gloss">
-    <xsl:text> ``</xsl:text><xsl:apply-templates/><xsl:text>''</xsl:text>
+    <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="bibliography">
+    <xsl:text> [</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="preccomment">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <!-- ###### -->
