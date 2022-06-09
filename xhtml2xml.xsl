@@ -64,6 +64,10 @@
   @class='examplescontents' or
   @class='examplescontent' or
   @class='example' or
+  @class='pictures' or
+  @class='picture' or
+  @class='captionContent' or
+  @class='caption' or
   @class='translationcontents' or
   @class='translationcontent' or
   @class='complexformtypes' or
