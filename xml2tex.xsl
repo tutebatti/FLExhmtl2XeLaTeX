@@ -243,5 +243,13 @@
   <xsl:template match="complexformtype/abbreviation">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
+
+  <!-- ################ -->
+  <!-- Simtho Meta data -->
+  <!-- ################ -->
+  
+  <xsl:template match="simtho-sense-created-by/abbreviation">
+    <xsl:text> \textcolor{Dandelion}{(</xsl:text><xsl:apply-templates/><xsl:text>)}</xsl:text>
+  </xsl:template>
   
 </xsl:stylesheet>
