@@ -177,7 +177,7 @@
   <xsl:template match="examplescontent">
     <xsl:text>
     
-    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    $\triangleright$ </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <xsl:template match="simtho-period">
@@ -197,7 +197,7 @@
   </xsl:template>
   
   <xsl:template match="simtho-reference-page">
-    <xsl:text> p.\,</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <xsl:template match="example">
