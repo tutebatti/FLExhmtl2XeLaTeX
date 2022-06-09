@@ -127,6 +127,18 @@
   <!-- Etymologies -->
   <!-- ########### -->
   
+  <xsl:template match="etymaramaicbefore">
+    <xsl:text>
+    
+    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="etymsemiticbefore">
+    <xsl:text>
+    
+    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
   <xsl:template match="etymologies">
     <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
   </xsl:template>
