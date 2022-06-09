@@ -85,6 +85,26 @@
   <!-- Headword matter -->
   <!-- ############### -->
   
+  <!-- main headword -->
+  
+  <xsl:template match='mainheadword'>
+    <xsl:text>
+    
+    \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
+  </xsl:template>
+  
+  <!-- SEDRA-ID -->
+  
+  <xsl:template match='sedra-id'>
+    <xsl:text> (Sedra-ID: </xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+  
+  <!-- gender inflection -->
+  
+  <xsl:template match='gender-inflection'>
+    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <!-- Homograph entry numbering -->
   
   <xsl:template match="homographentrynumber">
