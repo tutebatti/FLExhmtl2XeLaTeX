@@ -23,6 +23,7 @@
 \setmainfont{Charis SIL}
 
 \setotherlanguages{syriac,arabic,hebrew,geez}
+\setotherlanguages[variant=ancient]{greek}
 \newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
 \newfontfamily\serto[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
 \newfontfamily\estrangela[Script=Syriac, Scale=1.1]{Estrangelo Edessa}
@@ -30,6 +31,7 @@
 \newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Amiri}
 \newfontfamily\hebrewfont[Script=Hebrew]{Ezra SIL}
 \newfontfamily\geezfont[Script=Ethiopic]{Abyssinica SIL}
+\newfontfamily\greekfont[Script=Greek]{SBL Greek}
 
 \begin{document}
     </xsl:text>
