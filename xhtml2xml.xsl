@@ -69,6 +69,8 @@
   @class='picture' or
   @class='captionContent' or
   @class='caption' or
+  @class='sidebar-title' or
+  @class='sidebar-text' or
   @class='translationcontents' or
   @class='translationcontent' or
   @class='complexformtypes' or
