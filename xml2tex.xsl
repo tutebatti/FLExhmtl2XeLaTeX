@@ -301,4 +301,14 @@
     <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(subentry modified: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
   </xsl:template>
   
+  <!-- ######## -->
+  <!-- Comments -->
+  <!-- ######## -->
+  
+  <xsl:template match="comment">
+    <xsl:text>
+    
+    \begin{scriptsize}\textcolor{red}{NOTE TO EDITOR: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+  </xsl:template>
+  
 </xsl:stylesheet>
