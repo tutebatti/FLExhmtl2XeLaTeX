@@ -25,6 +25,7 @@
 
   <xsl:template match="xhtml:span[
   @class='mainheadword' or
+  @class='headword' or
   @class='sedra-id' or
   @class='gender-inflection' or
   @class='variantformentrybackrefs' or
