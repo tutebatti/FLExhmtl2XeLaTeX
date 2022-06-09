@@ -200,6 +200,10 @@
     <xsl:text> p.\,</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
+  <xsl:template match="example">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
   <xsl:template match="highlightedsyriac">
     <xsl:text> \textsyriac{\textcolor{BrickRed}{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
