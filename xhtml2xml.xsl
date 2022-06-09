@@ -176,5 +176,11 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  <!-- subscript -->
+  
+  <xsl:template match="xhtml:span[@style='font-size:58%;position:relative;top:0.3em;']">
+    <xsl:element name="superscript"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
 
 </xsl:stylesheet>
