@@ -255,6 +255,10 @@
   <xsl:template match="complexformtype/abbreviation">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
+  
+  <xsl:template match="reverseabbr">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
 
   <!-- ######## -->
   <!-- Sidebars -->
