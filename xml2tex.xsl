@@ -213,6 +213,19 @@
   </xsl:template>
   
   <!-- ########## -->
+  <!-- Pictures -->
+  <!-- ########## -->
+  
+  <xsl:template match="pictures">
+    <xsl:text> 
+    
+    \smallskip{}
+    \begin{tiny}\{PICTURE PLACEHOLDER: </xsl:text><xsl:apply-templates/><xsl:text>\}
+    
+    \end{tiny}</xsl:text>
+  </xsl:template>
+  
+  <!-- ########## -->
   <!-- Subentries -->
   <!-- ########## -->
   
