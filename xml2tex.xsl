@@ -23,7 +23,7 @@
 \setmainfont{Charis SIL}
 
 \setotherlanguages{syriac,arabic,hebrew,geez}
-\setotherlanguages[variant=ancient]{greek}
+\setotherlanguage[variant=ancient]{greek}
 \newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
 \newfontfamily\serto[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
 \newfontfamily\estrangela[Script=Syriac, Scale=1.1]{Estrangelo Edessa}
