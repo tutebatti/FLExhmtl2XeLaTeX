@@ -8,9 +8,8 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
-- XSLT file `xhtml2xml.xsl` (for current approach using two transformation steps)
-- XSLT file `xml2tex.xsl` (for current approach using two transformation steps)
-- XSLT file `xhtml2tex.xsl` (for former/first approach)
+- XSLT file `xhtml2xml.xsl`
+- XSLT file `xml2tex.xsl`
 - Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx 
 - Simple markdown file `xslt_structure.md` documenting structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes (in markdown format, but stored as TXT)
