@@ -58,7 +58,7 @@
   @class='simtho-period' or
   @class='simtho-reference-century' or
   @class='simtho-reference-page' or
-  @class='simtho-ex-created by' or
+  @class='simtho-ex-created-by' or
   @class='restrictions' or
   @class='subentries_verbal-stems-measures' or
   @class='subentry_verbal-stems-measures' or
