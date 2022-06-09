@@ -78,7 +78,7 @@
   <!-- RTL -->
     
   <xsl:template match="rtl">
-    <xsl:text> \RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>\RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- ############### -->
