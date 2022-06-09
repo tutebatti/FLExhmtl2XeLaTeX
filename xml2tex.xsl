@@ -77,6 +77,12 @@
     <xsl:text> \textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <!-- Greek -->
+    
+  <xsl:template match="geez">
+    <xsl:text> \textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
   <!-- RTL -->
     
   <xsl:template match="rtl">
