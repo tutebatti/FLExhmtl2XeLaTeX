@@ -138,29 +138,48 @@
     \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
   
-  <xsl:template match="etymsemiticbefore">
+  <xsl:template match="etymologies">
     <xsl:text>
     
     \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
   
-  <xsl:template match="etymologies">
-    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
-  </xsl:template>
-  
-  <xsl:template match="etymology//abbreviation">
+  <xsl:template match="etymology">
     <xsl:choose>
-      <xsl:when test="./ancestor::etymology[position() != [0]] and
-      not(normalize-space(.)='&lt;SEM&gt;') and
-      not(normalize-space(ancestor::etymology/preceding-sibling::etymology//abbreviation) = '&lt;SEM&gt;') and
-      not(normalize-space(ancestor::etymology/following-sibling::etymology//abbreviation) = '&lt;SEM&gt;')
-      ">
-        <xsl:text> | </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-      </xsl:when>
-      <xsl:when test="normalize-space(.)='&lt;SEM&gt;'">
+      <xsl:when test="position() = [1]">
         <xsl:text>
         
+        \smallskip
+        \textbf{Aramaic etymologies}
+        
+        </xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
+      </xsl:when>
+      <xsl:when test="
+      not(position() = last()) and
+      not(following-sibling::node()[1][.//abbreviation = '&lt;SEM&gt;']) and
+      not(descendant::abbreviation = '&lt;SEM&gt;')
+      ">
+        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
+      </xsl:when>
+      <xsl:when test="
+      position() = last()
+      ">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:when test="
+      descendant::abbreviation = '&lt;SEM&gt;'
+      ">
+        <xsl:text>
+    
+        \smallskip
+        \textbf{Semitic etymologies}
+        
         </xsl:text>
+      </xsl:when>
+      <xsl:when test="
+      following-sibling::node()[1][.//abbreviation = '&lt;SEM&gt;']
+      ">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
