@@ -23,6 +23,8 @@
 \setmainfont{Charis SIL}
 
 \usepackage[]{mdframed}
+\definecolor{lightgreen}{RGB}{230, 240, 194}
+\newmdenv[linecolor=gray,backgroundcolor=lightgreen]{sidebar}
 
 \setotherlanguages{syriac,arabic,hebrew,geez}
 \setotherlanguage[variant=ancient]{greek}
@@ -305,13 +307,14 @@
   <xsl:template match="sidebar-title">
     <xsl:text>
     
-    \begin{mdframed}[]
-    \subsection*{Brock-Kiraz Sidebar}
-    \begin{footnotesize}\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}\end{footnotesize} </xsl:text>
+    \begin{sidebar}[]
+    \begin{center}\begin{footnotesize}\textbf{\textcolor{BrickRed}{</xsl:text><xsl:apply-templates/><xsl:text>}}\end{footnotesize}\end{center} </xsl:text>
   </xsl:template>
   
   <xsl:template match="sidebar-text">
-    <xsl:text>\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}\end{mdframed}</xsl:text>
+    <xsl:text>
+
+    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}\end{sidebar}</xsl:text>
   </xsl:template>
   
   <xsl:template match="sidebar-text/text()">
