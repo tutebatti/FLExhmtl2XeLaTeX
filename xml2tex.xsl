@@ -19,6 +19,8 @@
 
 \usepackage[dvipsnames]{xcolor}
 
+\usepackage{graphicx}
+
 \setdefaultlanguage{english}
 \setmainfont{Charis SIL}
 
@@ -270,11 +272,18 @@
   
   <xsl:template match="pictures">
     <xsl:text> 
-    
-    \smallskip{}
-    \begin{tiny}\{PICTURE PLACEHOLDER: </xsl:text><xsl:apply-templates/><xsl:text>\}
-    
-    \end{tiny}</xsl:text>
+
+    \begin{center}
+    \begin{figure}[h]	    
+    \centering
+    \includegraphics[width=0.7\columnwidth]{bytA.png}
+    \caption{
+    \begin{tiny}</xsl:text>
+    <xsl:apply-templates select="caption"/>
+    <xsl:text>
+    \end{tiny}}
+    \end{figure}
+    \end{center}</xsl:text>
   </xsl:template>
   
   <!-- ########## -->
