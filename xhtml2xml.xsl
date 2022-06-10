@@ -98,11 +98,11 @@
     <xsl:element name="{@class}"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
-  <xsl:template match="xhtml:span[contains(@class, 'subentries')]">
+  <xsl:template match="xhtml:span[contains(@class, 'subentries ')]">
     <xsl:element name="subentries"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
-  <xsl:template match="xhtml:span[contains(@class, 'subentry')]">
+  <xsl:template match="xhtml:span[contains(@class, 'subentry ')]">
     <xsl:element name="subentry"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
