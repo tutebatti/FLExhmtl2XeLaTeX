@@ -66,19 +66,19 @@
   <!-- Hebrew -->
   
   <xsl:template match="hebrew">
-    <xsl:text> \texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textup{\texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
   
   <!-- Geez -->
     
   <xsl:template match="geez">
-    <xsl:text> \textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textup{\textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
   
   <!-- Greek -->
     
   <xsl:template match="greek">
-    <xsl:text> \textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> \textup{\textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
   
   <!-- RTL -->
