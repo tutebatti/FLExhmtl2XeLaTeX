@@ -22,6 +22,8 @@
 \setdefaultlanguage{english}
 \setmainfont{Charis SIL}
 
+\usepackage[]{mdframed}
+
 \setotherlanguages{syriac,arabic,hebrew,geez}
 \setotherlanguage[variant=ancient]{greek}
 \newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
@@ -303,12 +305,13 @@
   <xsl:template match="sidebar-title">
     <xsl:text>
     
+    \begin{mdframed}[]
     \subsection*{Brock-Kiraz Sidebar}
     \begin{footnotesize}\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}\end{footnotesize} </xsl:text>
   </xsl:template>
   
   <xsl:template match="sidebar-text">
-    <xsl:text>\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+    <xsl:text>\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}\end{mdframed}</xsl:text>
   </xsl:template>
   
   <xsl:template match="sidebar-text/text()">
