@@ -247,15 +247,19 @@
   <!-- ###### -->
   <!-- Senses -->
   <!-- ###### -->
-  
-  <xsl:template match="sensenumber">
+
+  <xsl:template match="sensecontent">
     <xsl:text>
-    
-    \textbf{</xsl:text><xsl:apply-templates/><xsl:text>)} </xsl:text>
+
+    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
+  <xsl:template match="sensenumber">
+    <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>)} </xsl:text>
   </xsl:template>
   
   <xsl:template match="definitionorgloss">
-    <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- ######## -->
