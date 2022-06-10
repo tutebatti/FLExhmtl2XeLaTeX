@@ -199,7 +199,23 @@
   </xsl:template>
 
   <xsl:template match="form">
-    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:choose>
+      <xsl:when test="./(
+      arabic |
+      hebrew |
+      geez |
+      greek
+      )">
+        <xsl:text></xsl:text>
+        <xsl:apply-templates select="(arabic | hebrew | geez | greek)"/>
+	<xsl:text> \textit{</xsl:text>
+        <xsl:apply-templates select="text()"/>
+        <xsl:text>}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match="superscript">
