@@ -136,6 +136,7 @@
   </xsl:template>
 
   <!-- handle homograph entry numbering [is that a good term for this?] -->
+
   <xsl:template match="xhtml:span[@style='font-size:10pt;font-weight:bold;font-size:58%;position:relative;top:0.3em;']">
     <xsl:element name="homographentrynumber"><xsl:apply-templates/></xsl:element>
   </xsl:template>
@@ -183,4 +184,9 @@
     <xsl:element name="superscript"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
+  <!-- italics -->
+
+  <xsl:template match="xhtml:span[@style='font-style:italic;']">
+    <xsl:element name="italics"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
 </xsl:stylesheet>
