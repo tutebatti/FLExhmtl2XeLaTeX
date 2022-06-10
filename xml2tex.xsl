@@ -93,6 +93,18 @@
     <xsl:text>\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
+  <!-- subscript -->
+
+  <xsl:template match="subscript">
+    <xsl:text>\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
+  <!-- superscript -->
+
+  <xsl:template match="superscript">
+    <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
   <!-- ############### -->
   <!-- Headword matter -->
   <!-- ############### -->
@@ -219,11 +231,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
-  <xsl:template match="superscript">
-    <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
-  </xsl:template>
-  
+   
   <xsl:template match="gloss">
     <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
   </xsl:template>
