@@ -178,10 +178,16 @@
     </xsl:choose>
   </xsl:template>
   
+  <!-- superscript -->
+  
+  <xsl:template match="xhtml:span[@style='font-size:58%;position:relative;top:-0.6em;']">
+    <xsl:element name="superscript"><xsl:apply-templates/></xsl:element>
+  </xsl:template>
+
   <!-- subscript -->
   
   <xsl:template match="xhtml:span[@style='font-size:58%;position:relative;top:0.3em;']">
-    <xsl:element name="superscript"><xsl:apply-templates/></xsl:element>
+    <xsl:element name="subscript"><xsl:apply-templates/></xsl:element>
   </xsl:template>
 
   <!-- italics -->
