@@ -1,3 +1,15 @@
+# 2022-06-10
+- Add preliminary formatting of pictures
+- Improve formatting of sidebars
+- Add formatting of italics
+- Improve formatting of senses
+- Add formatting of verbstems as subentries
+- Further minor improvements of formatting
+- Fix spacing of non-Latin and transcription in etymologies
+- Add/improve formatting of superscript and subscript
+- Refactor code
+- Update `changelog.txt`
+
 # 2022-06-09
 
 - Delete `xhtml2tex.xsl` (not needed anymore)
