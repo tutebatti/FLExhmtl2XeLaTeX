@@ -194,6 +194,10 @@
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template match="etymology//abbreviation">
+    <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
   <xsl:template match="form">
     <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
