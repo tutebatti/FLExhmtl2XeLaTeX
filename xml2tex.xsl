@@ -87,6 +87,10 @@
     <xsl:text>\RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <xsl:template match="italics">
+    <xsl:text>\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
   <!-- ############### -->
   <!-- Headword matter -->
   <!-- ############### -->
