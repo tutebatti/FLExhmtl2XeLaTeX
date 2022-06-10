@@ -328,14 +328,14 @@
   <!-- Subentries -->
   <!-- ########## -->
   
-  <xsl:template match="subentry">
+  <xsl:template match="(subentry | subentry_verbal-stems-measures)">
     <xsl:text>
     
     \medskip{}
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
-  <xsl:template match="subentry/headword">
+  <xsl:template match="(subentry | subentry_verbal-stems-measures)/headword">
     <xsl:text>\begin{large}</xsl:text><xsl:apply-templates/><xsl:text>\end{large}</xsl:text>
   </xsl:template>
   
