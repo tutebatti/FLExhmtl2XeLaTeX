@@ -361,8 +361,8 @@
     \textcolor{Dandelion}{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
-  <xsl:template match="entry/datecreated">
-    <xsl:text>
+  <xsl:template match="datecreated | datemodified"/>
+  <!-- <xsl:text>
     
     \begin{scriptsize}\textcolor{Dandelion}{(entry created: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
   </xsl:template>
@@ -379,7 +379,7 @@
   
   <xsl:template match="subentry/datemodified">
     <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(subentry modified: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
-  </xsl:template>
+  </xsl:template>-->
   
   <!-- ######## -->
   <!-- Comments -->
