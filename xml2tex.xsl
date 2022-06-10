@@ -48,7 +48,7 @@
   </xsl:template>
   
   <!-- ################# -->
-  <!-- non-Latin scripts -->
+  <!-- scripts and fonts -->
   <!-- ################# -->
   
   <!-- Syriac -->
