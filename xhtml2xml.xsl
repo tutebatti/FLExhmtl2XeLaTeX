@@ -50,6 +50,7 @@
   @class='sharedgrammaticalinfo' or
   @class='morphosyntaxanalysis' or
   @class='partofspeech' or
+  @class='senses' or
   @class='sensecontent' or
   @class='sensenumber' or
   @class='sense' or
