@@ -170,10 +170,12 @@
 
   <!-- handle multiple verb stems of etymology entries -->
 
-  <xsl:template match="xhtml:span[@class='gloss']//xhtml:span">
+  <xsl:template match="xhtml:span[@class='gloss']/xhtml:span/xhtml:span">
     <xsl:choose>
       <xsl:when test="@style='color:#F0F;'">
         <xsl:element name="etymology-gloss_verbstem"><xsl:apply-templates/></xsl:element>
+      </xsl:when>
+      <xsl:when test=". = ', '">
       </xsl:when>
       <xsl:otherwise>
         <xsl:element name="etymology-gloss_gloss"><xsl:apply-templates/></xsl:element>
