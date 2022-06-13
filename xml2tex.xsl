@@ -259,6 +259,24 @@
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template match="etymology-gloss_verbstem">
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="$nextelement = 'etymology-gloss_verbstem'">
+        <xsl:apply-templates/><xsl:text>, </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="etymology-gloss_gloss">
+    <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+  </xsl:template>
+  
   <xsl:template match="bibliography">
     <xsl:text> [</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
   </xsl:template>
