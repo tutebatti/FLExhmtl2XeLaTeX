@@ -189,7 +189,7 @@
         \smallskip
         \textbf{Aramaic etymologies}
         
-        </xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
+        \noindent{}</xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
       </xsl:when>
       <xsl:when test="
       not(position() = last()) and
@@ -211,7 +211,7 @@
         \smallskip
         \textbf{Semitic etymologies}
         
-        </xsl:text>
+        \noindent{}</xsl:text>
       </xsl:when>
       <xsl:when test="
       following-sibling::node()[1][.//abbreviation = '&lt;SEM&gt;']
