@@ -32,14 +32,18 @@
 
 \setotherlanguages{syriac,arabic,hebrew,geez}
 \setotherlanguage[variant=ancient]{greek}
-\newfontfamily\syriacfont[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
-\newfontfamily\serto[Script=Syriac, Scale=1.1]{Serto Antioch Bible}
-\newfontfamily\estrangela[Script=Syriac, Scale=1.1]{Estrangelo Edessa}
-\newfontfamily\madnhaya[Script=Syriac, Scale=1.1]{East Syriac Adiabene}
-\newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Amiri}
-\newfontfamily\hebrewfont[Script=Hebrew]{Ezra SIL}
-\newfontfamily\geezfont[Script=Ethiopic]{Abyssinica SIL}
+\newfontfamily\syriacfont[Script=Syriac, Scale=1.0]{Serto Antioch Bible}
+\newfontfamily\serto[Script=Syriac, Scale=1.0]{Serto Antioch Bible}
+\newfontfamily\estrangela[Script=Syriac, Scale=1.0]{Estrangelo Edessa}
+\newfontfamily\madnhaya[Script=Syriac, Scale=1.0]{East Syriac Adiabene}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.0]{Amiri}
+\newfontfamily\hebrewfont[Script=Hebrew, Scale=1.0]{Ezra SIL}
+\newfontfamily\geezfont[Script=Ethiopic, Scale=1.0]{Abyssinica SIL}
 \newfontfamily\greekfont[Script=Greek]{SBL Greek}
+
+\usepackage{setspace}
+\onehalfspacing
+\lineskiplimit=-\maxdimen
 
 \begin{document}
     </xsl:text>
@@ -169,9 +173,12 @@
   </xsl:template>
   
   <xsl:template match="etymologies">
+    <!--<xsl:text>
+    
+    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>-->
     <xsl:text>
     
-    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <xsl:template match="etymology">
