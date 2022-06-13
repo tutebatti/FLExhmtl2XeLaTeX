@@ -239,7 +239,14 @@
   </xsl:template>
    
   <xsl:template match="gloss">
-    <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+    <xsl:choose>
+      <xsl:when test=". = parent::etymology/preceding-sibling::etymology/gloss">
+        <xsl:text> \textit{id.}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match="bibliography">
