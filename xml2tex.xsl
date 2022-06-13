@@ -250,6 +250,9 @@
       <xsl:when test=". = parent::etymology/preceding-sibling::etymology/gloss">
         <xsl:text> \textit{id.}</xsl:text>
       </xsl:when>
+      <xsl:when test="descendant::etymology-gloss_gloss">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
       </xsl:otherwise>
