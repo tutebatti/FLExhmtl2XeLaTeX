@@ -221,8 +221,18 @@
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match="etymology//abbreviation">
-    <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  <xsl:template match="etymology//language">
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="$nextelement = 'language'">
+        <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}, </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="form">
