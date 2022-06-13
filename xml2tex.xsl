@@ -268,6 +268,10 @@
     <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
+  <xsl:template match="lexsensereference">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
   <!-- ######## -->
   <!-- Examples -->
   <!-- ######## -->
