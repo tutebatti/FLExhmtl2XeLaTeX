@@ -302,11 +302,38 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
-  <xsl:template match="highlightedsyriac">
-    <xsl:text> \textsyriac{\textcolor{BrickRed}{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
-    <!--<xsl:text> \char"200D\textsyriac{\textcolor{BrickRed}{\char"200D</xsl:text>
-    <xsl:apply-templates/>
-    <xsl:text>\char"200D}}</xsl:text>-->
+  <xsl:template match="example/rtl/syriac">
+    <xsl:choose>
+      <xsl:when test="position() = [1]">
+        <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:when test="position() != [1] and position() != last()">
+        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:when test="position() = last()">
+        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="example/rtl/highlightedsyriac">
+    <xsl:choose>
+      <xsl:when test="position() = [1]">
+        <xsl:text>\textsyriac{\textcolor{BrickRed}{</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
+      </xsl:when>
+      <xsl:when test="position() != [1] and position() != last()">
+        <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
+      </xsl:when>
+      <xsl:when test="position() = last()">
+        <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="translationcontent">
