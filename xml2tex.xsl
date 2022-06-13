@@ -304,6 +304,9 @@
   
   <xsl:template match="highlightedsyriac">
     <xsl:text> \textsyriac{\textcolor{BrickRed}{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <!--<xsl:text> \char"200D\textsyriac{\textcolor{BrickRed}{\char"200D</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>\char"200D}}</xsl:text>-->
   </xsl:template>
 
   <xsl:template match="translationcontent">
