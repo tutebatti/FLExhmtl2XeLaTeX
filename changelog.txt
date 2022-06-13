@@ -1,4 +1,12 @@
+# 2022-06-13
+
+- Add external references to Sedra IDs
+- Fixed detachment/connection of colored Syriac
+- Add handling and formatting for `lexsensereferences`
+- Update `changelog.txt`
+
 # 2022-06-10
+
 - Add preliminary formatting of pictures
 - Improve formatting of sidebars
 - Add formatting of italics
