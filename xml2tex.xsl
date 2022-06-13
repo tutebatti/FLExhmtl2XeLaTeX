@@ -19,7 +19,7 @@
 
 \usepackage[dvipsnames]{xcolor}
 
-\usepackage{hyperref}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
 
 \usepackage{graphicx}
 
