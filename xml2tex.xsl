@@ -113,7 +113,7 @@
   
   <!-- main headword -->
   
-  <xsl:template match='mainheadword'>
+  <xsl:template match="mainheadword">
     <xsl:text>
     
     \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
@@ -131,7 +131,7 @@
   
   <!-- gender inflection -->
   
-  <xsl:template match='gender-inflection'>
+  <xsl:template match="gender-inflection">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>.</xsl:text>
   </xsl:template>
   
@@ -359,7 +359,7 @@
   
   <xsl:template match="sidebar-title">
     <xsl:variable name="lemma">
-	    <xsl:value-of select="parent::entry/mainheadword/syriac/rtl/text()"/>
+      <xsl:value-of select="parent::entry/mainheadword/syriac/rtl/text()"/>
     </xsl:variable>
     <xsl:text>
     
