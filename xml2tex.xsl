@@ -328,12 +328,21 @@
   </xsl:template>
   
   <xsl:template match="example/rtl/highlightedsyriac">
+    
+    <xsl:variable name="lastcharself">
+      <xsl:value-of select="substring(., string-length(.))"/>
+    </xsl:variable>
+    
+    <xsl:variable name="lastcharpreceding">
+      <xsl:value-of select="substring(preceding-sibling::syriac[1], string-length(preceding-sibling::syriac[1]))"/>
+    </xsl:variable>
+    
     <xsl:choose>
       <xsl:when test="position() = [1]">
         <xsl:text>\textsyriac{\textcolor{BrickRed}{</xsl:text>
         <xsl:apply-templates/>
         <xsl:choose>
-          <xsl:when test="matches(./text()[last()], '[ܐܕܗܘܙܨܪܬ]')">
+          <xsl:when test="matches($lastcharself, '[ܐܕܗܘܙܨܪܬ ]')">
             <xsl:text>}</xsl:text>
           </xsl:when>
           <xsl:otherwise>
@@ -344,19 +353,19 @@
       
       <xsl:when test="position() != [1] and position() != last()">
         <xsl:choose>
-          <xsl:when test="matches(preceding-sibling::syriac[1][last()], '[ܐܕܗܘܙܨܪܬ]') and not(matches(./text()[last()], '[ܐܕܗܘܙܨܪܬ]'))">
+          <xsl:when test="matches($lastcharpreceding, '[ ܐܕܗܘܙܨܪܬ]') and not(matches($lastcharself, '[ܐܕܗ ܘܙܨܪܬ]'))">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
           </xsl:when>
           
-          <xsl:when test="matches(./text()[last()], '[ܐܕܗܘܙܨܪܬ]') and not(matches(preceding-sibling::syriac[1][last()], '[ܐܕܗܘܙܨܪܬ]'))">
+          <xsl:when test="matches($lastcharself, '[ܐܕܗܘ ܙܨܪܬ]') and not(matches($lastcharpreceding, '[ܐܕܗܘ ܙܨܪܬ]'))">
             <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>}</xsl:text>
           </xsl:when>
           
-          <xsl:when test="matches(preceding-sibling::syriac[1][last()], '[ܐܕܗܘܙܨܪܬ]') and matches(./text()[last()], '[ܐܕܗܘܙܨܪܬ]')">
+          <xsl:when test="matches($lastcharpreceding, '[ܐܕܗܘ ܙܨܪܬ]') and matches($lastcharself, '[ܐܕܗܘ ܙܨܪܬ]')">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>}</xsl:text>
@@ -367,13 +376,12 @@
             <xsl:apply-templates/>
             <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
           </xsl:otherwise>
-          
         </xsl:choose>
       </xsl:when>
       
       <xsl:when test="position() = last()">
         <xsl:choose>
-          <xsl:when test="matches(preceding-sibling::syriac[1][last()], '[ܐܕܗܘܙܨܪܬ]')">
+          <xsl:when test="matches($lastcharpreceding, '[ܐܕܗܘ ܙܨܪܬ]')">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>}}</xsl:text>
