@@ -1,3 +1,11 @@
+# 2022-06-14
+
+- Add xslt for conversion from xhtml (FLEx output) to xml using identity transformation
+- Add xslt for rearranging pre- and postnotes to etymologies
+- Adapt formatting of etymologies accordingly
+- Update `README.md`
+- Update `changelog.txt`
+
 # 2022-06-13
 
 - Add external references to Sedra IDs
