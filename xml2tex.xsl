@@ -161,63 +161,61 @@
   <!-- Etymologies -->
   <!-- ########### -->
   
-  <xsl:template match="(
-  etymaramaicbefore |
-  etymaramaicafter |
-  etymsemiticbefore |
-  etymsemiticafter
-  )">
+  <xsl:template match="etymaramaicbefore">
     <xsl:text>
     
-    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+    \smallskip
+    \textbf{Aramaic etymologies}
+    
+    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="etymsemiticbefore">
+    <xsl:text>
+    
+    \smallskip
+    \textbf{Semitic etymologies}
+    
+    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="etymaramaicafter">
+    <xsl:text>
+    
+    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="etymsemiticafter">
+    <xsl:text>
+    
+    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
   
   <xsl:template match="etymologies">
-    <!--<xsl:text>
-    
-    \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>-->
     <xsl:text>
     
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
   <xsl:template match="etymology">
+    <xsl:variable name="precedingelement">
+      <xsl:value-of select="(preceding-sibling::*[1])/name()"/>
+    </xsl:variable>
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
     <xsl:choose>
-      <xsl:when test="position() = [1]">
+      <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore'">
         <xsl:text>
-        
-        \smallskip
-        \textbf{Aramaic etymologies}
         
         \noindent{}</xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
       </xsl:when>
-      <xsl:when test="
-      not(position() = last()) and
-      not(following-sibling::node()[1][.//abbreviation = '&lt;SEM&gt;']) and
-      not(descendant::abbreviation = '&lt;SEM&gt;')
-      ">
+      <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter'">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
         <xsl:text></xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
-      </xsl:when>
-      <xsl:when test="
-      position() = last()
-      ">
-        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-      </xsl:when>
-      <xsl:when test="
-      descendant::abbreviation = '&lt;SEM&gt;'
-      ">
-        <xsl:text>
-    
-        \smallskip
-        \textbf{Semitic etymologies}
-        
-        \noindent{}</xsl:text>
-      </xsl:when>
-      <xsl:when test="
-      following-sibling::node()[1][.//abbreviation = '&lt;SEM&gt;']
-      ">
-        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-      </xsl:when>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
   
