@@ -2,6 +2,8 @@
 
 - Add external references to Sedra IDs
 - Fixed detachment/connection of colored Syriac
+- Improve formatting of etymologies
+- Fix line spacing when Arabic is used
 - Add handling and formatting for `lexsensereferences`
 - Update `changelog.txt`
 
