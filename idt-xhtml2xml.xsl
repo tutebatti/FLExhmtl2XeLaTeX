@@ -15,6 +15,16 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="/xhtml:html">
+        <xsl:apply-templates select="node()"/>
+    </xsl:template>
+    
+    <xsl:template match="xhtml:body">
+        <xsl:apply-templates select="node()"/>
+    </xsl:template>
+    
+    <xsl:template match="xhtml:head"/>
+    
     <xsl:template match="xhtml:div[@class='letHead']"/>
     
     <xsl:template match="xhtml:div[@class='entry']">
