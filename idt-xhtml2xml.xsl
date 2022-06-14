@@ -11,7 +11,7 @@
     
     <xsl:template match="node()|@*">
         <xsl:copy>
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:apply-templates select="node()|@*[id|dir]"/>
         </xsl:copy>
     </xsl:template>
     
@@ -19,7 +19,7 @@
     
     <xsl:template match="xhtml:div[@class='entry']">
         <xsl:element name="{@class}">
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:apply-templates select="node()|@*[id]"/>
         </xsl:element>
     </xsl:template>
      
