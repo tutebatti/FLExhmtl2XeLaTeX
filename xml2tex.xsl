@@ -125,6 +125,10 @@
   
   <!-- Sedra ID -->
   
+  <xsl:variable name="sedraid">
+    <xsl:value-of select="//sedra-id"/>
+  </xsl:variable>
+  
   <xsl:template match="sedra-id">
     <xsl:text> [\href{https://sedra.bethmardutho.org/lexeme/get/</xsl:text>
     <xsl:apply-templates/>
@@ -446,7 +450,7 @@
     \begin{center}
     \begin{figure}[h]	    
     \centering
-    \includegraphics[width=0.7\columnwidth]{bytA.png}
+    \includegraphics[width=0.7\columnwidth]{../pictures/</xsl:text><xsl:value-of select='$sedraid'/><xsl:text>.png}
     \caption{
     \begin{tiny}</xsl:text>
     <xsl:apply-templates select="caption"/>
