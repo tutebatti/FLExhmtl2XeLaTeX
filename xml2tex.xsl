@@ -102,13 +102,27 @@
   <!-- subscript -->
 
   <xsl:template match="subscript">
-    <xsl:text>\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:choose>
+      <xsl:when test='preceding::italics and following::italics'>
+        <xsl:text>\textit{\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- superscript -->
 
   <xsl:template match="superscript">
-    <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:choose>
+      <xsl:when test='preceding::italics and following::italics'>
+        <xsl:text>\textit{\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- ############### -->
