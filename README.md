@@ -8,6 +8,7 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
+- Folder `pictures` inside folder `sample-entries` with illustrations; files should be in PNG format and be named after the SEDRA id of the respective word
 - XSLT file `xhtml2xml.xsl` (not to be used for now)
 - XSLT file `idt-xhtml2xml.xsl` (replacing the former, using "identity transformation")
 - XSLT file `idt-xml2xml.xsl` (used for rearranging the etymology section with wrong order in FLEx output)

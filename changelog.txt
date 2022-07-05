@@ -4,6 +4,7 @@
 - Add folder `pictures` in folder `sample-entries` with two sample pictures
 - Add handling of pictures based on SEDRA id
 - Fix transformation of <pictures> element
+- Fix superscript, subscript, and interpunctuation within italic text
 - Update `README.md`
 - Update `changelog.txt`
 
