@@ -79,8 +79,6 @@
                 @class='examplescontent' or
                 @class='example' or
                 @class='pictures' or
-                @class='picture' or
-                @class='captionContent' or
                 @class='caption' or
                 @class='sidebar-title' or
                 @class='sidebar-text' or
@@ -108,6 +106,12 @@
                 @class='simtho-contributors' or
                 @class='simtho-contributor'
                   ]">
+        <xsl:element name="{@class}">
+            <xsl:apply-templates select="node()"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="xhtml:div[@class='picture' or @class='captionContent']">
         <xsl:element name="{@class}">
             <xsl:apply-templates select="node()"/>
         </xsl:element>
