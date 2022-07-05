@@ -1,10 +1,19 @@
+# 2022-07-05
+
+- Manually change sedra-id of sample entry `bytA.xhtml` (for testing)
+- Add folder `pictures` in folder `sample-entries` with two sample pictures
+- Add handling of pictures based on SEDRA id
+- Fix transformation of <pictures> element
+- Update `README.md`
+- Update `changelog.txt`
+
 # 2022-06-14
 
 - Add xslt for conversion from xhtml (FLEx output) to xml using identity transformation
 - Add xslt for rearranging pre- and postnotes to etymologies
 - Adapt formatting of etymologies accordingly
 - Update `README.md`
-- Update `changelog.txt`
+- Update `changelog.txt`
 
 # 2022-06-13
 
