@@ -8,10 +8,6 @@
 - LaTeX preamble
 - document environment
 
-# general entry
-
-## homograph entry numbering
-
 # handling of non-Latin scripts
 
 ## Syriac
@@ -22,18 +18,46 @@
 
 ## Geez
 
+## Greek
+
+## RTL
+
+## italics
+
+## subscript
+
+## superscript
+
+# Headword matter
+
+## main Headword
+
+## Sedra ID
+
+## gender inflection
+
+## homograph entry numbering
+
+## variant entries
+
+## part-of-speech
+
 # Etymologies
 
-## general sectioning using parentheses
-
-## conditional for separating etymologies
+## general sectioning ("before"/"after")
 
 ## handling forms and glosses
 
-# Variant entries
-
-# Part-of-speech
+# Senses
 
 # Examples
 
+# Pictures
+
 # Subentries
+
+# Sidebars
+
+# Simtho Metadata
+
+# Comments
