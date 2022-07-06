@@ -1,3 +1,11 @@
+# 2022-07-06
+
+- Amend `xhtml_structure.md`
+- Amend `xslt_structure.md`
+- Remove old xsl file without identity transform
+- Drop "idt" for identity transform in xsl file names
+- Update `changelog.txt`
+
 # 2022-07-05
 
 - Manually change sedra-id of sample entry `bytA.xhtml` (for testing)
