@@ -20,15 +20,26 @@ keywords:
                     1) abbreviation
             3) form
             4) gloss
+    4) pictures
+        1) picture
+            1) captionContent
+                1) headword
+                2) caption
     5) senses
         1) sharedgrammaticalinfo
             1) morphosyntaxanalysis
                 1) partofspeech
         3) sensecontent
             1) sensenumber
-                1) sense
-                    1) definitionorgloss
-                    2) examplescontents
+            2) sense
+                1) definitionorgloss
+                2) lexsensereferences
+                    1) lexsensereference
+                        1) ownertype_abbreviation
+                    2) configtargets
+                        1) configtarget
+                            1) headword
+                3) examplescontents
                         1) examplescontent
                             1) example
                             2) translationcontents
@@ -45,6 +56,14 @@ keywords:
                   1) ownertype_abbreviation
                   2) configtargets
                       1) headword
+                      2) primaryentryrefs
+                          1) primaryentryref
+                              1) entrytypes
+                                  1) entrytype
+                                      1) reverseabbr
+                              2) referencedentries
+                                  1) referencedentry
+                                      1) headword
           4) senses
               1) sensecontent
               2) examplescontents
