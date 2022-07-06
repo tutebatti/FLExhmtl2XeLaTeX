@@ -60,7 +60,8 @@
   <!-- Syriac -->
   
   <xsl:template match="syriac">
-    <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+<!--     <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text> -->
+    <xsl:text> \textsyriac{</xsl:text><xsl:value-of select="replace(.,'_([A-z]*)','\\textenglish{$1}')"/><xsl:text>}</xsl:text>
   </xsl:template>
   
   <!-- Arabic -->
