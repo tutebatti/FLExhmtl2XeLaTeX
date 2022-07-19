@@ -178,6 +178,35 @@
     <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
   </xsl:template>
   
+  <xsl:template match="variantentrytypes">  
+    <xsl:choose>
+      <xsl:when test="position() = 1">
+        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="variantformentrybackref">
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+    
+    <xsl:choose>
+      <xsl:when test="$nextelement = 'variantentrytypes'">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$nextelement = 'variantformentrybackref'">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>;</xsl:text>
+      </xsl:when>
+      <xsl:when test="position() = last()">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  
   <!-- Part-of-speech -->
   
   <xsl:template match="partofspeech">
