@@ -59,10 +59,13 @@
                     </xsl:element>
                 </xsl:matching-substring>
                 <xsl:non-matching-substring>
-                    <xsl:analyze-string select="." regex=".* of {$stemabbreviations}">
+                    <xsl:analyze-string select="." regex="(.* of) ({$stemabbreviations})">
                         <xsl:matching-substring>
                             <xsl:element name="pseudo-gloss">
-                                <xsl:value-of select="."/>
+                                <xsl:value-of select="regex-group(1)"/>
+                                <xsl:element name="pseudo-gloss-stem">
+                                    <xsl:value-of select="regex-group(2)"/>
+                                </xsl:element>
                             </xsl:element>
                         </xsl:matching-substring>
                         <xsl:non-matching-substring>
