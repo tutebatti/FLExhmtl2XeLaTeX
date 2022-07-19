@@ -214,6 +214,56 @@
   </xsl:template>
   
   <!-- ########### -->
+  <!-- Phonology -->
+  <!-- ########### -->
+  
+  <xsl:template match="pronunciations">
+    <xsl:text>
+    
+    +TEMP+ </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="transliteration">
+    <xsl:text>
+    
+    PHONO /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="phono-received-pronunciation">
+    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+  
+  <!-- ########### -->
+  <!-- Orthography -->
+  <!-- ########### -->
+  
+  <xsl:template match="orth-estrangela/syriac">
+    <xsl:text>
+    
+    ORTHO Est. \textestrangela{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="orth-serto/syriac">
+    <xsl:text> Ser. \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="orth-madnḥaya/syriac">
+    <xsl:text> Mad. \textmadnhaya{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="dots-sublinear">
+    <xsl:text> DOTS Sub. </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="dots-supralinear">
+    <xsl:text> Supra</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="dots-sublinear-label|dots-supralinear-label">
+    <xsl:text> \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  </xsl:template>
+  
+  <!-- ########### -->
   <!-- Etymologies -->
   <!-- ########### -->
   
@@ -349,6 +399,37 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
   
+  <!-- ########### -->
+  <!-- Morpholoy -->
+  <!-- ########### -->
+  
+  <xsl:template match="compmorphperf">
+    <xsl:text>
+    
+    MORPHO perf. f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="compmorphimpf">
+    <xsl:text>impf. sing./pl. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="compmorphactpartm">
+    <xsl:text>act. part. m./f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="compmorphpasspart">
+    <xsl:text>pass. part. (abs./emph pairs) </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="compmorphinf">
+    <xsl:text>inf. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="compmorphtable">
+    <xsl:text>Conj. Table </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+  
+  
   <!-- ###### -->
   <!-- Senses -->
   <!-- ###### -->
@@ -361,6 +442,10 @@
 
   <xsl:template match="sensenumber">
     <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>)} </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="sensetype">
+    <xsl:text>(\textit{</xsl:text><xsl:apply-templates/><xsl:text>}) </xsl:text>
   </xsl:template>
   
   <xsl:template match="definitionorgloss">
