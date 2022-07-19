@@ -47,4 +47,33 @@
     <xsl:template match="etymaramaicbefore|etymsemiticbefore|etymaramaicafter|etymsemiticafter"
     />
     
+    <xsl:template match="etymology-gloss-stem">
+        <xsl:variable name="stemabbreviations">
+            <xsl:value-of select="'(G|N|D|H|Gt|C|CG|I|II|III|IV|V|VI|VII|VIII|IX|X)'"/>
+        </xsl:variable>
+        <xsl:element name="stemglosspair">
+            <xsl:analyze-string select="." regex="{$stemabbreviations} ">
+                <xsl:matching-substring>
+                    <xsl:element name="stem">
+                        <xsl:value-of select="regex-group(1)"/>
+                    </xsl:element>
+                </xsl:matching-substring>
+                <xsl:non-matching-substring>
+                    <xsl:analyze-string select="." regex=".* of {$stemabbreviations}">
+                        <xsl:matching-substring>
+                            <xsl:element name="pseudo-gloss">
+                                <xsl:value-of select="."/>
+                            </xsl:element>
+                        </xsl:matching-substring>
+                        <xsl:non-matching-substring>
+                            <xsl:element name="gloss">
+                                <xsl:value-of select="."/>
+                            </xsl:element>
+                        </xsl:non-matching-substring>
+                    </xsl:analyze-string>
+                </xsl:non-matching-substring>    
+            </xsl:analyze-string>
+        </xsl:element>
+    </xsl:template>
+    
 </xsl:stylesheet>

@@ -221,15 +221,20 @@
     
     <!-- handle multiple verb stems of etymology entries -->
     
-    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span/xhtml:span">
+    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span">
+        <xsl:variable name="number-of-children">
+            <xsl:value-of select="count(./xhtml:span)"/>
+        </xsl:variable>
         <xsl:choose>
-            <xsl:when test="@style='color:#F0F;'">
-                <xsl:element name="etymology-gloss_verbstem"><xsl:apply-templates/></xsl:element>
-            </xsl:when>
-            <xsl:when test=". = ', '">
+            <xsl:when test="$number-of-children > 1">
+                <xsl:for-each select="tokenize(.,'; ')">
+                    <xsl:element name='etymology-gloss-stem'>
+                        <xsl:value-of select="normalize-space()"/>
+                    </xsl:element>
+                </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:element name="etymology-gloss_gloss"><xsl:apply-templates/></xsl:element>
+                <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
