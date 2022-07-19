@@ -361,34 +361,29 @@
    
   <xsl:template match="gloss">
     <xsl:choose>
-      <xsl:when test=". = parent::etymology/preceding-sibling::etymology/gloss">
-        <xsl:text> \textit{id.}</xsl:text>
-      </xsl:when>
-      <xsl:when test="descendant::etymology-gloss_gloss">
-        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
-      </xsl:otherwise>
+            <xsl:when test="./stemglosspair">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+            </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match="etymology-gloss_verbstem">
-    <xsl:variable name="nextelement">
-      <xsl:value-of select="(following-sibling::*[1])/name()"/>
-    </xsl:variable>
-    <xsl:choose>
-      <xsl:when test="$nextelement = 'etymology-gloss_verbstem'">
-        <xsl:apply-templates/><xsl:text>, </xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:apply-templates/>
-      </xsl:otherwise>
-    </xsl:choose>
+  <xsl:template match="gloss/stemglosspair/stem">
+    <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
   
-  <xsl:template match="etymology-gloss_gloss">
-    <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>'</xsl:text>
+  <xsl:template match="gloss/stemglosspair/gloss">
+    <xsl:text> `</xsl:text><xsl:apply-templates/><xsl:text>' </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="gloss/stemglosspair/pseudo-gloss">
+    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="gloss/stemglosspair//pseudo-gloss-stem">
+    <xsl:text> \textup{</xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text>
   </xsl:template>
   
   <xsl:template match="bibliography">
