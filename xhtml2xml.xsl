@@ -91,6 +91,8 @@
                 @class='simtho-sense-created-by' or
                 @class='simtho-period' or
                 @class='simtho-reference-century' or
+                @class='simtho-reference-author' or
+                @class='reference' or
                 @class='simtho-reference-page' or
                 @class='simtho-ex-created-by' or
                 @class='restrictions' or
