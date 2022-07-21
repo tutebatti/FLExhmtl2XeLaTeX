@@ -6,7 +6,7 @@
 
   <xsl:output method="text" version="1.0" encoding="UTF-8" />
   <xsl:strip-space elements="*"/>
- 
+
   <xsl:include href="./xsl-modules/01_root-element.xsl"/>
   <xsl:include href="./xsl-modules/02_scripts-and-fonts.xsl"/>
   <xsl:include href="./xsl-modules/03_headword-matter.xsl"/>
@@ -20,5 +20,5 @@
   <xsl:include href="./xsl-modules/11_subentries.xsl"/>
   <xsl:include href="./xsl-modules/12_sidebars.xsl"/>
   <xsl:include href="./xsl-modules/13_simtho-meta-data.xsl"/>
-  
+
 </xsl:stylesheet>

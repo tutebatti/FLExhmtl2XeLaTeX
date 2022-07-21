@@ -18,6 +18,14 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
+  <xsl:template match="simtho-reference-author">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
+  <xsl:template match="reference">
+    <xsl:text> </xsl:text><xsl:value-of select="replace(current(), '&amp;', '\\&amp;')"/><xsl:text></xsl:text>
+  </xsl:template>
+
   <xsl:template match="examplescontent/abbreviation">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>

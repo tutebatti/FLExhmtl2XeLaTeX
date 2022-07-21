@@ -1,3 +1,15 @@
+# 2022-07-20
+
+- Add handling and formatting of author and reference in examples
+- Update `changelog.txt`
+
+# 2022-07-19
+
+- Improve handling and formatting of stems in etymologies
+- Add handling and formatting of Phonology, Orthogrophy, Morphology
+- Update sample file `Amr.xhtml`, incl. pretty version
+- Add sample file `Htm.xhtml`, incl. pretty version
+
 # 2022-07-06
 
 - Amend `xhtml_structure.md`
