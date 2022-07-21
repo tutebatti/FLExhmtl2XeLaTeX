@@ -1,6 +1,7 @@
 # 2022-07-21
 
 - Modularize `xml2tex.xsl` including creation of subfolder `xsl-modules`
+- Accordingly, delete `xslt_structure.md`
 - Update `README.md`
 - Update `changelog.txt`
 

@@ -15,7 +15,6 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
 - Folder `pictures` inside folder `sample-entries` with illustrations; files should be in PNG format and be named after the SEDRA id of the respective word
 - Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx 
-- Simple markdown file `xslt_structure.md` documenting structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes (in markdown format, but stored as TXT)
 - Bash script `prettyxhtml.sh` for easy prettifying/formatting of Flex xhtml output (do not use this file for further processing: spaces cause problems; it is mainly meant for better readability when studying FLEx output)
 
