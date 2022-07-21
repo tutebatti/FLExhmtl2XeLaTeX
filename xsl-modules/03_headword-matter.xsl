@@ -14,10 +14,12 @@
 
   <!-- Sedra ID -->
 
+  <!-- Sedra ID is read as global variable to be available throughout-->
   <xsl:variable name="sedraid">
     <xsl:value-of select="//sedra-id"/>
   </xsl:variable>
 
+  <!-- link to Sedra is generated -->
   <xsl:template match="sedra-id">
     <xsl:text> [\href{https://sedra.bethmardutho.org/lexeme/get/</xsl:text>
     <xsl:apply-templates/>
@@ -46,7 +48,7 @@
 
   <xsl:template match="variantentrytypes">
     <xsl:choose>
-      <xsl:when test="position() = 1">
+      <xsl:when test="position() = 1"> <!-- First variant entry has no leading space. -->
         <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
       </xsl:when>
       <xsl:otherwise>
@@ -56,11 +58,11 @@
   </xsl:template>
 
   <xsl:template match="variantformentrybackref">
-    <xsl:variable name="nextelement">
+    <xsl:variable name="nextelement"> <!-- Local variable is generated to check the next element. -->
       <xsl:value-of select="(following-sibling::*[1])/name()"/>
     </xsl:variable>
 
-    <xsl:choose>
+    <xsl:choose> <!-- Depending on the next element and position, comma, semicolon, or nothing is set as trailing character -->
       <xsl:when test="$nextelement = 'variantentrytypes'">
         <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>,</xsl:text>
       </xsl:when>
@@ -74,6 +76,7 @@
   </xsl:template>
 
   <!-- Part-of-speech -->
+  <!-- This seems to come later, but belongs logically to the headword (?). -->
 
   <xsl:template match="partofspeech">
     <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>

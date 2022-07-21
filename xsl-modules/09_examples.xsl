@@ -5,6 +5,7 @@
     >
 
   <xsl:template match="examplescontent">
+    <!-- $ introduces and ends LaTeX mathmode. -->
     <xsl:text>
 
     $\triangleright$ </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
@@ -23,6 +24,7 @@
   </xsl:template>
 
   <xsl:template match="reference">
+    <!-- Ampersand is masked for LaTeX. -->
     <xsl:text> </xsl:text><xsl:value-of select="replace(current(), '&amp;', '\\&amp;')"/><xsl:text></xsl:text>
   </xsl:template>
 
@@ -58,6 +60,8 @@
 
   <xsl:template match="example/rtl/highlightedsyriac">
 
+    <!-- Local variables are created to determine characters for connection of letters regarding the highlighted word in the example. -->
+
     <xsl:variable name="lastcharself">
       <xsl:value-of select="substring(., string-length(.), 1)"/>
     </xsl:variable>
@@ -69,6 +73,8 @@
     <xsl:variable name="firstcharfollowing">
       <xsl:value-of select="substring(following-sibling::syriac[1], 1, 1)"/>
     </xsl:variable>
+
+    <!-- Depending on the surrounding characters and position, separation or connection are achieved via ommission or insertion of the Unicode character U200D -->
 
     <xsl:choose>
       <xsl:when test="position() = [1]">

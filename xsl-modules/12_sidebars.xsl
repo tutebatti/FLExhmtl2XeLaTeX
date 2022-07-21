@@ -31,6 +31,7 @@
   </xsl:template>
 
   <xsl:template match="sidebar-text/text()">
+    <!-- The square bullet is replaced. -->
     <xsl:text></xsl:text><xsl:value-of select="replace(current(), '▪', '\\textbullet{}')"/><xsl:text></xsl:text>
   </xsl:template>
 
