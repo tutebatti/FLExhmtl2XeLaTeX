@@ -50,8 +50,8 @@
     </xsl:text>
     <xsl:apply-templates/>
     <xsl:text>
-\end{document}    
+\end{document}
     </xsl:text>
   </xsl:template>
-  
+
 </xsl:stylesheet>
