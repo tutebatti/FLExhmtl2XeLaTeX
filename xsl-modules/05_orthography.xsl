@@ -4,10 +4,14 @@
     version="2.0"
     >
 
-  <xsl:template match="orth-estrangela/syriac">
+  <xsl:template match="orthography">
     <xsl:text>
 
-    ORTHO Est. {\estrangelafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    ORTHO </xsl:text><xsl:apply-templates/>
+  </xsl:template>
+    
+  <xsl:template match="orth-estrangela/syriac">
+    <xsl:text>Est. {\estrangelafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="orth-serto/syriac">

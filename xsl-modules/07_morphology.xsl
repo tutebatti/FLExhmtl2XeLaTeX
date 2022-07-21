@@ -4,10 +4,14 @@
     version="2.0"
     >
 
-  <xsl:template match="compmorphperf">
+  <xsl:template match="morphology">
     <xsl:text>
 
-    MORPHO perf. f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    MORPHO </xsl:text><xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="compmorphperf">
+    <xsl:text>perf. f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphimpf">
