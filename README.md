@@ -1,18 +1,19 @@
 # xhtml2tex
 
-This repository provides code and documentation to transform Flex dictionary output in xhtml format to LaTeX via XSLT.
+This repository provides code and documentation to transform FLEx dictionary output in xhtml format to LaTeX via XSLT.
 The project is carried out by [Beth Mardutho](bethmardutho.org).
 
 ## Content of Repository
 
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
+- XSLT file `xhtml2xml.xsl` (replacing the former, using "identity transformation")
+- XSLT file `xml2xml.xsl` (used for rearranging the etymology section with wrong order in FLEx output)
+- XSLT file `xml2tex.xsl`
+- Folder `xsl-modules` with modules included in `xml2tex.xsl` via `<xsl:include>`
+- Illustrations for each module showing correspondences between XML elements and PDF output to facilitate adaption
 - Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
 - Folder `pictures` inside folder `sample-entries` with illustrations; files should be in PNG format and be named after the SEDRA id of the respective word
-- XSLT file `xhtml2xml.xsl` (not to be used for now)
-- XSLT file `idt-xhtml2xml.xsl` (replacing the former, using "identity transformation")
-- XSLT file `idt-xml2xml.xsl` (used for rearranging the etymology section with wrong order in FLEx output)
-- XSLT file `xml2tex.xsl`
 - Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx 
 - Simple markdown file `xslt_structure.md` documenting structure of XSLT for better readibility (long XSLT file cannot be easily navigated)
 - `changelog.txt` to document changes (in markdown format, but stored as TXT)

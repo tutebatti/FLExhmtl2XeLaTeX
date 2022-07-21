@@ -1,3 +1,9 @@
+# 2022-07-21
+
+- Modularize `xml2tex.xsl` including creation of subfolder `xsl-modules`
+- Update `README.md`
+- Update `changelog.txt`
+
 # 2022-07-20
 
 - Add handling and formatting of author and reference in examples
