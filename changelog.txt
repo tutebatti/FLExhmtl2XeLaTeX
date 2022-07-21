@@ -2,6 +2,8 @@
 
 - Modularize `xml2tex.xsl` including creation of subfolder `xsl-modules`
 - Accordingly, delete `xslt_structure.md`
+- Improve handling of Estrangela, Madnḥaya, and Geez scripts
+- Restructure and comment modules
 - Update `README.md`
 - Update `changelog.txt`
 
