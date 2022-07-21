@@ -9,6 +9,24 @@
     <xsl:strip-space elements="*"/>
     <xsl:variable name="apo">'</xsl:variable> <!-- needed to use single quotation mark in filters etc. -->
 
+    <xsl:template match="phono-received-pronunciation">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+        <xsl:element name="orthography">
+            <xsl:copy-of select="following-sibling::orth-estrangela"/>
+            <xsl:copy-of select="following-sibling::orth-serto"/>
+            <xsl:copy-of select="following-sibling::orth-madnḥaya"/>
+            <xsl:copy-of select="following-sibling::dots-sublinear"/>
+            <xsl:copy-of select="following-sibling::dots-sublinear-label"/>
+            <xsl:copy-of select="following-sibling::dots-supralinear"/>
+            <xsl:copy-of select="following-sibling::dots-supralinear-label"/>
+        </xsl:element>
+    </xsl:template>
+
+    <xsl:template match="orth-estrangela|orth-serto|orth-madnḥaya|dots-sublinear|dots-sublinear-label|dots-supralinear|dots-supralinear-label"
+    />
+
     <xsl:template match="node()|@*">
         <xsl:copy>
             <xsl:apply-templates select="node()|@*[id|dir]"/>
@@ -78,5 +96,22 @@
             </xsl:analyze-string>
         </xsl:element>
     </xsl:template>
+
+    <xsl:template match="etymologies">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+        <xsl:element name="morphology">
+            <xsl:copy-of select="following-sibling::compmorphperf"/>
+            <xsl:copy-of select="following-sibling::compmorphimpf"/>
+            <xsl:copy-of select="following-sibling::compmorphactpartm"/>
+            <xsl:copy-of select="following-sibling::compmorphpasspart"/>
+            <xsl:copy-of select="following-sibling::compmorphinf"/>
+            <xsl:copy-of select="following-sibling::compmorphtable"/>
+        </xsl:element>
+    </xsl:template>
+
+    <xsl:template match="compmorphperf|compmorphimpf|compmorphactpartm|compmorphpasspart|compmorphinf|compmorphtable"
+    />
 
 </xsl:stylesheet>
