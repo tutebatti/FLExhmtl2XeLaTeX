@@ -25,9 +25,7 @@
 
 \setotherlanguage{syriac}
 \newfontfamily\syriacfont[Script=Syriac, Scale=1.0]{Serto Antioch Bible}
-\setotherlanguage{estrangela} % causes 
 \newfontfamily\estrangelafont[Script=Syriac, Scale=1.0]{Estrangelo Edessa}
-\setotherlanguage{madnhaya}
 \newfontfamily\madnhayafont[Script=Syriac, Scale=1.0]{East Syriac Adiabene}
 
 \setotherlanguage{arabic}
@@ -36,8 +34,8 @@
 \setotherlanguage{hebrew}
 \newfontfamily\hebrewfont[Script=Hebrew, Scale=1.0]{Ezra SIL}
 
-\setotherlanguage{geez}
-\newfontfamily\geezfont[Script=Ethiopic, Scale=1.0]{Abyssinica SIL}
+\setotherlanguage{amharic}
+\newfontfamily\amharicfont[Script=Ethiopic, Scale=1.0]{Abyssinica SIL}
 
 \setotherlanguage[variant=ancient]{greek}
 \newfontfamily\greekfont[Script=Greek]{SBL Greek}

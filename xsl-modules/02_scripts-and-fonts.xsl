@@ -30,7 +30,7 @@
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="geez">
-    <xsl:text> \textup{\textgeez{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text> \textup{\textamharic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Greek -->

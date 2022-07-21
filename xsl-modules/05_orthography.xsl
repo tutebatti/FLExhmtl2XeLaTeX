@@ -7,7 +7,7 @@
   <xsl:template match="orth-estrangela/syriac">
     <xsl:text>
 
-    ORTHO Est. \textestrangela{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    ORTHO Est. {\estrangelafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="orth-serto/syriac">
@@ -15,7 +15,7 @@
   </xsl:template>
 
   <xsl:template match="orth-madnḥaya/syriac">
-    <xsl:text> Mad. \textmadnhaya{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> Mad. {\madnhayafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="dots-sublinear">
