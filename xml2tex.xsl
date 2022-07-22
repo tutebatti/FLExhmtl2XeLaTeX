@@ -20,5 +20,6 @@
   <xsl:include href="./xsl-modules/11_subentries.xsl"/>
   <xsl:include href="./xsl-modules/12_sidebars.xsl"/>
   <xsl:include href="./xsl-modules/13_simtho-meta-data.xsl"/>
+  <!--<xsl:include href="./xsl-modules/14_comments.xsl"/>-->
 
 </xsl:stylesheet>
