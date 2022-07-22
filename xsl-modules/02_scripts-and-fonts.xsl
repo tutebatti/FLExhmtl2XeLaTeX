@@ -9,35 +9,35 @@
   the range of letters specified in the regex might need adaption. -->
 
   <xsl:template match="syriac">
-    <xsl:text> \textsyriac{</xsl:text><xsl:value-of select="replace(.,'_([A-z]*)','\\textenglish{$1}')"/><xsl:text>}</xsl:text>
+    <xsl:text>\textsyriac{</xsl:text><xsl:value-of select="replace(.,'_([A-z]*)','\\textenglish{$1}')"/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- Arabic -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="arabic">
-    <xsl:text> \textup{\textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Hebrew -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="hebrew">
-    <xsl:text> \textup{\texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Geez -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="geez">
-    <xsl:text> \textup{\textamharic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textamharic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Greek -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="greek">
-    <xsl:text> \textup{\textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- RTL -->

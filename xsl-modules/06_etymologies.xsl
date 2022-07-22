@@ -78,7 +78,7 @@
       geez |
       greek
       )">
-        <xsl:text></xsl:text>
+        <xsl:text> </xsl:text>
         <xsl:apply-templates select="(arabic | hebrew | geez | greek)"/>
 	<xsl:text> \textit{</xsl:text>
         <xsl:apply-templates select="text()"/>
