@@ -36,7 +36,7 @@
     <xsl:template match="etymology">
         <xsl:choose>
             <xsl:when test="position() = [1]">
-                <xsl:copy-of select="//etymaramaicbefore"/>
+                <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
                 <xsl:copy>
                     <xsl:apply-templates/>
                 </xsl:copy>
@@ -46,12 +46,12 @@
                 <xsl:copy>
                     <xsl:apply-templates/>
                 </xsl:copy>
-                <xsl:copy-of select="//etymsemiticafter"/>
+                <xsl:copy-of select="ancestor::entry//etymsemiticafter"/>
             </xsl:when>
 
             <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
-                <xsl:copy-of select="//etymaramaicafter"/>
-                <xsl:copy-of select="//etymsemiticbefore"/>
+                <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
+                <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
             </xsl:when>
 
             <xsl:otherwise>
