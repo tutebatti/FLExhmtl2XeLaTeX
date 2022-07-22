@@ -45,13 +45,13 @@
       <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore'">
         <xsl:text>
 
-        \noindent{}</xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
+        \noindent{}</xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
       </xsl:when>
       <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter'">
         <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text> | </xsl:text>
+        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
