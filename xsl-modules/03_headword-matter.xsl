@@ -13,8 +13,7 @@
     %%%%%%%%%%%%%%
 
     \bigskip{}
-    \noindent{}
-    \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
+    \noindent \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
   </xsl:template>
 
   <!-- Sedra ID -->
