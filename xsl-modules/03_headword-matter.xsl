@@ -8,7 +8,12 @@
 
   <xsl:template match="mainheadword">
     <xsl:text>
+    %%%%%%%%%%%%%%
+    %%% New entry
+    %%%%%%%%%%%%%%
 
+    \bigskip{}
+    \noindent{}
     \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
   </xsl:template>
 
