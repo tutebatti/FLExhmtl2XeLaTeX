@@ -12,7 +12,19 @@ keywords:
             1) variantentrytype
                 1) abbreviation
             1) variantformentrybackref
-    3) etymologies
+    3) pronunciations
+    4) transliteration
+    5) phono-received-pronunciation
+    6) orth-estrangela
+    6) orth-serto
+    6) orth-madnḥaya
+    6) dots-sublinear
+    7) dots-sublinear-label
+    8) dots-supralinear
+    9) dots-supralinear-label
+    10) etymaramaicbefore
+    11) etymsemiticbefore
+    12) etymologies
         1) etymology
             1) preccomment
             2) languages
@@ -20,12 +32,20 @@ keywords:
                     1) abbreviation
             3) form
             4) gloss
-    4) pictures
+    13) etymaramaicafter
+    14) etymsemiticafter
+    15) compmorphperf
+    16) compmorphimpf
+    17) compmorphactpartm
+    18) compmorphpasspart
+    19) compmorphinf
+    20) compmorphtable
+    21) pictures
         1) picture
             1) captionContent
                 1) headword
                 2) caption
-    5) senses
+    22) senses
         1) sharedgrammaticalinfo
             1) morphosyntaxanalysis
                 1) partofspeech
@@ -45,7 +65,7 @@ keywords:
                             2) translationcontents
                                 1) translationcontent
                                     1) translation
-    6) subentries
+    23) subentries
       1) subentry
           1) headword
           2) complexformtypes
