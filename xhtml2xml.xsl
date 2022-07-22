@@ -20,7 +20,9 @@
     </xsl:template>
 
     <xsl:template match="xhtml:body">
-        <xsl:apply-templates select="node()"/>
+        <xsl:element name="entries">
+          <xsl:apply-templates select="node()"/>
+        </xsl:element>
     </xsl:template>
 
     <xsl:template match="xhtml:head"/>
