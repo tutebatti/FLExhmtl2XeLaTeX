@@ -156,7 +156,7 @@
   </xsl:template>
 
   <xsl:template match="etymology/comment">
-    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text> &gt;\textit{</xsl:text><xsl:apply-templates/>}<xsl:text></xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
