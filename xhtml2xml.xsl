@@ -27,7 +27,11 @@
 
     <xsl:template match="xhtml:head"/>
 
-    <xsl:template match="xhtml:div[@class='letHead']"/>
+    <xsl:template match="xhtml:div[@class='letHead']">
+        <xsl:element name="letterHead">
+          <xsl:apply-templates select="node()"/>
+        </xsl:element>
+    </xsl:template>
 
     <xsl:template match="xhtml:div[@class='entry']|xhtml:div[@class='minorentrycomplex']">
         <xsl:element name="{@class}">
