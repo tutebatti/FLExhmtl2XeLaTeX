@@ -104,14 +104,23 @@
         <xsl:copy>
             <xsl:apply-templates/>
         </xsl:copy>
-        <xsl:element name="morphology">
-            <xsl:copy-of select="following-sibling::compmorphperf"/>
-            <xsl:copy-of select="following-sibling::compmorphimpf"/>
-            <xsl:copy-of select="following-sibling::compmorphactpartm"/>
-            <xsl:copy-of select="following-sibling::compmorphpasspart"/>
-            <xsl:copy-of select="following-sibling::compmorphinf"/>
-            <xsl:copy-of select="following-sibling::compmorphtable"/>
-        </xsl:element>
+        <xsl:if test="
+            following-sibling::compmorphperf or
+            following-sibling::compmorphimpf or
+            following-sibling::compmorphactpartm or
+            following-sibling::compmorphpasspart or
+            following-sibling::compmorphinf or
+            following-sibling::compmorphtable
+            ">
+            <xsl:element name="morphology">
+                <xsl:copy-of select="following-sibling::compmorphperf"/>
+                <xsl:copy-of select="following-sibling::compmorphimpf"/>
+                <xsl:copy-of select="following-sibling::compmorphactpartm"/>
+                <xsl:copy-of select="following-sibling::compmorphpasspart"/>
+                <xsl:copy-of select="following-sibling::compmorphinf"/>
+                <xsl:copy-of select="following-sibling::compmorphtable"/>
+            </xsl:element>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="compmorphperf|compmorphimpf|compmorphactpartm|compmorphpasspart|compmorphinf|compmorphtable"
