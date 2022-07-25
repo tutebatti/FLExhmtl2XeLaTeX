@@ -2,6 +2,10 @@
 
 - Update sample entry ܚܬܡ
 - Resolve several formatting issues
+- Add handling and formatting of letter headings
+- Add handling and formatting of roots
+- Add sample entry with several entries belonging to one root (k-t-b)
+- Update `changelog.txt`
 
 # 2022-07-22
 
@@ -11,6 +15,7 @@
 - Fix further problems occuring with multiple entries
 - Avoid general leading space with non-Latin scripts, use space where
 necessary instead
+- Handle comments in separate module
 - Update `changelog.txt`
 
 # 2022-07-21
