@@ -42,13 +42,37 @@
       <xsl:value-of select="(following-sibling::*[1])/name()"/>
     </xsl:variable>
     <xsl:choose> <!-- Depending on the preceding/next element, a line break and separators are set. -->
-      <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore'">
+      <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore' and not(descendant::abbreviation = '&lt;SEM&gt;')">
         <xsl:text>
 
         \noindent{}</xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
       </xsl:when>
+      <xsl:when test="position() = 1"> <!-- in case there is no etymaramaicbefore-->
+        <xsl:text>
+
+        \smallskip
+        \textbf{Aramaic etymologies}
+
+        \noindent{}</xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
+      </xsl:when>
+
       <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter' or position() = last()">
         <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+      </xsl:when>
+
+      <xsl:when test="not(preceding::etymsemiticbefore) and descendant::abbreviation = '&lt;SEM&gt;'"> <!-- in case there is no etymsemiticbefore -->
+        <xsl:text>
+
+        \smallskip
+        \textbf{Semitic etymologies}
+
+        \noindent{}</xsl:text><xsl:text></xsl:text>
+      </xsl:when>
+
+      <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
+        <xsl:text>
+
+        \noindent{}</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text></xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
@@ -64,6 +88,7 @@
       <xsl:when test="$nextelement = 'language'">
         <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}, </xsl:text>
       </xsl:when>
+      <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'"/>
       <xsl:otherwise>
         <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
       </xsl:otherwise>
