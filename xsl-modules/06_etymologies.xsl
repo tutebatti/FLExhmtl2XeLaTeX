@@ -126,7 +126,11 @@
     <xsl:text>]</xsl:text>
   </xsl:template>
 
-  <xsl:template match="preccomment">
+  <xsl:template match="languagenotes|preccomment">
+    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
+  <xsl:template match="etymology/comment">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
