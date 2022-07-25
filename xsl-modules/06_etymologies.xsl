@@ -120,7 +120,10 @@
   </xsl:template>
 
   <xsl:template match="bibliography">
-    <xsl:text> [</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
+    <!-- Number sign is masked for LaTeX. -->
+    <xsl:text> [</xsl:text>
+    <xsl:value-of select="replace(current(), '#', '\\#')"/>
+    <xsl:text>]</xsl:text>
   </xsl:template>
 
   <xsl:template match="preccomment">
