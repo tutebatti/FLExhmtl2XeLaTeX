@@ -6,7 +6,7 @@
 
   <!-- main headword -->
 
-  <xsl:template match="mainheadword">
+  <xsl:template match="mainheadword|minorentrycomplex/headword">
     <xsl:text>
     %%%%%%%%%%%%%%
     %%% New entry
@@ -87,7 +87,7 @@
 
   <!-- Minor entries -->
 
-  <xsl:template match="minorentrycomplex">
+  <xsl:template match="entry/minorentrycomplex">
     <xsl:text>
 
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
