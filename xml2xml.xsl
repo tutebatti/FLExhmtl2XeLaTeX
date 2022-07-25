@@ -52,6 +52,9 @@
             <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
                 <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
                 <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
+                <xsl:copy>
+                    <xsl:apply-templates/>
+                </xsl:copy>
             </xsl:when>
 
             <xsl:otherwise>
