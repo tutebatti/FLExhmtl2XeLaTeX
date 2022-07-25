@@ -93,6 +93,12 @@
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
+  <!-- Root reference -->
+
+  <xsl:template match="minimallexreference_root">
+    <xsl:text> √(</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+  </xsl:template>
+
   <!-- Part-of-speech -->
   <!-- This seems to come later, but belongs logically to the headword (?). -->
 
