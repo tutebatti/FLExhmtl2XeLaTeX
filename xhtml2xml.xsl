@@ -231,7 +231,7 @@
 
     <!-- handle multiple verb stems of etymology entries -->
 
-    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span">
+    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span[not(@style='font-style:italic;')]">
         <xsl:variable name="number-of-children">
             <xsl:value-of select="count(./xhtml:span)"/>
         </xsl:variable>
