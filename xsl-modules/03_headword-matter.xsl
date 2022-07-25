@@ -79,6 +79,14 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- Minor entries -->
+
+  <xsl:template match="minorentrycomplex">
+    <xsl:text>
+
+    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
   <!-- Part-of-speech -->
   <!-- This seems to come later, but belongs logically to the headword (?). -->
 
