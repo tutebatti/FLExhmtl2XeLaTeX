@@ -29,7 +29,7 @@
 
     <xsl:template match="xhtml:div[@class='letHead']"/>
 
-    <xsl:template match="xhtml:div[@class='entry']">
+    <xsl:template match="xhtml:div[@class='entry']|xhtml:div[@class='minorentrycomplex']">
         <xsl:element name="{@class}">
             <xsl:apply-templates select="node()|@*[id]"/>
         </xsl:element>
