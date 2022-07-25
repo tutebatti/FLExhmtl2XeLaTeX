@@ -52,4 +52,14 @@
     </xsl:text>
   </xsl:template>
 
+  <!-- Letter Heads -->
+
+  <xsl:template match="letterHead">
+    <xsl:text>\bigskip
+
+    \begin{center}\begin{Huge}</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>\end{Huge}\end{center}\bigskip</xsl:text>
+  </xsl:template>
+
 </xsl:stylesheet>
