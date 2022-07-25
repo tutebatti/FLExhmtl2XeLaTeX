@@ -47,7 +47,7 @@
 
         \noindent{}</xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
       </xsl:when>
-      <xsl:when test="position() = 1"> <!-- in case there is no etymaramaicbefore-->
+      <xsl:when test="position() = 1 and descendant::abbreviation = 'Arm'"> <!-- in case there is no etymaramaicbefore-->
         <xsl:text>
 
         \smallskip
