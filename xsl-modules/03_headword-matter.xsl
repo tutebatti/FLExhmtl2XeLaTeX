@@ -44,6 +44,12 @@
     <xsl:text> \textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
+  <!-- Greek equivalence -->
+
+  <xsl:template match="entry/greek">
+    <xsl:text> \textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
   <!-- Variant entries -->
 
   <xsl:template match="variantformentrybackrefs">
