@@ -236,6 +236,9 @@
             <xsl:value-of select="count(./xhtml:span)"/>
         </xsl:variable>
         <xsl:choose>
+            <xsl:when test="./xhtml:span[1]/text() = 'id.'">
+                <xsl:apply-templates/>
+            </xsl:when>
             <xsl:when test="$number-of-children > 1">
                 <xsl:for-each select="tokenize(.,'; ')">
                     <xsl:element name='etymology-gloss-stem'>
