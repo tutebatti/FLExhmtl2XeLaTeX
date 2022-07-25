@@ -2,6 +2,15 @@
 
 - Update sample entry ܚܬܡ
 - Resolve several formatting issues
+
+# 2022-07-22
+
+- Update `xhtml_structure.md`
+- Create sample entry `Aekal+AaklAo` containing two FLEx entries
+- Introduce parent element `entries` as root element of custom xml
+- Fix further problems occuring with multiple entries
+- Avoid general leading space with non-Latin scripts, use space where
+necessary instead
 - Update `changelog.txt`
 
 # 2022-07-21
@@ -10,6 +19,7 @@
 - Accordingly, delete `xslt_structure.md`
 - Improve handling of Estrangela, Madnḥaya, and Geez scripts
 - Restructure and comment modules
+- Rearrange Orthography and Morphology in parent element using `xml2xml.xsl`
 - Update `README.md`
 - Update `changelog.txt`
 
