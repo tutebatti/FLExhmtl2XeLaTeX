@@ -47,7 +47,7 @@
 
         \noindent{}</xsl:text><xsl:apply-templates/><xsl:text>~| </xsl:text>
       </xsl:when>
-      <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter'">
+      <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter' or position() = last()">
         <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
       </xsl:when>
       <xsl:otherwise>
