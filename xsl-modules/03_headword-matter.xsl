@@ -103,7 +103,7 @@
   <!-- This seems to come later, but belongs logically to the headword (?). -->
 
   <xsl:template match="partofspeech">
-    <xsl:text> \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>~\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- ########### -->
