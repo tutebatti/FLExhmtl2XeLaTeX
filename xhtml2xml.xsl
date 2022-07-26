@@ -96,6 +96,7 @@
                 @class='lexsensereferences' or
                 @class='lexsensereference' or
                 @class='definitionorgloss' or
+                @class='source' or
                 @class='simtho-sense-created-by' or
                 @class='simtho-period' or
                 @class='simtho-reference-century' or
