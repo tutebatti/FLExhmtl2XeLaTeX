@@ -52,4 +52,8 @@
   <xsl:template match="lexsensereference//configtarget//syriac"/>
   <xsl:template match="lexsensereference//configtarget//lexsensereference_sensenumber"/>
 
+  <xsl:template match="sense/source">
+    <xsl:text> [cf. </xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
+  </xsl:template>
+
 </xsl:stylesheet>
