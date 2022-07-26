@@ -40,13 +40,15 @@
     <xsl:text></xsl:text><xsl:apply-templates/><xsl:text> </xsl:text>
   </xsl:template>
 
-  <xsl:template match="lexsensereference//configtarget//rtl">
+  <xsl:template match="lexsensereference//configtarget/headword">
     <xsl:text>\textsyriac{</xsl:text>
     <xsl:value-of select="normalize-space(./syriac)"/>
     <xsl:text>}</xsl:text>
-    <xsl:text> </xsl:text>
-    <xsl:value-of select="./lexsensereference_sensenumber"/>
-    <xsl:text>)</xsl:text>
+    <xsl:if test="./lexsensereference_sensenumber">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="./lexsensereference_sensenumber"/>
+      <xsl:text>)</xsl:text>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="lexsensereference//configtarget//syriac"/>
