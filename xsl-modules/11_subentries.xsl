@@ -6,13 +6,16 @@
 
   <xsl:template match="(subentry | subentry_verbal-stems-measures)">
     <xsl:text>
+    %%%%%%%%%%%
+    %%%subentry
+    %%%%%%%%%%%
 
     \medskip{}
-    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    \noindent{}</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="(subentry | subentry_verbal-stems-measures)/headword">
-    <xsl:text>\begin{large}</xsl:text><xsl:apply-templates/><xsl:text>\end{large}</xsl:text>
+    <xsl:text>\begin{Large}</xsl:text><xsl:apply-templates/><xsl:text>\end{Large}</xsl:text>
   </xsl:template>
 
   <xsl:template match="complexformtype/abbreviation">
