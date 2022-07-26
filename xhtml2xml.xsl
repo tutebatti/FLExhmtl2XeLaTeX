@@ -203,6 +203,14 @@
         </xsl:element>
     </xsl:template>
 
+    <!-- sense numbering in lexsensereferences -->
+
+    <xsl:template match="xhtml:span[@style='font-size:9pt;font-weight:normal;']">
+        <xsl:element name="lexsensereference_sensenumber">
+            <xsl:apply-templates select="node()"/>
+        </xsl:element>
+    </xsl:template>
+
     <!-- Arabic -->
 
     <xsl:template match="xhtml:span[@style=concat('font-family:',$apo,'Amiri',$apo,',serif;font-size:10pt;')]">
