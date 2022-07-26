@@ -19,7 +19,17 @@
   </xsl:template>
 
   <xsl:template match="definitionorgloss">
-    <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:variable name="precedingelement"> <!-- Local variable is generated to check the preceding element. -->
+      <xsl:value-of select="(preceding-sibling::*[1])/name()"/>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="$precedingelement = 'restrictions'"> <!-- insert space if preceded by <restrictions> -->
+        <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="lexsensereference">
