@@ -32,16 +32,16 @@
     <xsl:text>}]</xsl:text>
   </xsl:template>
 
+  <!-- Homograph entry numbering -->
+
+  <xsl:template match="homographentrynumber">
+    <xsl:text>\begin{large}\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}\end{large}</xsl:text>
+  </xsl:template>
+
   <!-- gender inflection -->
 
   <xsl:template match="gender-inflection">
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>.</xsl:text>
-  </xsl:template>
-
-  <!-- Homograph entry numbering -->
-
-  <xsl:template match="homographentrynumber">
-    <xsl:text> \textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- Greek equivalence -->
