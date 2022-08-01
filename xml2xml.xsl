@@ -29,7 +29,7 @@
 
     <xsl:template match="node()|@*">
         <xsl:copy>
-            <xsl:apply-templates select="node()|@*[id|dir]"/>
+            <xsl:apply-templates select="node()|@id|@entryguid|@intref"/>
         </xsl:copy>
     </xsl:template>
 

@@ -11,7 +11,7 @@
 
     <xsl:template match="node()|@*">
         <xsl:copy>
-            <xsl:apply-templates select="node()|@*[id|dir]"/>
+            <xsl:apply-templates select="node()|@*[not(xml:space) and not(xhtml:class)]"/>
         </xsl:copy>
     </xsl:template>
 
@@ -35,7 +35,10 @@
 
     <xsl:template match="xhtml:div[@class='entry']|xhtml:div[@class='minorentrycomplex']">
         <xsl:element name="{@class}">
-            <xsl:apply-templates select="node()|@*[id]"/>
+            <xsl:attribute name="id">
+                <xsl:value-of select="./@id"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*[id]"/> <!-- check why "id" is needed to avoid copying of @class attribute -->
         </xsl:element>
     </xsl:template>
 
@@ -139,6 +142,11 @@
                 @class='simtho-contributor'
                   ]">
         <xsl:element name="{@class}">
+            <xsl:if test="@entryguid">
+                <xsl:attribute name="entryguid">
+                    <xsl:value-of select="./@entryguid"/>
+                </xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
@@ -279,11 +287,16 @@
         <xsl:element name="italics"><xsl:apply-templates/></xsl:element>
     </xsl:template>
 
-    <xsl:template match="xhtml:a">
+    <xsl:template match="xhtml:span">
         <xsl:apply-templates select="node()"/>
     </xsl:template>
 
-    <xsl:template match="xhtml:span">
+    <!-- internal references -->
+
+    <xsl:template match="xhtml:a">
+        <xsl:attribute name="intref">
+            <xsl:value-of select="@href"/>
+        </xsl:attribute>
         <xsl:apply-templates select="node()"/>
     </xsl:template>
 
