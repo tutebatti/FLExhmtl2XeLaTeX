@@ -73,7 +73,7 @@
             <xsl:value-of select="'(It|Š|Št|G|N|D|H|Gt|Gtn|C|CG|I|II|III|IV|V|VI|VII|VIII|IX|X)'"/>
         </xsl:variable>
         <xsl:element name="stemglosspair">
-            <xsl:analyze-string select="." regex="{$stemabbreviations} ">
+            <xsl:analyze-string select="." regex="{$stemabbreviations}(, | )">
                 <xsl:matching-substring>
                     <xsl:element name="stem">
                         <xsl:value-of select="regex-group(1)"/>

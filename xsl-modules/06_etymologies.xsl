@@ -129,7 +129,17 @@
   </xsl:template>
 
   <xsl:template match="gloss/stemglosspair/stem">
-    <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:variable name="nextelement"> <!-- Local variable is generated to check the next element. -->
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+    <xsl:choose>
+            <xsl:when test="$nextelement = 'stem'">
+                <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>},</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text> \textbf{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+            </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="gloss/stemglosspair/gloss">
