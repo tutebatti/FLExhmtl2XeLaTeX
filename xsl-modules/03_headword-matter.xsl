@@ -4,16 +4,29 @@
     version="2.0"
     >
 
-  <!-- main headword -->
+  <!-- entry -->
 
-  <xsl:template match="mainheadword|minorentrycomplex/headword">
+  <xsl:template match="entry|minorentrycomplex">
     <xsl:text>
+
     %%%%%%%%%%%%%%
     %%% New entry
     %%%%%%%%%%%%%%
 
-    \bigskip{}
-    \noindent \begin{huge}</xsl:text><xsl:apply-templates/><xsl:text>\end{huge}</xsl:text>
+    \bigskip{}</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text></xsl:text>
+  </xsl:template>
+
+  <!-- headword -->
+
+  <xsl:template match="mainheadword|minorentrycomplex/headword">
+    <xsl:text>
+    \noindent \begin{huge}\hypertarget{</xsl:text>
+    <xsl:value-of select="ancestor::entry/@id"/>
+    <xsl:text>}{</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>}\end{huge}</xsl:text>
   </xsl:template>
 
   <!-- Sedra ID -->
