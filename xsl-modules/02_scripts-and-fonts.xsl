@@ -8,8 +8,18 @@
   <!-- Note: English text within <syriac> elements is set as \textenglish{};
   the range of letters specified in the regex might need adaption. -->
 
-  <xsl:template match="syriac">
-    <xsl:text>\textsyriac{</xsl:text><xsl:value-of select="replace(.,'_([A-z]*)','\\textenglish{$1}')"/><xsl:text>}</xsl:text>
+  <xsl:template match="syriac[@intref]">
+        <xsl:text>\hyperlink{</xsl:text>
+        <xsl:value-of select="substring-after(@intref, '#')"/>
+        <xsl:text>}{\textsyriac{</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="syriac[not(@intref)]">
+    <xsl:text>\textsyriac{</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- Arabic -->
@@ -43,8 +53,18 @@
   <!-- RTL -->
   <!-- The tex command \RLE ensures rtl direction. -->
 
+  <xsl:template match="rtl[@intref]">
+    <xsl:text>\hyperlink{</xsl:text>
+    <xsl:value-of select="substring-after(@intref, '#')"/>
+    <xsl:text>}{\RLE{</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
+  </xsl:template>
+  
   <xsl:template match="rtl">
-    <xsl:text>\RLE{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>\RLE{</xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- italics -->
