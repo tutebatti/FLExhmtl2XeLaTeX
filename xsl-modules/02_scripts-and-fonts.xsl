@@ -5,8 +5,6 @@
     >
 
   <!-- Syriac -->
-  <!-- Note: English text within <syriac> elements is set as \textenglish{};
-  the range of letters specified in the regex might need adaption. -->
 
   <xsl:template match="syriac[@intref]">
         <xsl:text>\hyperlink{</xsl:text>
@@ -20,6 +18,13 @@
     <xsl:text>\textsyriac{</xsl:text>
     <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
+  </xsl:template>
+
+  <!-- Note: English text within <syriac> elements is set as \textenglish{};
+  the range of letters specified in the regex might need adaption. -->
+
+  <xsl:template match="syriac/text()">
+    <xsl:value-of select="replace(.,'_([A-z]*)','\\textenglish{$1}')"/>
   </xsl:template>
 
   <!-- Arabic -->
