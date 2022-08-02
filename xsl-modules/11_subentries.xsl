@@ -6,6 +6,7 @@
 
   <xsl:template match="(subentry | subentry_verbal-stems-measures)">
     <xsl:text>
+
     %%%%%%%%%%%
     %%%subentry
     %%%%%%%%%%%
