@@ -27,7 +27,7 @@
   </xsl:template>
 
   <xsl:template match="dots-supralinear">
-    <xsl:text> Supra</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text> Supra </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="dots-sublinear-label|dots-supralinear-label">
