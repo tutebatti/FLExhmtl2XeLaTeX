@@ -74,6 +74,10 @@
       <xsl:value-of select="substring(following-sibling::syriac[1], 1, 1)"/>
     </xsl:variable>
 
+    <xsl:variable name="nonconnectingletters">
+      <xsl:value-of select="[ܐܕܗܘܙܨܪܬ ]"/>
+    </xsl:variable>
+
     <!-- Depending on the surrounding characters and position, separation or connection are achieved via ommission or insertion of the Unicode character U200D -->
 
     <xsl:choose>
@@ -81,7 +85,7 @@
         <xsl:text>\textsyriac{\textcolor{BrickRed}{</xsl:text>
         <xsl:apply-templates/>
         <xsl:choose>
-          <xsl:when test="matches($lastcharself, '[ܐܕܗܘܙܨܪܬ ]') or matches($firstcharfollowing, ' ')">
+          <xsl:when test="matches($lastcharself, $nonconnectingletters) or matches($firstcharfollowing, ' ')">
             <xsl:text>}</xsl:text>
           </xsl:when>
           <xsl:otherwise>
@@ -92,12 +96,12 @@
 
       <xsl:when test="position() != [1] and position() != last()">
         <xsl:choose>
-          <xsl:when test="matches($lastcharpreceding, '[ ܐܕܗܘܙܨܪܬ]')">
+          <xsl:when test="matches($lastcharpreceding, $nonconnectingletters)">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
             <xsl:apply-templates/>
             <xsl:choose>
               <xsl:when test="
-              matches($lastcharself, '[ܐܕܗܘܙܨܪܬ]') or
+              matches($lastcharself, $nonconnectingletters) or
               matches($firstcharfollowing, ' ')
               ">
                 <xsl:text>}</xsl:text>
@@ -108,12 +112,12 @@
             </xsl:choose>
           </xsl:when>
 
-          <xsl:when test="not(matches($lastcharpreceding, '[ ܐܕܗܘܙܨܪܬ]'))">
+          <xsl:when test="not(matches($lastcharpreceding, $nonconnectingletters))">
             <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
             <xsl:apply-templates/>
             <xsl:choose>
               <xsl:when test="
-              matches($lastcharself, '[ܐܕܗܘܙܨܪܬ]') or
+              matches($lastcharself, $nonconnectingletters) or
               matches($firstcharfollowing, ' ')
               ">
                 <xsl:text>}</xsl:text>
@@ -128,7 +132,7 @@
 
       <xsl:when test="position() = last()">
         <xsl:choose>
-          <xsl:when test="matches($lastcharpreceding, '[ ܐܕܗܘܙܨܪܬ]')">
+          <xsl:when test="matches($lastcharpreceding, $nonconnectingletters)">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
             <xsl:apply-templates/>
             <xsl:text>}}</xsl:text>
