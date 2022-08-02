@@ -10,15 +10,15 @@
     ORTHO </xsl:text><xsl:apply-templates/>
   </xsl:template>
     
-  <xsl:template match="orth-estrangela/syriac">
+  <xsl:template match="orth-estrangela">
     <xsl:text>Est. {\estrangelafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
-  <xsl:template match="orth-serto/syriac">
+  <xsl:template match="orth-serto">
     <xsl:text> Ser. \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
-  <xsl:template match="orth-madnḥaya/syriac">
+  <xsl:template match="orth-madnḥaya">
     <xsl:text> Mad. {\madnhayafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 

@@ -14,9 +14,15 @@
             <xsl:apply-templates/>
         </xsl:copy>
         <xsl:element name="orthography">
-            <xsl:copy-of select="following-sibling::orth-estrangela"/>
-            <xsl:copy-of select="following-sibling::orth-serto"/>
-            <xsl:copy-of select="following-sibling::orth-madnḥaya"/>
+            <xsl:element name="orth-estrangela">
+                <xsl:copy-of select="following-sibling::orth-estrangela/syriac/rtl/text()"/>
+            </xsl:element>
+            <xsl:element name="orth-serto">
+                <xsl:copy-of select="following-sibling::orth-estrangela/syriac/rtl/text()"/>
+            </xsl:element>
+            <xsl:element name="orth-madnḥaya">
+                <xsl:copy-of select="following-sibling::orth-madnḥaya/syriac/rtl/text()"/>
+            </xsl:element>
             <xsl:copy-of select="following-sibling::dots-sublinear"/>
             <xsl:copy-of select="following-sibling::dots-sublinear-label"/>
             <xsl:copy-of select="following-sibling::dots-supralinear"/>
