@@ -76,7 +76,7 @@
 
     <xsl:template match="etymology-gloss-stem">
         <xsl:variable name="stemabbreviations">
-            <xsl:value-of select="'(It|Š|Št|G|Gt|Gtn|L|Lt|N|Nt|Ntn|D|Dt|H|C|CD|CG|I|II|III|IV|V|VI|VII|VIII|IX|X)'"/>
+            <xsl:value-of select="'(It|Š|Št|G|Gt|Gtn|L|Lt|N|Nt|Ntn|D|Dt|H|C|CD|CG|I|II|IIt|III|IV|V|VI|VII|VIII|IX|X)'"/>
         </xsl:variable>
         <xsl:element name="stemglosspair">
             <xsl:analyze-string select="." regex="{$stemabbreviations}(, | )">
