@@ -114,4 +114,12 @@
     <xsl:text> √(</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
   </xsl:template>
 
+  <!-- Aramaic references -->
+
+  <xsl:template match="minimallexreference_aramaic">
+    <xsl:text> Cf. Simtho Etym Related Lexemes: </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
+  <xsl:template match="minimallexreference_aramaic/ownertype_name"/>
+
 </xsl:stylesheet>

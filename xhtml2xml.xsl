@@ -49,6 +49,8 @@
                 @class='originform' or
                 @class='minimallexreferences_root' or
                 @class='minimallexreference_root' or
+                @class='minimallexreferences_aramaic' or
+                @class='minimallexreference_aramaic' or
                 @class='gender-inflection' or
                 @class='variantformentrybackrefs' or
                 @class='variantentrytypes' or
