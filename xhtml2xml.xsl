@@ -55,8 +55,6 @@
                 @class='variantentrytype' or
                 @class='abbreviation' or
                 @class='variantformentrybackref' or
-                @class='pronunciations' or
-                @class='pronunciation' or
                 @class='cvpattern' or
                 @class='location' or
                 @class='tone' or

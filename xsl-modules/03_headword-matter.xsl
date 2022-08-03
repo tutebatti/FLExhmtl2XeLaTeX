@@ -121,14 +121,4 @@
     <xsl:text>~\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
   </xsl:template>
 
-  <!-- ########### -->
-  <!-- Phonology? -->
-  <!-- ########### -->
-
-  <xsl:template match="pronunciations">
-    <xsl:text>
-
-    +TEMP+ </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
-  </xsl:template>
-
 </xsl:stylesheet>
