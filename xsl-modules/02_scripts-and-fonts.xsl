@@ -14,7 +14,7 @@
         <xsl:text>}}</xsl:text>
   </xsl:template>
 
-  <xsl:template match="syriac[not(@intref)]">
+  <xsl:template match="*[not(self::example)]/*/syriac[not(@intref)]">
     <xsl:text>\textsyriac{</xsl:text>
     <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
