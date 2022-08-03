@@ -4,11 +4,31 @@
     version="2.0"
     >
 
+  <!-- part-of-speech -->
+
+  <!-- 1) if the same for all senses -->
+
+  <xsl:template match="senses/sharedgrammaticalinfo//partofspeech">
+    <xsl:text>
+
+    \textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  </xsl:template>
+
+  <!-- 2) if different in different senses -->
+
+  <xsl:template match="sense//partofspeech">
+    <xsl:text>~\textit{</xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text>
+  </xsl:template>
+
+  <!-- sense content -->
+
   <xsl:template match="sensecontent">
     <xsl:text>
 
     </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
+
+  <!-- sense content -->
 
   <xsl:template match="sensenumber">
     <xsl:text>\textbf{</xsl:text><xsl:apply-templates/><xsl:text>)} </xsl:text>
