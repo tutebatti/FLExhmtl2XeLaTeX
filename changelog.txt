@@ -1,3 +1,26 @@
+# 2022-08-03
+
+- Fix ambigious rules for Syriac
+- Add headding for senses
+- Improve formatting of p-o-s
+- Add handling and formatting of `<originform>` for Greek etymologies
+- Add handling and formatting of Simtho Etym Related
+- Update `changelog.txt`
+
+# 2022-08-02
+
+- Improve code (e.g. Syriac non-connecting letters in variable)
+- Improve different formatting issues
+
+# 2022-08-01
+
+- Add internal linking
+
+# 2022-07-26
+
+- Fix several minor problems
+- Resolve different formatting issues
+
 # 2022-07-25
 
 - Update sample entry ܚܬܡ
