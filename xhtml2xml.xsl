@@ -46,6 +46,7 @@
                 @class='mainheadword' or
                 @class='headword' or
                 @class='sedra-id' or
+                @class='originform' or
                 @class='minimallexreferences_root' or
                 @class='minimallexreference_root' or
                 @class='gender-inflection' or

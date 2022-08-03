@@ -59,10 +59,10 @@
     <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text>.</xsl:text>
   </xsl:template>
 
-  <!-- Greek equivalence -->
+  <!-- Originform as Note to Etymologist -->
 
-  <xsl:template match="entry/greek">
-    <xsl:text> \textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+  <xsl:template match="originform">
+    <xsl:text> \hl{NOTE TO ETYM EDITOR:} </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
   </xsl:template>
 
   <!-- Variant entries -->

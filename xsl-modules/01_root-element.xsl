@@ -11,6 +11,7 @@
 \usepackage{polyglossia, xunicode}
 
 \usepackage[dvipsnames]{xcolor} % used for coloring, option 'dvipsnames' provides extended color names
+\usepackage{soul} % used for highlighting via \hl
 
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref} % adapt internal and external linking
 
