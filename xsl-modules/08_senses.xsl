@@ -4,6 +4,17 @@
     version="2.0"
     >
 
+  <!-- heading for senses -->
+
+  <xsl:template match="senses">
+    <xsl:text>
+
+    \medskip{}
+    \noindent{}\textbf{Senses}
+
+    </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  </xsl:template>
+
   <!-- part-of-speech -->
 
   <!-- 1) if the same for all senses -->
