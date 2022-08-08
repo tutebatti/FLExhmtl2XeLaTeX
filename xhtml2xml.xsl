@@ -106,7 +106,7 @@
                 @class='simtho-reference-century' or
                 @class='simtho-reference-author' or
                 @class='simtho-reference-medium' or
-                @class='reference' or
+                @class='simtho-reference' or
                 @class='simtho-reference-page' or
                 @class='simtho-ex-created-by' or
                 @class='restrictions' or
