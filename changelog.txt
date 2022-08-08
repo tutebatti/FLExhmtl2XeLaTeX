@@ -1,3 +1,10 @@
+# 2022-08-08
+
+- Add pictures for documentation of code-output correspondence
+- Add handling and formatting of `simtho-reference-medium`
+- Refactor code
+- Update `changelog.txt`
+
 # 2022-08-03
 
 - Fix ambigious rules for Syriac
@@ -5,6 +12,7 @@
 - Improve formatting of p-o-s
 - Add handling and formatting of `<originform>` for Greek etymologies
 - Add handling and formatting of Simtho Etym Related
+- Add pictures for documentation of code-output correspondence
 - Update `changelog.txt`
 
 # 2022-08-02
