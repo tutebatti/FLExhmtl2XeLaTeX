@@ -14,7 +14,7 @@
     %%%subentry
     %%%%%%%%%%%
 
-    \medskip{}
+    \medskip{} --- 
     </xsl:text>
       <xsl:apply-templates/>
     <xsl:text></xsl:text>
