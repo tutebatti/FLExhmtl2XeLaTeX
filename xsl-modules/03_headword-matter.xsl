@@ -29,7 +29,7 @@
       <xsl:value-of select="ancestor::minorentrycomplex/@id"/>
     <xsl:text>}{}
 
-    \bigskip{}\noindent{}\begin{huge}</xsl:text>
+    \bigskip{}\begin{huge}</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>\end{huge}</xsl:text>
   </xsl:template>

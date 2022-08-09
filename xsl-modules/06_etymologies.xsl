@@ -10,7 +10,7 @@
     \smallskip
     \textbf{Aramaic etymologies}
 
-    \noindent{}\begin{footnotesize}</xsl:text>
+    \begin{footnotesize}</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
@@ -21,7 +21,7 @@
     \smallskip
     \textbf{Semitic etymologies}
 
-    \noindent{}\begin{footnotesize}</xsl:text>
+    \begin{footnotesize}</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
@@ -32,7 +32,7 @@
     ">
     <xsl:text>
 
-    \noindent{}\begin{footnotesize}</xsl:text>
+    \begin{footnotesize}</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
@@ -60,7 +60,7 @@
       <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore' and not(descendant::abbreviation = '&lt;SEM&gt;')">
         <xsl:text>
 
-        \noindent{}</xsl:text>
+        </xsl:text>
           <xsl:apply-templates/>
         <xsl:text>~| </xsl:text>
       </xsl:when>
@@ -71,7 +71,7 @@
         \smallskip
         \textbf{Aramaic etymologies}
 
-        \noindent{}</xsl:text>
+        </xsl:text>
           <xsl:apply-templates/>
         <xsl:text>~| </xsl:text>
       </xsl:when>
@@ -88,13 +88,13 @@
         \smallskip
         \textbf{Semitic etymologies}
 
-        \noindent{}</xsl:text><xsl:text></xsl:text>
+        </xsl:text><xsl:text></xsl:text>
       </xsl:when>
 
       <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
         <xsl:text>
 
-        \noindent{}</xsl:text>
+        </xsl:text>
           <xsl:apply-templates/>
         <xsl:text></xsl:text>
       </xsl:when>

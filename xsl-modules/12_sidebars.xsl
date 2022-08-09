@@ -29,7 +29,7 @@
   <xsl:template match="sidebar-text">
     <xsl:text>
 
-    \noindent{}\begin{footnotesize}</xsl:text>
+    \begin{footnotesize}</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>\end{footnotesize}\end{sidebar}</xsl:text>
   </xsl:template>

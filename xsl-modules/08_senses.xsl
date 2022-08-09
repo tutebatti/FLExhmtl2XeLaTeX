@@ -10,7 +10,7 @@
     <xsl:text>
 
     \medskip{}
-    \noindent{}\textbf{Senses}
+    \textbf{Senses}
 
     </xsl:text>
       <xsl:apply-templates/>

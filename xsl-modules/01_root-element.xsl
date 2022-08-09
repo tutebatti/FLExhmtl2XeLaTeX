@@ -45,6 +45,8 @@
 \onehalfspacing
 \lineskiplimit=-\maxdimen
 
+\setlength{\parindent}{0pt} % deactivate automatic indentation in new lines
+
 \begin{document}
     </xsl:text>
       <xsl:apply-templates/>
