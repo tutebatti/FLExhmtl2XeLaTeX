@@ -7,31 +7,48 @@
   <xsl:template match="orthography">
     <xsl:text>
 
-    ORTHO </xsl:text><xsl:apply-templates/>
+    ORTHO </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
-    
+
   <xsl:template match="orth-estrangela">
-    <xsl:text>Est. {\estrangelafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>Est. {\estrangelafont </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="orth-serto">
-    <xsl:text> Ser. \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> Ser. \textsyriac{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="orth-madnḥaya">
-    <xsl:text> Mad. {\madnhayafont </xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text> Mad. {\madnhayafont </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <xsl:template match="dots-sublinear">
-    <xsl:text> DOTS Sub. </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text> DOTS Sub. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="dots-supralinear">
-    <xsl:text> Supra </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text> Supra </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
-  <xsl:template match="dots-sublinear-label|dots-supralinear-label">
-    <xsl:text> \begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}</xsl:text>
+  <xsl:template match="
+    dots-sublinear-label|
+    dots-supralinear-label
+    ">
+    <xsl:text> \begin{footnotesize}</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>\end{footnotesize}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

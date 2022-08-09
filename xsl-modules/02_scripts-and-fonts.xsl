@@ -8,15 +8,15 @@
 
   <xsl:template match="syriac[@intref]">
         <xsl:text>\hyperlink{</xsl:text>
-        <xsl:value-of select="substring-after(@intref, '#')"/>
+          <xsl:value-of select="substring-after(@intref, '#')"/>
         <xsl:text>}{\textsyriac{</xsl:text>
-        <xsl:apply-templates/>
+          <xsl:apply-templates/>
         <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <xsl:template match="*[not(self::example)]/*/syriac[not(@intref)]">
     <xsl:text>\textsyriac{</xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
   </xsl:template>
 
@@ -31,28 +31,36 @@
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="arabic">
-    <xsl:text>\textup{\textarabic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textarabic{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Hebrew -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="hebrew">
-    <xsl:text>\textup{\texthebrew{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\texthebrew{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Geez -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="geez">
-    <xsl:text>\textup{\textamharic{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textamharic{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- Greek -->
   <!-- \textup ensures non-Latin text not to be in italics -->
 
   <xsl:template match="greek">
-    <xsl:text>\textup{\textgreek{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+    <xsl:text>\textup{\textgreek{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <!-- RTL -->
@@ -60,35 +68,45 @@
 
   <xsl:template match="rtl[@intref]">
     <xsl:text>\hyperlink{</xsl:text>
-    <xsl:value-of select="substring-after(@intref, '#')"/>
+      <xsl:value-of select="substring-after(@intref, '#')"/>
     <xsl:text>}{\RLE{</xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text>}}</xsl:text>
   </xsl:template>
-  
+
   <xsl:template match="rtl">
     <xsl:text>\RLE{</xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- italics -->
 
   <xsl:template match="italics">
-    <xsl:text>\textit{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    <xsl:text>\textit{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- subscript -->
   <!-- The conditional ensures subscript to be in italics if surrounded by italic text. -->
 
   <xsl:template match="subscript">
+
     <xsl:choose>
+
       <xsl:when test='preceding::italics and following::italics'>
-        <xsl:text>\textit{\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+        <xsl:text>\textit{\textsubscript{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
       </xsl:when>
+
       <xsl:otherwise>
-        <xsl:text>\textsubscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+        <xsl:text>\textsubscript{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}</xsl:text>
       </xsl:otherwise>
+
     </xsl:choose>
   </xsl:template>
 
@@ -97,12 +115,19 @@
 
   <xsl:template match="superscript">
     <xsl:choose>
+
       <xsl:when test='preceding::italics and following::italics'>
-        <xsl:text>\textit{\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}}</xsl:text>
+        <xsl:text>\textit{\textsuperscript{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
       </xsl:when>
+
       <xsl:otherwise>
-        <xsl:text>\textsuperscript{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+        <xsl:text>\textsuperscript{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}</xsl:text>
       </xsl:otherwise>
+
     </xsl:choose>
   </xsl:template>
 

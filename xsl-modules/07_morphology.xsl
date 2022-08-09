@@ -7,31 +7,45 @@
   <xsl:template match="morphology">
     <xsl:text>
 
-    MORPHO </xsl:text><xsl:apply-templates/>
+    MORPHO </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphperf">
-    <xsl:text>perf. f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    <xsl:text>perf. f. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphimpf">
-    <xsl:text>impf. sing./pl. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    <xsl:text>impf. sing./pl. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphactpartm">
-    <xsl:text>act. part. m./f. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    <xsl:text>act. part. m./f. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphpasspart">
-    <xsl:text>pass. part. (abs./emph pairs) </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    <xsl:text>pass. part. (abs./emph pairs) </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphinf">
-    <xsl:text>inf. </xsl:text><xsl:apply-templates/><xsl:text>, </xsl:text>
+    <xsl:text>inf. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>, </xsl:text>
   </xsl:template>
 
   <xsl:template match="compmorphtable">
-    <xsl:text>Conj. Table </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    <xsl:text>Conj. Table </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

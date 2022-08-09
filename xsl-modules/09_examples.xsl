@@ -8,17 +8,22 @@
     <!-- $ introduces and ends LaTeX mathmode. -->
     <xsl:text>
 
-    $\triangleright$ </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+    $\triangleright$ </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
-  <xsl:template match="simtho-period|
-  simtho-reference-century|
-  simtho-reference-medium|
-  simtho-reference-author|
-  simtho-reference-page|
-  simtho-reference|
-  example">
-    <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+  <xsl:template match="
+    simtho-period|
+    simtho-reference-century|
+    simtho-reference-medium|
+    simtho-reference-author|
+    simtho-reference-page|
+    simtho-reference|
+    example">
+    <xsl:text> </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="simtho-reference/text()">
@@ -27,20 +32,32 @@
   </xsl:template>
 
   <xsl:template match="examplescontent/text()">
-    <xsl:text> </xsl:text><xsl:value-of select="."/><xsl:text></xsl:text>
+    <xsl:text> </xsl:text>
+      <xsl:value-of select="."/>
+    <xsl:text></xsl:text>
   </xsl:template>
 
   <xsl:template match="example/rtl/syriac">
     <xsl:choose>
+
       <xsl:when test="position() = [1]">
-        <xsl:text> \textsyriac{</xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+        <xsl:text> \textsyriac{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text></xsl:text>
       </xsl:when>
+
       <xsl:when test="position() != [1] and position() != last()">
-        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text></xsl:text>
+        <xsl:text></xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text></xsl:text>
       </xsl:when>
+
       <xsl:when test="position() = last()">
-        <xsl:text></xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+        <xsl:text></xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}</xsl:text>
       </xsl:when>
+
     </xsl:choose>
   </xsl:template>
 
@@ -67,74 +84,93 @@
     <!-- Depending on the surrounding characters and position, separation or connection are achieved via ommission or insertion of the Unicode character U200D -->
 
     <xsl:choose>
+
       <xsl:when test="position() = [1]">
         <xsl:text>\textsyriac{\textcolor{BrickRed}{</xsl:text>
-        <xsl:apply-templates/>
+          <xsl:apply-templates/>
         <xsl:choose>
+
           <xsl:when test="matches($lastcharself, $nonconnectingletters) or matches($firstcharfollowing, ' ')">
             <xsl:text>}</xsl:text>
           </xsl:when>
+
           <xsl:otherwise>
             <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
+
           </xsl:otherwise>
+
         </xsl:choose>
       </xsl:when>
 
       <xsl:when test="position() != [1] and position() != last()">
         <xsl:choose>
+
           <xsl:when test="matches($lastcharpreceding, $nonconnectingletters)">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
-            <xsl:apply-templates/>
+              <xsl:apply-templates/>
             <xsl:choose>
+
               <xsl:when test="
               matches($lastcharself, $nonconnectingletters) or
               matches($firstcharfollowing, ' ')
               ">
                 <xsl:text>}</xsl:text>
               </xsl:when>
+
               <xsl:otherwise>
                 <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
               </xsl:otherwise>
+
             </xsl:choose>
           </xsl:when>
 
           <xsl:when test="not(matches($lastcharpreceding, $nonconnectingletters))">
             <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
-            <xsl:apply-templates/>
+              <xsl:apply-templates/>
             <xsl:choose>
+
               <xsl:when test="
               matches($lastcharself, $nonconnectingletters) or
               matches($firstcharfollowing, ' ')
               ">
                 <xsl:text>}</xsl:text>
               </xsl:when>
+
               <xsl:otherwise>
                 <xsl:text>\char"200D{}}\char"200D{}</xsl:text>
               </xsl:otherwise>
+
             </xsl:choose>
           </xsl:when>
+
         </xsl:choose>
       </xsl:when>
 
       <xsl:when test="position() = last()">
         <xsl:choose>
+
           <xsl:when test="matches($lastcharpreceding, $nonconnectingletters)">
             <xsl:text>\textcolor{BrickRed}{</xsl:text>
-            <xsl:apply-templates/>
+              <xsl:apply-templates/>
             <xsl:text>}}</xsl:text>
           </xsl:when>
+
           <xsl:otherwise>
             <xsl:text>\char"200D{}\textcolor{BrickRed}{\char"200D{}</xsl:text>
-            <xsl:apply-templates/>
+              <xsl:apply-templates/>
             <xsl:text>}}</xsl:text>
           </xsl:otherwise>
+
         </xsl:choose>
       </xsl:when>
+
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="translationcontent">
-    <xsl:text> \begin{footnotesize}``</xsl:text><xsl:apply-templates/><xsl:text>''\end{footnotesize}</xsl:text>
+    <xsl:text> \begin{footnotesize}``</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>''\end{footnotesize}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

@@ -7,7 +7,9 @@
   <xsl:template match="comment">
     <xsl:text>
 
-    \begin{scriptsize}\textcolor{red}{NOTE TO EDITOR: </xsl:text><xsl:apply-templates/><xsl:text>)}\end{scriptsize}</xsl:text>
+    \begin{scriptsize}\textcolor{red}{NOTE TO EDITOR: </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>)}\end{scriptsize}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

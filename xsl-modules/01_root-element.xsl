@@ -5,7 +5,7 @@
     >
 
     <xsl:template match="/">
-    <xsl:text>
+      <xsl:text>
 \documentclass[10pt, a4paper, twocolumn, twoside]{book}
 
 \usepackage{polyglossia, xunicode}
@@ -47,7 +47,7 @@
 
 \begin{document}
     </xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text>
 \end{document}
     </xsl:text>
@@ -59,7 +59,7 @@
     <xsl:text>\bigskip
 
     \begin{center}\begin{Huge}</xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text>\end{Huge}\end{center}\bigskip</xsl:text>
   </xsl:template>
 

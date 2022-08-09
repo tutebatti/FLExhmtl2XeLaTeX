@@ -5,9 +5,11 @@
     >
 
   <xsl:template match="sidebar-title">
+
     <xsl:variable name="lemma">
       <xsl:value-of select="parent::entry/mainheadword/syriac/rtl/text()"/>
     </xsl:variable>
+
     <xsl:text>
 
     \begin{sidebar}[]
@@ -16,9 +18,9 @@
     \textsc{
     \textbf{
     \textcolor{BrickRed}{</xsl:text>
-    <xsl:apply-templates/>
+      <xsl:apply-templates/>
     <xsl:text> \textsyriac{</xsl:text>
-    <xsl:value-of select="$lemma"/>
+      <xsl:value-of select="$lemma"/>
     <xsl:text>}}}}
     \end{footnotesize}
     \end{center}</xsl:text>
@@ -27,12 +29,14 @@
   <xsl:template match="sidebar-text">
     <xsl:text>
 
-    \noindent{}\begin{footnotesize}</xsl:text><xsl:apply-templates/><xsl:text>\end{footnotesize}\end{sidebar}</xsl:text>
+    \noindent{}\begin{footnotesize}</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>\end{footnotesize}\end{sidebar}</xsl:text>
   </xsl:template>
 
   <xsl:template match="sidebar-text/text()">
     <!-- The square bullet is replaced. -->
-    <xsl:text></xsl:text><xsl:value-of select="replace(current(), '▪', '\\textbullet{}')"/><xsl:text></xsl:text>
+    <xsl:value-of select="replace(current(), '▪', '\\textbullet{}')"/>
   </xsl:template>
 
 </xsl:stylesheet>

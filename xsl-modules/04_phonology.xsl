@@ -7,11 +7,15 @@
   <xsl:template match="transliteration">
     <xsl:text>
 
-    PHONO /</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>
+    PHONO /</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <xsl:template match="phono-received-pronunciation">
-    <xsl:text> (</xsl:text><xsl:apply-templates/><xsl:text>)</xsl:text>
+    <xsl:text> (</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>)</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>

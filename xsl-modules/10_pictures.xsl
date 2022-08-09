@@ -10,10 +10,12 @@
     \begin{center}
     \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\columnwidth]{../pictures/</xsl:text><xsl:value-of select='$sedraid'/><xsl:text>.png}
+    \includegraphics[width=0.7\columnwidth]{../pictures/</xsl:text>
+      <xsl:value-of select='$sedraid'/>
+      <xsl:text>.png}
     \caption{
     \begin{tiny}</xsl:text>
-    <xsl:apply-templates select=".//caption"/>
+      <xsl:apply-templates select=".//caption"/>
     <xsl:text>
     \end{tiny}}
     \end{figure}
