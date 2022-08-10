@@ -233,14 +233,17 @@
     <xsl:text>]</xsl:text>
   </xsl:template>
 
-  <xsl:template match="
-    languagenotes|
-    preccomment
-    ">
+  <xsl:template match="preccomment">
     <xsl:text> </xsl:text>
       <xsl:apply-templates/>
     <xsl:text></xsl:text>
   </xsl:template>
+
+    <xsl:template match="languagenotes">
+      <xsl:text> (</xsl:text>
+        <xsl:apply-templates/>
+      <xsl:text>)</xsl:text>
+    </xsl:template>
 
   <xsl:template match="etymology/comment">
     <xsl:text> &gt;\textit{</xsl:text>
