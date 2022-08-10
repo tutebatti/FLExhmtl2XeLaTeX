@@ -1,0 +1,2 @@
+# Do not count sample entries in github language statistics
+sample-entries/** linguist-generated
