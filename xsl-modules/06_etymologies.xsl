@@ -4,30 +4,43 @@
     version="2.0"
     >
 
-  <xsl:template match="etymaramaicbefore">
-    <xsl:text>
+  <xsl:template match="etymaramaic">
+    <xsl:if test="node()">
+      <xsl:text>
 
-    \smallskip
-    \textbf{Aramaic etymologies}
-
-    \begin{footnotesize}</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>\end{footnotesize}</xsl:text>
+      \smallskip
+      \textbf{Aramaic etymologies}</xsl:text>
+        <xsl:apply-templates/>
+      <xsl:text></xsl:text>
+    </xsl:if>
   </xsl:template>
 
-  <xsl:template match="etymsemiticbefore">
-    <xsl:text>
+  <xsl:template match="etymsemitic">
+    <xsl:if test="node()">
+      <xsl:text>
 
-    \smallskip
-    \textbf{Semitic etymologies}
+      \smallskip
+      \textbf{Semitic etymologies}</xsl:text>
+        <xsl:apply-templates/>
+      <xsl:text></xsl:text>
+    </xsl:if>
+  </xsl:template>
 
-    \begin{footnotesize}</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>\end{footnotesize}</xsl:text>
+  <xsl:template match="etymgreek">
+    <xsl:if test="node()">
+      <xsl:text>
+
+      \smallskip
+      \textbf{Greek etymology}</xsl:text>
+        <xsl:apply-templates/>
+      <xsl:text></xsl:text>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="
+    etymaramaicbefore|
     etymaramaicafter|
+    etymsemiticbefore|
     etymsemiticafter
     ">
     <xsl:text>
@@ -58,9 +71,10 @@
     <xsl:choose> <!-- Depending on the preceding/next element, a line break and separators are set. -->
 
       <xsl:when test="
+        position() = 1 or
         $precedingelement = 'etymaramaicbefore' or
-        $precedingelement = 'etymsemiticbefore' and
-        not(descendant::abbreviation = '&lt;SEM&gt;')">
+        $precedingelement = 'etymsemiticbefore'
+      ">
         <xsl:text>
 
         </xsl:text>
@@ -69,41 +83,11 @@
       </xsl:when>
 
       <xsl:when test="
-      position() = 1 and
-      (descendant::abbreviation = 'Arm')"> <!-- in case there is no etymaramaicbefore-->
-        <xsl:text>
-
-        \smallskip
-        \textbf{Aramaic etymologies}
-
-        </xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>~| </xsl:text>
-      </xsl:when>
-
-      <xsl:when test="
+        position() = last() or
         $nextelement = 'etymaramaicafter' or
-        $nextelement = 'etymsemiticbefore' or
-        $nextelement = 'etymsemiticafter' or
-        position() = last()">
+        $nextelement = 'etymsemiticafter'
+      ">
         <xsl:text> </xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text></xsl:text>
-      </xsl:when>
-
-      <xsl:when test="not(preceding::etymsemiticbefore) and descendant::abbreviation = '&lt;SEM&gt;'"> <!-- in case there is no etymsemiticbefore -->
-        <xsl:text>
-
-        \smallskip
-        \textbf{Semitic etymologies}
-
-        </xsl:text><xsl:text></xsl:text>
-      </xsl:when>
-
-      <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
-        <xsl:text>
-
-        </xsl:text>
           <xsl:apply-templates/>
         <xsl:text></xsl:text>
       </xsl:when>

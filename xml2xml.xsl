@@ -49,18 +49,23 @@
     <xsl:template match="etymologies">
       <xsl:element name="etymologies">
         <xsl:element name="etymaramaic">
-                      <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
-                      <xsl:apply-templates select="etymology[
-    matches(descendant::abbreviation/text(), '(Arm|OA|OfA|QA|JA|NA|PA|BA|TO|HA|SA|JPA|JBA|CPA|M|CU|WNA|NM|T|TVW[2]|ŠS|JNA|JNAB|B)')]"/>
-                      <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
+          <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
+          <xsl:apply-templates select="etymology[
+matches(languages/language[1]/abbreviation/text(), 'Arm|OA|OfA|QA|JA|NA|PA|BA|TO|HA|SA|JPA|JBA|CPA|M[^(&gt;)hi]|CU|WNA|NM|T|(TVW[2])|ŠS|JNA|JNAB|B')]"/>
+          <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
         </xsl:element>
         <xsl:element name="etymsemitic">
-                      <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
-                      <xsl:apply-templates select="etymology[
-    matches(descendant::abbreviation/text(), '(Sem|Akk|Ebl|Hrb|Pho/Pun|Ugr|Arb|Min|Qat|Sab|Gez|Hrs|Jib|Mhr|(Cf. Arb))')]"/>
-                      <xsl:copy-of select="ancestor::entry//etymsemiticcafter"/>
+          <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
+          <xsl:apply-templates select="etymology[
+matches(languages/language[1]/abbreviation/text(), 'Sem|Akk|Ebl|Hrb|Pho/Pun|Ugr|Arb|(Min)|Qat|Sab|Gez|Hrs|Jib|(Mhr)|(Cf. Arb)')]"/>
+          <xsl:copy-of select="ancestor::entry//etymsemiticcafter"/>
         </xsl:element>
-        <xsl:element name="etymgreek"/>
+        <xsl:element name="etymgreek">
+          <xsl:copy-of select="ancestor::entry//etymgreekbefore"/>
+            <xsl:apply-templates select="etymology[
+matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
+          <xsl:copy-of select="ancestor::entry//etymgreekafter"/>
+        </xsl:element>
       </xsl:element>
 
       <xsl:if test="
