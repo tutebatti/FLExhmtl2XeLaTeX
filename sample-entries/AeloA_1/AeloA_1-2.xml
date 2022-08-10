@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+   <entry id="g968bc047-871e-4149-b316-0be8c4fabb93">
+      <mainheadword>
+         <rtl>
+            <syriac intref="#g968bc047-871e-4149-b316-0be8c4fabb93">ܐܶܠܳܐ</syriac>
+            <homographentrynumber intref="#g968bc047-871e-4149-b316-0be8c4fabb93">1</homographentrynumber>
+         </rtl>
+      </mainheadword>
+      <sedra-id>128</sedra-id>
+      <gender-inflection>m</gender-inflection>
+      <minimallexreferences_aramaic>
+         <minimallexreference_aramaic>
+            <ownertype_name>Simtho Etym Related Lexemes</ownertype_name>
+            <configtargets>
+               <configtarget>
+                  <headword>
+                     <syriac>
+                        <rtl intref="#ge4f9ab4a-9488-438a-9de9-4cad1028b559">ܝܠܠ</rtl>
+                     </syriac>
+                  </headword>
+               </configtarget>
+            </configtargets>
+         </minimallexreference_aramaic>
+      </minimallexreferences_aramaic>
+      <etymologies>
+         <etymaramaicbefore>The verbal root is a more marginal root variant of <italics>yll/ˀll</italics> with the same meaning. </etymaramaicbefore>
+         <etymology>
+            <languages>
+               <language>
+                  <abbreviation>M</abbreviation>
+               </language>
+            </languages>
+            <preccomment>vb.</preccomment>
+            <form>ˀlˀ, ˁlˀ</form>
+            <gloss>
+               <stemglosspair>
+                  <stem>I</stem>
+                  <gloss>to shriek, wail, howl, lament</gloss>
+               </stemglosspair>
+            </gloss>
+            <languagenotes>only act. part.</languagenotes>
+            <bibliography>MD 18</bibliography>
+         </etymology>
+         <etymology>
+            <languages>
+               <language>
+                  <abbreviation>JPA</abbreviation>
+               </language>
+            </languages>
+            <form>ˀly</form>
+            <gloss>
+               <stemglosspair>
+                  <stem>I</stem>
+                  <gloss>to wail</gloss>
+               </stemglosspair>
+            </gloss>
+            <languagenotes>only act. part.</languagenotes>
+            <bibliography>DJPA 59</bibliography>
+         </etymology>
+         <etymology>
+            <languages>
+               <language>
+                  <abbreviation>&lt;SEM&gt;</abbreviation>
+               </language>
+            </languages>
+         </etymology>
+         <etymology>
+            <languages>
+               <language>
+                  <abbreviation>Hbr</abbreviation>
+               </language>
+            </languages>
+            <preccomment>vb.</preccomment>
+            <form>
+               <hebrew>אָלָה</hebrew>ˀālā</form>
+            <gloss>wail</gloss>
+            <languagenotes>hapax legomenon</languagenotes>
+            <bibliography>BDB 46, KB 49</bibliography>
+         </etymology>
+         <etymsemiticafter>See also: [DRS 20].</etymsemiticafter>
+      </etymologies>
+      <senses>
+         <sharedgrammaticalinfo>
+            <morphosyntaxanalysis>
+               <partofspeech>v</partofspeech>
+            </morphosyntaxanalysis>
+         </sharedgrammaticalinfo>
+         <sensecontent>
+            <sense entryguid="g968bc047-871e-4149-b316-0be8c4fabb93">
+               <definitionorgloss>East Syriac <syriac>
+                     <rtl>ܐܰܠܳܐ</rtl>
+                  </syriac>
+               </definitionorgloss>
+            </sense>
+         </sensecontent>
+      </senses>
+      <subentries_verbal-stems-measures>
+         <subentry_verbal-stems-measures>
+            <headword>
+               <syriac>
+                  <rtl intref="#ga3c40da0-c81f-47f1-a7d9-a28ccce12edb">ܐܶܠܳܐ_Ia</rtl>
+               </syriac>
+            </headword>
+            <sedra-id>0</sedra-id>
+            <complexformtypes>
+               <complexformtype>
+                  <abbreviation>I</abbreviation>
+               </complexformtype>
+            </complexformtypes>
+            <senses>
+               <sharedgrammaticalinfo>
+                  <morphosyntaxanalysis>
+                     <partofspeech>v</partofspeech>
+                  </morphosyntaxanalysis>
+               </sharedgrammaticalinfo>
+               <sensecontent>
+                  <sense entryguid="ga3c40da0-c81f-47f1-a7d9-a28ccce12edb">
+                     <definitionorgloss>to mourn, lament</definitionorgloss>
+                  </sense>
+               </sensecontent>
+            </senses>
+            <datecreated>Sonntag, 24. Januar 2021</datecreated>
+            <datemodified>Donnerstag, 31. März 2022</datemodified>
+         </subentry_verbal-stems-measures>
+         <subentry_verbal-stems-measures>
+            <headword>
+               <syriac>
+                  <rtl intref="#gfcf84d88-f002-4247-825a-0fa99836875d">ܐܶܬܶܐܠܺܝ</rtl>
+               </syriac>
+            </headword>
+            <sedra-id>0</sedra-id>
+            <complexformtypes>
+               <complexformtype>
+                  <abbreviation>It</abbreviation>
+               </complexformtype>
+            </complexformtypes>
+            <senses>
+               <sharedgrammaticalinfo>
+                  <morphosyntaxanalysis>
+                     <partofspeech>v</partofspeech>
+                  </morphosyntaxanalysis>
+               </sharedgrammaticalinfo>
+            </senses>
+            <datecreated>Sonntag, 24. Januar 2021</datecreated>
+            <datemodified>Donnerstag, 31. März 2022</datemodified>
+         </subentry_verbal-stems-measures>
+      </subentries_verbal-stems-measures>
+      <datecreated>Sonntag, 24. Januar 2021</datecreated>
+      <datemodified>Mittwoch, 15. Juni 2022</datemodified>
+      <simtho-contributors>
+         <simtho-contributor>
+            <abbreviation>Y. Kirilenko (Sem. etymology)</abbreviation>
+         </simtho-contributor>
+         <simtho-contributor>
+            <abbreviation>A. Cherkashina (Aram. etymology)</abbreviation>
+         </simtho-contributor>
+      </simtho-contributors>
+   </entry>
+</entries>
