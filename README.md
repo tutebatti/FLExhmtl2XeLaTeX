@@ -1,22 +1,82 @@
-# xhtml2tex
+# FLEx2LaTeX
 
-This repository provides code and documentation to transform FLEx dictionary output in xhtml format to LaTeX via XSLT.
+This repository provides code and documentation to transform FLEx dictionary output in XHTML format to LaTeX via XSLT.
 The project is carried out by [Beth Mardutho](bethmardutho.org).
 
 ## Content of Repository
 
 - This `README.md`
 - `.gitignore` (cf. https://git-scm.com/docs/gitignore)
-- XSLT file `xhtml2xml.xsl` (replacing the former, using "identity transformation")
-- XSLT file `xml2xml.xsl` (used for rearranging the etymology section with wrong order in FLEx output)
-- XSLT file `xml2tex.xsl`
-- Folder `xsl-modules` with modules included in `xml2tex.xsl` via `<xsl:include>`
-- Illustrations for each module showing correspondences between XML elements and PDF output to facilitate adaption
-- Folder `sample-entries` with subfolders for each sample entry of the dictionary in xhtml and derivatives
-- Folder `pictures` inside folder `sample-entries` with illustrations; files should be in PNG format and be named after the SEDRA id of the respective word
-- Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx 
+- `.gitattributes` (cf. https://git-scm.com/docs/gitattributes)
+- XSLT file `xhtml2xml.xsl`, used to transform messy XHTML output of FLEx into custom XML
+- XSLT file `xml2xml.xsl`, used mainly for rearranging some sections and elements with wrong order in FLEx output
+- XSLT file `xml2tex.xsl`, referring to the xsl modules (see next point)
+- Folder `xsl-modules` with
+    - XSLT templates for each section of an entry, included in `xml2tex.xsl` via `<xsl:include>`
+    - Illustrations for each module showing correspondences between XML elements and PDF output to facilitate adaption
+- Folder `sample-entries` with
+    - Subfolders for each sample entry of the dictionary in XHTML, including a prettified version for better readability
+    - Folder `pictures` with illustrations; files should be in PNG format and be named after the SEDRA id of the respective entry
+- Simple markdown file `xhtml_structure.md` documenting structure of XHTML output of FLEx
 - `changelog.txt` to document changes (in markdown format, but stored as TXT)
 - Bash script `prettyxhtml.sh` for easy prettifying/formatting of Flex xhtml output (do not use this file for further processing: spaces cause problems; it is mainly meant for better readability when studying FLEx output)
+
+## Basic idea and how to adapt
+
+The transformation consists of four steps:
+
+1) FLEx XHTML output, which mainly consists of `<div>` and `<span>` elements with a wide variety of `@class` attributes (used for CSS handling), is transformed to a custom XML format.
+The transformation is achieved with an [identity transformation](http://dh.obdurodon.org/identity.xhtml) approach.
+The general order of the FLEx output is kept.
+In the resulting custom format, the elements are mainly named after the `@class` attributes just mentioned.
+A notable exception is the handling of different scripts (e.g. Syriac or Arabic) and font styles (e.g. italics or superscript);
+here, elements are created according to `@style` attributes.
+Further, internal references (i.e., one entry referring to another one) are created based on `@href` attributes.
+The only attributes in the original XHTML file that are kept as such in the output are the `@id` attributes for internal referencing.
+More complex transformations based on conditionals is the handling of nested elements for Syriac as well as the handling of verb stems in etymology entries.
+
+Future adaption will probably need to include additional `@class` attributes of `<span>` (or `div`) elements not
+Another problem might be possible changes in FLEx and, accordingly, its output (e.g., different style for certain elements), which, however, should be easily adaptable.
+
+2) A second XSLT file is mainly meant to rearrange the elements in a more concise order, including the introduction of new parent elements which are not present in the original FLEx output.
+This file, too, uses identity transformation.
+First, orthographic variants are put in an `<orthography>` element;
+non-Serto scripts (i.e., Estrangela and Eastern/Madnḥaya) are transformed to special elements.
+Secondly, the whole etymology section is rearranged, with a parent element (e.g., `<etymsemitic>`) for each block;
+"before" and "after" fields (e.g., `<etymaramaicbefore>`) are positioned at the beginning or end of each block.
+Thirdly, morphology elements are put in an `<morphology>` element.
+Fourthly, the verb stems for the etymologies are further restructured.
+
+Adaption will possibly be needed regarding the verb stems as well as phonology and morphology;
+both the latter sections are based on a possibly outdated sample entry.
+
+3) A third XSLT file is only a container that points to several modules.
+These modules correspond to the different sections and elements of an entry.
+For some modules, pictures showing the correspondences between the elements and the output are included for better documentation.
+(However, these will need updating after most changes...)
+
+These modules will need most adaption to achieve the desired output.
+However, there can be no general remarks at this point.
+
+4) The final XML file is compiled using XeLaTeX.
+If problems are encountered, there can be two reasons:
+either there are inconsistencies on the level of an individual entry (typos etc.) which need to be changed manually.
+or there is a structural problem (e.g. the &/ampersand character appearing time and again in an element), which should be solved automatically via code.
+
+## Workflow for FLEx Output Transformation
+
+### Preparation
+
+1) Export the desired entries via `File` > `Export` > `Configured Dictionary` to the respective subfolder of `sample-entries`
+2) Delete the created css files
+3) Create a prettified version via `prettyxhtml.sh`
+
+### Actual Transformation (see [] above)
+
+1) Transform the XHTML file using `xhtml2xml`
+2) Transform the result using `xml2xml`
+3) Transform the result using `xml2tex`
+4) Use the command `xelatex` to create a PDF
 
 ## Workflow for Using _git(hub)_
 
