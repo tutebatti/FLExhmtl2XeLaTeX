@@ -9,6 +9,12 @@
     <xsl:strip-space elements="*"/>
     <xsl:variable name="apo">'</xsl:variable> <!-- needed to use single quotation mark in filters etc. -->
 
+    <xsl:template match="node()|@*">
+        <xsl:copy>
+            <xsl:apply-templates select="node()|@id|@entryguid|@intref"/>
+        </xsl:copy>
+    </xsl:template>
+
     <xsl:template match="phono-received-pronunciation">
         <xsl:copy>
             <xsl:apply-templates/>
@@ -30,48 +36,66 @@
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="orth-estrangela|orth-serto|orth-madnḥaya|dots-sublinear|dots-sublinear-label|dots-supralinear|dots-supralinear-label"
+    <xsl:template match="
+    orth-estrangela|
+    orth-serto|
+    orth-madnḥaya|
+    dots-sublinear|
+    dots-sublinear-label|
+    dots-supralinear|
+    dots-supralinear-label"
     />
 
-    <xsl:template match="node()|@*">
-        <xsl:copy>
-            <xsl:apply-templates select="node()|@id|@entryguid|@intref"/>
-        </xsl:copy>
+    <xsl:template match="etymologies">
+      <xsl:element name="etymologies">
+        <xsl:element name="etymaramaic">
+                      <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
+                      <xsl:apply-templates select="etymology[
+    matches(descendant::abbreviation/text(), '(Arm|OA|OfA|QA|JA|NA|PA|BA|TO|HA|SA|JPA|JBA|CPA|M|CU|WNA|NM|T|TVW[2]|ŠS|JNA|JNAB|B)')]"/>
+                      <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
+        </xsl:element>
+        <xsl:element name="etymsemitic">
+                      <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
+                      <xsl:apply-templates select="etymology[
+    matches(descendant::abbreviation/text(), '(Sem|Akk|Ebl|Hrb|Pho/Pun|Ugr|Arb|Min|Qat|Sab|Gez|Hrs|Jib|Mhr|(Cf. Arb))')]"/>
+                      <xsl:copy-of select="ancestor::entry//etymsemiticcafter"/>
+        </xsl:element>
+        <xsl:element name="etymgreek"/>
+      </xsl:element>
+
+      <xsl:if test="
+          following-sibling::compmorphperf or
+          following-sibling::compmorphimpf or
+          following-sibling::compmorphactpartm or
+          following-sibling::compmorphpasspart or
+          following-sibling::compmorphinf or
+          following-sibling::compmorphtable
+          ">
+          <xsl:element name="morphology">
+              <xsl:copy-of select="following-sibling::compmorphperf"/>
+              <xsl:copy-of select="following-sibling::compmorphimpf"/>
+              <xsl:copy-of select="following-sibling::compmorphactpartm"/>
+              <xsl:copy-of select="following-sibling::compmorphpasspart"/>
+              <xsl:copy-of select="following-sibling::compmorphinf"/>
+              <xsl:copy-of select="following-sibling::compmorphtable"/>
+          </xsl:element>
+      </xsl:if>
     </xsl:template>
 
-    <xsl:template match="etymology">
-        <xsl:choose>
-            <xsl:when test="position() = [1]">
-                <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
-                <xsl:copy>
-                    <xsl:apply-templates/>
-                </xsl:copy>
-            </xsl:when>
+    <xsl:template match="
+    etymaramaicbefore|
+    etymsemiticbefore|
+    etymaramaicafter|
+    etymsemiticafter"
+    />
 
-            <xsl:when test="position() = last()">
-                <xsl:copy>
-                    <xsl:apply-templates/>
-                </xsl:copy>
-                <xsl:copy-of select="ancestor::entry//etymsemiticafter"/>
-            </xsl:when>
-
-            <xsl:when test="descendant::abbreviation = '&lt;SEM&gt;'">
-                <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
-                <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
-                <xsl:copy>
-                    <xsl:apply-templates/>
-                </xsl:copy>
-            </xsl:when>
-
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:apply-templates/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match="etymaramaicbefore|etymsemiticbefore|etymaramaicafter|etymsemiticafter"
+        <xsl:template match="
+    compmorphperf|
+    compmorphimpf|
+    compmorphactpartm|
+    compmorphpasspart|
+    compmorphinf|
+    compmorphtable"
     />
 
     <xsl:template match="etymology-gloss-stem">
@@ -105,31 +129,5 @@
             </xsl:analyze-string>
         </xsl:element>
     </xsl:template>
-
-    <xsl:template match="etymologies">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
-        <xsl:if test="
-            following-sibling::compmorphperf or
-            following-sibling::compmorphimpf or
-            following-sibling::compmorphactpartm or
-            following-sibling::compmorphpasspart or
-            following-sibling::compmorphinf or
-            following-sibling::compmorphtable
-            ">
-            <xsl:element name="morphology">
-                <xsl:copy-of select="following-sibling::compmorphperf"/>
-                <xsl:copy-of select="following-sibling::compmorphimpf"/>
-                <xsl:copy-of select="following-sibling::compmorphactpartm"/>
-                <xsl:copy-of select="following-sibling::compmorphpasspart"/>
-                <xsl:copy-of select="following-sibling::compmorphinf"/>
-                <xsl:copy-of select="following-sibling::compmorphtable"/>
-            </xsl:element>
-        </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="compmorphperf|compmorphimpf|compmorphactpartm|compmorphpasspart|compmorphinf|compmorphtable"
-    />
 
 </xsl:stylesheet>
