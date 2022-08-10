@@ -1,3 +1,15 @@
+# 2022-08-10
+
+- Improve handling and formatting of etymologies by introducing parent (e.g. `<etymaramaic>`) for each section
+- Add `.gitattributes` to show correct language statistic on github
+- Update `README.md`
+- Update `changelog.txt`
+
+# 2022-08-09
+
+- Improve code and formatting (e.g., indentation)
+- Create branch for more compact formating
+
 # 2022-08-08
 
 - Add pictures for documentation of code-output correspondence
