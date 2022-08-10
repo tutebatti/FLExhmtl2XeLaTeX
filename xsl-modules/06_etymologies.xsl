@@ -57,7 +57,10 @@
 
     <xsl:choose> <!-- Depending on the preceding/next element, a line break and separators are set. -->
 
-      <xsl:when test="$precedingelement = 'etymaramaicbefore' or $precedingelement = 'etymsemiticbefore' and not(descendant::abbreviation = '&lt;SEM&gt;')">
+      <xsl:when test="
+        $precedingelement = 'etymaramaicbefore' or
+        $precedingelement = 'etymsemiticbefore' and
+        not(descendant::abbreviation = '&lt;SEM&gt;')">
         <xsl:text>
 
         </xsl:text>
@@ -65,7 +68,9 @@
         <xsl:text>~| </xsl:text>
       </xsl:when>
 
-      <xsl:when test="position() = 1 and (descendant::abbreviation = 'Arm' or descendant::abbreviation='OA')"> <!-- in case there is no etymaramaicbefore-->
+      <xsl:when test="
+      position() = 1 and
+      (descendant::abbreviation = 'Arm')"> <!-- in case there is no etymaramaicbefore-->
         <xsl:text>
 
         \smallskip
@@ -76,7 +81,11 @@
         <xsl:text>~| </xsl:text>
       </xsl:when>
 
-      <xsl:when test="$nextelement = 'etymaramaicafter' or $nextelement = 'etymsemiticafter' or position() = last()">
+      <xsl:when test="
+        $nextelement = 'etymaramaicafter' or
+        $nextelement = 'etymsemiticbefore' or
+        $nextelement = 'etymsemiticafter' or
+        position() = last()">
         <xsl:text> </xsl:text>
           <xsl:apply-templates/>
         <xsl:text></xsl:text>
