@@ -7,6 +7,12 @@
   <xsl:output method="text" version="1.0" encoding="UTF-8" />
   <xsl:strip-space elements="*"/>
 
+  <!-- variable to switch dates on/off -->
+
+  <xsl:variable name="showdates">
+    <xsl:value-of select="true()"/>
+  </xsl:variable>
+
   <xsl:include href="./xsl-modules/01_root-element.xsl"/>
   <xsl:include href="./xsl-modules/02_scripts-and-fonts.xsl"/>
   <xsl:include href="./xsl-modules/03_headword-matter.xsl"/>

@@ -4,6 +4,8 @@
     version="2.0"
     >
 
+  <!-- simtho sense/ex created by -->
+
   <xsl:template match="
     (simtho-sense-created-by|
     simtho-ex-created-by)
@@ -14,6 +16,8 @@
     <xsl:text>)}</xsl:text>
   </xsl:template>
 
+  <!-- simtho contributor: spacious layout -->
+
   <xsl:template match="simtho-contributor/abbreviation">
     <xsl:text>
 
@@ -23,38 +27,77 @@
 
   </xsl:template>
 
+  <!-- simtho contributor: compact layout -->
 
-  <xsl:template match="
-    datecreated|
-    datemodified
-    "/>
-  <!--
-    <xsl:text>
-
-    \begin{scriptsize}\textcolor{Dandelion}{(entry created: </xsl:text>
+  <!--<xsl:template match="simtho-contributor/abbreviation">
+    <xsl:text> \textcolor{Dandelion}{</xsl:text>
       <xsl:apply-templates/>
-    <xsl:text>)}\end{scriptsize}</xsl:text>
+
+        <xsl:if test="count(../following-sibling::simtho-contributor) != 0">
+          <xsl:text>; </xsl:text>
+        </xsl:if>
+
+  <!-- dates -->
+
+  <xsl:template match="datecreated">
+    <xsl:choose>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>
+
+        \begin{scriptsize}\textcolor{Dandelion}{(entry created: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="entry/datemodified">
-    <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(entry modified: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>)}\end{scriptsize}</xsl:text>
+  <xsl:template match="entry/datecreated">
+    <xsl:choose>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>
+
+        \begin{scriptsize}\textcolor{YellowGreen}{(entry created: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
+  </xsl:template>
+
+    <xsl:template match="entry/datemodified">
+    <xsl:choose>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (entry modified: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="subentry/datecreated">
-    <xsl:text>
+    <xsl:choose>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>
 
-    \begin{scriptsize}\textcolor{Dandelion}{(subentry created: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>)}\end{scriptsize}</xsl:text>
+        \begin{scriptsize}\textcolor{YellowGreen}{(subentry created: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="subentry/datemodified">
-    <xsl:text> \begin{scriptsize}\textcolor{Dandelion}{(subentry modified: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>)}\end{scriptsize}</xsl:text>
+    <xsl:choose>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (subentry modified: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
   </xsl:template>
-  -->
 
 </xsl:stylesheet>
