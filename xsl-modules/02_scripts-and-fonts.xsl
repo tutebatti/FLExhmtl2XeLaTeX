@@ -7,11 +7,11 @@
   <!-- Syriac -->
 
   <xsl:template match="syriac[@intref]">
-        <xsl:text>\hyperlink{</xsl:text>
-          <xsl:value-of select="substring-after(@intref, '#')"/>
-        <xsl:text>}{\textsyriac{</xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>}}</xsl:text>
+    <xsl:text>\hyperlink{</xsl:text>
+      <xsl:value-of select="substring-after(@intref, '#')"/>
+    <xsl:text>}{\textsyriac{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}}</xsl:text>
   </xsl:template>
 
   <xsl:template match="*[not(self::example)]/*/syriac[not(@intref)]">
