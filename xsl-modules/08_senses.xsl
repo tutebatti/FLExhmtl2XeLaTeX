@@ -138,29 +138,31 @@
     <xsl:text></xsl:text>
   </xsl:template>
 
-  <xsl:template match="lexsensereference//ownertype_abbreviation">
-    <xsl:text></xsl:text>
-      <xsl:apply-templates/>
+  <xsl:template match="configtarget">
     <xsl:text> </xsl:text>
-  </xsl:template>
-
-  <xsl:template match="lexsensereference//configtarget/headword">
-    <xsl:text>\textsyriac{</xsl:text>
-      <xsl:value-of select="normalize-space(./syriac)"/>
-    <xsl:text>}</xsl:text>
-
-    <xsl:if test="./lexsensereference_sensenumber">
-      <xsl:text> </xsl:text>
-        <xsl:value-of select="./lexsensereference_sensenumber"/>
-      <xsl:text>)</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:if test="position() != last()">
+      <xsl:text>, </xsl:text>
     </xsl:if>
-
   </xsl:template>
 
-  <xsl:template match="
-    lexsensereference//configtarget//syriac|
-    lexsensereference//configtarget//lexsensereference_sensenumber
-    "/>
+  <xsl:template match="lexsensereference_sensenumber">
+    <xsl:text></xsl:text>
+    <xsl:apply-templates/>
+    <xsl:text></xsl:text>
+  </xsl:template>
+
+  <xsl:template match="lexsensereference//ownertype_abbreviation">
+    <xsl:text>\textit{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>:} </xsl:text>
+  </xsl:template>
+
+  <xsl:template match="primaryentryrefs">
+    <xsl:text> (</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>)</xsl:text>
+  </xsl:template>
 
   <xsl:template match="sense/source">
     <xsl:text> [cf. </xsl:text>

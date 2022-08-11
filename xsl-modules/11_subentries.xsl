@@ -31,7 +31,6 @@
 
   <xsl:template match="
     complexformtype/abbreviation|
-    reverseabbr|
     referencedentry
     ">
     <xsl:text> </xsl:text>
