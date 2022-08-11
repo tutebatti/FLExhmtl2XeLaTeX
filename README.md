@@ -26,7 +26,7 @@ The project is carried out by [Beth Mardutho](bethmardutho.org).
 The transformation consists of four steps:
 
 1) FLEx XHTML output, which mainly consists of `<div>` and `<span>` elements with a wide variety of `@class` attributes (used for CSS handling), is transformed to a custom XML format.
-The transformation is achieved with an [identity transformation](http://dh.obdurodon.org/identity.xhtml) approach.
+The transformation is achieved with an [identity transformation](http://dh.obdurodon.org/identity.xhtml) approach using the XSLT file `xhtml2xml.xsl`.
 The general order of the FLEx output is kept.
 In the resulting custom format, the elements are mainly named after the `@class` attributes just mentioned.
 A notable exception is the handling of different scripts (e.g. Syriac or Arabic) and font styles (e.g. italics or superscript);
@@ -38,7 +38,7 @@ More complex transformations based on conditionals is the handling of nested ele
 Future adaption will probably need to include additional `@class` attributes of `<span>` (or `div`) elements not
 Another problem might be possible changes in FLEx and, accordingly, its output (e.g., different style for certain elements), which, however, should be easily adaptable.
 
-2) A second XSLT file is mainly meant to rearrange the elements in a more concise order, including the introduction of new parent elements which are not present in the original FLEx output.
+2) A second XSLT file, `xml2xml.xsl`, is mainly meant to rearrange the elements in a more concise order, including the introduction of new parent elements which are not present in the original FLEx output.
 This file, too, uses identity transformation.
 First, orthographic variants are put in an `<orthography>` element;
 non-Serto scripts (i.e., Estrangela and Eastern/Madnḥaya) are transformed to special elements.
@@ -50,18 +50,26 @@ Fourthly, the verb stems for the etymologies are further restructured.
 Adaption will possibly be needed regarding the verb stems as well as phonology and morphology;
 both the latter sections are based on a possibly outdated sample entry.
 
-3) A third XSLT file is only a container that points to several modules.
+3) A third XSLT file, `xml2tex.xsl`, is only a container that points to several modules.
 These modules correspond to the different sections and elements of an entry.
 For some modules, pictures showing the correspondences between the elements and the output are included for better documentation.
 (However, these will need updating after most changes...)
 
 These modules will need most adaption to achieve the desired output.
 However, there can be no general remarks at this point.
+Please refer to the individual XSLT files with the respective comments in the code for documentation.
 
 4) The final XML file is compiled using XeLaTeX.
 If problems are encountered, there can be two reasons:
 either there are inconsistencies on the level of an individual entry (typos etc.) which need to be changed manually.
 or there is a structural problem (e.g. the &/ampersand character appearing time and again in an element), which should be solved automatically via code.
+
+### Switches
+
+There are currently two switches: spacious/compact layout; show/hide dates (creation dates etc.).
+In the beginning of file `xml2tex.xsl`, these can each be set to `true()` or `false()`.
+Conditionals in the respective templates take care of the rest.
+Further switches can be introduced following the same or similar method.
 
 ## Workflow for FLEx Output Transformation
 
