@@ -12,19 +12,18 @@ keywords:
             1) variantentrytype
                 1) abbreviation
             1) variantformentrybackref
-    3) pronunciations
-    4) transliteration
-    5) phono-received-pronunciation
-    6) orth-estrangela
+    3) transliteration
+    4) phono-received-pronunciation
+    5) orth-estrangela
     6) orth-serto
-    6) orth-madnḥaya
-    6) dots-sublinear
-    7) dots-sublinear-label
-    8) dots-supralinear
-    9) dots-supralinear-label
-    10) etymaramaicbefore
-    11) etymsemiticbefore
-    12) etymologies
+    7) orth-madnḥaya
+    8) dots-sublinear
+    9) dots-sublinear-label
+    10) dots-supralinear
+    11) dots-supralinear-label
+    12) etymaramaicbefore
+    13) etymsemiticbefore
+    14) etymologies
         1) etymology
             1) preccomment
             2) languages
@@ -32,20 +31,22 @@ keywords:
                     1) abbreviation
             3) form
             4) gloss
-    13) etymaramaicafter
-    14) etymsemiticafter
-    15) compmorphperf
-    16) compmorphimpf
-    17) compmorphactpartm
-    18) compmorphpasspart
-    19) compmorphinf
-    20) compmorphtable
-    21) pictures
+            5) languagenotes
+            6) bibliography
+    15) etymaramaicafter
+    16) etymsemiticafter
+    17) compmorphperf
+    18) compmorphimpf
+    19) compmorphactpartm
+    20) compmorphpasspart
+    21) compmorphinf
+    22) compmorphtable
+    23) pictures
         1) picture
             1) captionContent
                 1) headword
                 2) caption
-    22) senses
+    24) senses
         1) sharedgrammaticalinfo
             1) morphosyntaxanalysis
                 1) partofspeech
@@ -61,17 +62,23 @@ keywords:
                             1) headword
                 3) examplescontents
                         1) examplescontent
-                            1) example
-                            2) translationcontents
+                            1) simtho-period
+                            2) simtho-reference-century
+                            3) simtho-reference-medium
+                            4) simtho-reference-author
+                            5) simtho-reference-page
+
+                            6) example
+                            7) translationcontents
                                 1) translationcontent
                                     1) translation
-    23) subentries
+    25) subentries
       1) subentry
           1) headword
           2) complexformtypes
               1) complexformtype
                   1) abbreviation
-          3)minimallexreferences
+          3) minimallexreferences
               1) minimallexreference
                   1) ownertype_abbreviation
                   2) configtargets
