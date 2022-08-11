@@ -1,3 +1,11 @@
+# 2022-08-11
+
+- Introduce switch for compact/spacious layout
+- Introduce switch for showing/hiding dates
+- Fix some formatting regarding synonyms
+- Update `README.md`
+- Update `changelog.txt`
+
 # 2022-08-10
 
 - Improve handling and formatting of etymologies by introducing parent (e.g. `<etymaramaic>`) for each section
