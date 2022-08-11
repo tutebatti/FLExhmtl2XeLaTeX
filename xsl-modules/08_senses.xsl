@@ -55,19 +55,22 @@
     <xsl:choose>
       <xsl:when test="$compactlayout  = true()">
         <xsl:text></xsl:text>
+          <xsl:apply-templates/>
+
+          <xsl:if test="position() != last()">
+            <xsl:text>\,; </xsl:text>
+          </xsl:if>
+
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>
 
         </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text></xsl:text>
       </xsl:otherwise>
     </xsl:choose>
 
-      <xsl:apply-templates/>
-
-    <xsl:if test="position() != last()">
-      <xsl:text>\,; </xsl:text>
-    </xsl:if>
 
   </xsl:template>
 
