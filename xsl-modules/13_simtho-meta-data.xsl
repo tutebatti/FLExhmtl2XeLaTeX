@@ -81,7 +81,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="subentry/datecreated">
+  <xsl:template match="(subentry|subentry_verbal-stems-measures)/datecreated">
     <xsl:choose>
       <xsl:when test="$showdates = true()">
         <xsl:text>
@@ -94,7 +94,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="subentry/datemodified">
+  <xsl:template match="(subentry|subentry_verbal-stems-measures)/datemodified">
     <xsl:choose>
       <xsl:when test="$showdates = true()">
         <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (subentry modified: </xsl:text>
