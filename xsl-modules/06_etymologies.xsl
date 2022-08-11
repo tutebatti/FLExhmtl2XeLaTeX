@@ -60,15 +60,18 @@
 
   <xsl:template match="etymology">
 
-    <xsl:variable name="precedingelement"> <!-- Local variable is generated to check the preceding element. -->
+    <!-- Local variable is generated to check the preceding element. -->
+    <xsl:variable name="precedingelement">
       <xsl:value-of select="(preceding-sibling::*[1])/name()"/>
     </xsl:variable>
 
-    <xsl:variable name="nextelement"> <!-- Local variable is generated to check the next element. -->
+    <!-- Local variable is generated to check the next element. -->
+    <xsl:variable name="nextelement">
       <xsl:value-of select="(following-sibling::*[1])/name()"/>
     </xsl:variable>
 
-    <xsl:choose> <!-- Depending on the preceding/next element, a line break and separators are set. -->
+    <!-- Depending on the preceding/next element, a line break and separators are set. -->
+    <xsl:choose>
 
       <xsl:when test="
         position() = 1 or
@@ -103,11 +106,13 @@
 
   <xsl:template match="etymology//language">
 
-    <xsl:variable name="nextelement"> <!-- Local variable is generated to check the next element. -->
+    <!-- Local variable is generated to check the next element. -->
+    <xsl:variable name="nextelement">
       <xsl:value-of select="(following-sibling::*[1])/name()"/>
     </xsl:variable>
 
-    <xsl:choose> <!-- Depending on the next element, a comma is set as trailing character. -->
+    <!-- Depending on the next element, a comma is set as trailing character. -->
+    <xsl:choose>
 
       <xsl:when test="$nextelement = 'language'">
         <xsl:text>\textbf{</xsl:text>
@@ -171,7 +176,8 @@
 
   <xsl:template match="gloss/stemglosspair/stem">
 
-    <xsl:variable name="nextelement"> <!-- Local variable is generated to check the next element. -->
+    <!-- Local variable is generated to check the next element. -->
+    <xsl:variable name="nextelement">
       <xsl:value-of select="(following-sibling::*[1])/name()"/>
     </xsl:variable>
 
