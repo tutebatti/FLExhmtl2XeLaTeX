@@ -7,6 +7,12 @@
   <xsl:output method="text" version="1.0" encoding="UTF-8" />
   <xsl:strip-space elements="*"/>
 
+  <!-- variable to switch between spacious and compact layout -->
+
+  <xsl:variable name="compactlayout">
+    <xsl:value-of select="true()"/>
+  </xsl:variable>
+
   <!-- variable to switch dates on/off -->
 
   <xsl:variable name="showdates">

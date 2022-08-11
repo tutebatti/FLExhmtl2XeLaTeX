@@ -4,11 +4,19 @@
     version="2.0"
     >
 
-  <xsl:template match="examplescontent">
-    <!-- $ introduces and ends LaTeX mathmode. -->
-    <xsl:text>
+  <!-- examples content (i.e., the whole individual example) -->
 
-    $\triangleright$ </xsl:text>
+  <xsl:template match="examplescontent">
+    <xsl:choose>
+      <xsl:when test="$compactlayout = true()">
+        <xsl:text>~$\triangleright$ </xsl:text><!-- $ introduces and ends LaTeX mathmode -->
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>
+
+        $\triangleright$ </xsl:text><!-- $ introduces and ends LaTeX mathmode -->
+      </xsl:otherwise>
+    </xsl:choose>
       <xsl:apply-templates/>
     <xsl:text></xsl:text>
   </xsl:template>
