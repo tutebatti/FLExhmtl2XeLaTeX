@@ -19,6 +19,12 @@
     <xsl:value-of select="true()"/>
   </xsl:variable>
 
+  <!-- variable to switch comments on/off -->
+
+  <xsl:variable name="showcomments">
+    <xsl:value-of select="false()"/>
+  </xsl:variable>
+
   <xsl:include href="./xsl-modules/01_root-element.xsl"/>
   <xsl:include href="./xsl-modules/02_scripts-and-fonts.xsl"/>
   <xsl:include href="./xsl-modules/03_headword-matter.xsl"/>
@@ -32,7 +38,7 @@
   <xsl:include href="./xsl-modules/11_subentries.xsl"/>
   <xsl:include href="./xsl-modules/12_sidebars.xsl"/>
   <xsl:include href="./xsl-modules/13_simtho-meta-data.xsl"/>
-  <!--<xsl:include href="./xsl-modules/14_comments.xsl"/>-->
+  <xsl:include href="./xsl-modules/14_comments.xsl"/>
 
   <!-- minimallexreferences: move to which module? -->
 

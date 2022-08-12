@@ -5,11 +5,16 @@
     >
 
   <xsl:template match="comment">
-    <xsl:text>
+    <xsl:choose>
+      <xsl:when test="$showcomments = true()">
+        <xsl:text>
 
-    \begin{scriptsize}\textcolor{red}{NOTE TO EDITOR: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>)}\end{scriptsize}</xsl:text>
+        \begin{scriptsize}\textcolor{red}{NOTE TO EDITOR: </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}\end{scriptsize}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
   </xsl:template>
 
 </xsl:stylesheet>
