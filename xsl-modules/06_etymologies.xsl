@@ -83,16 +83,6 @@
         </xsl:text>
       </xsl:when>
 
-      <xsl:when>
-
-      <xsl:otherwise>
-        <xsl:text> </xsl:text>
-      </xsl:otherwise>
-
-    </xsl:choose>
-      <xsl:apply-templates/>
-    <xsl:choose>
-
       <xsl:otherwise>
         <xsl:text> </xsl:text>
       </xsl:otherwise>
@@ -105,7 +95,6 @@
       $nextelement = 'etymology'
       ">
         <xsl:text>~| </xsl:text>
-
       </xsl:when>
 
       <xsl:otherwise/>
