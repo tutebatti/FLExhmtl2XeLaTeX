@@ -81,25 +81,24 @@
         <xsl:text>
 
         </xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>~| </xsl:text>
-      </xsl:when>
-
-      <xsl:when test="
-        position() = last() or
-        $nextelement = 'etymaramaicafter' or
-        $nextelement = 'etymsemiticafter'
-      ">
-        <xsl:text> </xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text></xsl:text>
-      </xsl:when>
+      <xsl:when>
 
       <xsl:otherwise>
-        <xsl:text></xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>~| </xsl:text>
+        <xsl:text> </xsl:text>
       </xsl:otherwise>
+
+    <xsl:choose>
+      <xsl:apply-templates/>
+    <xsl:choose>
+
+      <xsl:when test="
+      $nextelement = 'etymology'
+      ">
+        <xsl:text>~| </xsl:text>
+
+      </xsl:when>
+
+      <xsl:otherwise/>
 
     </xsl:choose>
   </xsl:template>
