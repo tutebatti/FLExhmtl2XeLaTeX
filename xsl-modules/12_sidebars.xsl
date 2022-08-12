@@ -21,8 +21,9 @@
       <xsl:apply-templates/>
     <!-- The following probably should apply only if the sidebar title is "Compounds with" (?) -->
     <!--<xsl:text> \textsyriac{</xsl:text>
-      <xsl:value-of select="$lemma"/>-->
-    <xsl:text>}}}}
+      <xsl:value-of select="$lemma"/>
+      <xsl:text>}</xsl:text>-->
+    <xsl:text>}}}
     \end{footnotesize}
     \end{center}</xsl:text>
   </xsl:template>
