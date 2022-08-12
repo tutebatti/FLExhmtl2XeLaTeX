@@ -147,14 +147,24 @@
     <xsl:text>)</xsl:text>
   </xsl:template>
 
-  <!-- Aramaic references -->
+  <!-- Aramaic/Semitic references -->
 
-  <xsl:template match="minimallexreference_aramaic">
-    <xsl:text> Cf. Simtho Etym Related Lexemes: </xsl:text>
+  <xsl:template match="
+    minimallexreference_aramaic|
+    minimallexreference_semitic
+  ">
+    <xsl:text> </xsl:text>
       <xsl:apply-templates/>
     <xsl:text></xsl:text>
   </xsl:template>
 
-  <xsl:template match="minimallexreference_aramaic/ownertype_name"/>
+  <xsl:template match="
+  (minimallexreference_aramaic|
+  minimallexreference_semitic)/
+  ownertype_name">
+    <xsl:text>Cf. </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>: </xsl:text>
+  </xsl:template>
 
 </xsl:stylesheet>

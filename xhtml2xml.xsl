@@ -51,6 +51,8 @@
                 @class='minimallexreference_root' or
                 @class='minimallexreferences_aramaic' or
                 @class='minimallexreference_aramaic' or
+                @class='minimallexreferences_semitic' or
+                @class='minimallexreference_semitic' or
                 @class='gender-inflection' or
                 @class='variantformentrybackrefs' or
                 @class='variantentrytypes' or
