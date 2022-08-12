@@ -57,7 +57,10 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="entry/datecreated">
+  <xsl:template match="
+    (entry|
+    minorentrycomplex)
+    /datecreated">
     <xsl:choose>
       <xsl:when test="$showdates = true()">
         <xsl:text>
@@ -70,7 +73,10 @@
     </xsl:choose>
   </xsl:template>
 
-    <xsl:template match="entry/datemodified">
+    <xsl:template match="
+    (entry|
+    minorentrycomplex)
+    /datemodified">
     <xsl:choose>
       <xsl:when test="$showdates = true()">
         <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (entry modified: </xsl:text>
