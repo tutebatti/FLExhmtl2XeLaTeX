@@ -145,9 +145,20 @@
   <!-- lexsensereferences -->
 
   <xsl:template match="lexsensereference">
+
+    <!-- Local variable is generated to check the next element. -->
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+
     <xsl:text> </xsl:text>
       <xsl:apply-templates/>
-    <xsl:text></xsl:text>
+
+    <!-- Depending on the next element, a comma is set as trailing character. -->
+    <xsl:if test="$nextelement = 'lexsensereference'">
+      <xsl:text>\,,</xsl:text>
+    </xsl:if>
+
   </xsl:template>
 
   <xsl:template match="configtarget">
