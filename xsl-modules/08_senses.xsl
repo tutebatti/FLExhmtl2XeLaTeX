@@ -7,19 +7,31 @@
   <!-- heading for senses -->
 
   <xsl:template match="senses">
-    <xsl:if test="not($compactlayout = true())">
-      <!-- to add heading depending on number of senses, set number other than 0 -->
-      <xsl:if test="count(./sensecontent) > 0">
-        <xsl:text>
+    <xsl:choose>
 
-        \medskip{}
-        \textbf{Senses}
+      <xsl:when test="$compactlayout = true()">
+        <xsl:text> </xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text></xsl:text>
+      </xsl:when>
 
-        </xsl:text>
-      </xsl:if>
-    </xsl:if>
-        <xsl:apply-templates/>
-      <xsl:text></xsl:text>
+      <xsl:otherwise>
+
+        <!-- to add heading depending on number of senses, set number other than 0 -->
+        <xsl:if test="count(./sensecontent) > 0">
+          <xsl:text>
+
+          \medskip{}
+          \textbf{Senses}
+
+          </xsl:text>
+        </xsl:if>
+
+          <xsl:apply-templates/>
+        <xsl:text></xsl:text>
+
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- part-of-speech -->
