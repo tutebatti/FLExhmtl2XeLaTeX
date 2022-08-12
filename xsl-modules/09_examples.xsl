@@ -9,12 +9,12 @@
   <xsl:template match="examplescontent">
     <xsl:choose>
       <xsl:when test="$compactlayout = true()">
-        <xsl:text>~$\triangleright$ </xsl:text><!-- $ introduces and ends LaTeX mathmode -->
+        <xsl:text> $\triangleright$\,</xsl:text><!-- $ introduces and ends LaTeX mathmode -->
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>
 
-        $\triangleright$ </xsl:text><!-- $ introduces and ends LaTeX mathmode -->
+        $\triangleright$\,</xsl:text><!-- $ introduces and ends LaTeX mathmode -->
       </xsl:otherwise>
     </xsl:choose>
       <xsl:apply-templates/>
