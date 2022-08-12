@@ -68,4 +68,24 @@
     <xsl:text>: </xsl:text>
   </xsl:template>
 
+  <!-- Simtho TKM (?) -->
+
+  <xsl:template match = "simtho-tkm">
+    <xsl:text>
+
+    Simtho-TKM: </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
+  </xsl:template>
+
+  <!-- lxx (?) -->
+
+  <xsl:template match = "lxx">
+    <xsl:text>
+
+    LXX: </xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text></xsl:text>
+  </xsl:template>
+
 </xsl:stylesheet>

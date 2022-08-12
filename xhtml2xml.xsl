@@ -143,7 +143,9 @@
                 @class='datecreated' or
                 @class='datemodified' or
                 @class='simtho-contributors' or
-                @class='simtho-contributor'
+                @class='simtho-contributor' or
+                @class='simtho-tkm' or
+                @class='lxx'
                   ]">
         <xsl:element name="{@class}">
             <xsl:if test="@entryguid">
