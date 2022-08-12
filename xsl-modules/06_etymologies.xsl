@@ -214,7 +214,7 @@
     <xsl:text>} </xsl:text>
   </xsl:template>
 
-  <xsl:template match="bibliography">
+  <xsl:template match="etymology/bibliography">
     <!-- Number sign is masked for LaTeX. -->
     <xsl:text> [</xsl:text>
       <xsl:value-of select="replace(current(), '#', '\\#')"/>

@@ -167,4 +167,16 @@
     <xsl:text>: </xsl:text>
   </xsl:template>
 
+  <!-- bibliography -->
+
+  <xsl:template match="
+    (entry|
+    minorentrycomplex)
+    /bibliography">
+    <!-- Number sign is masked for LaTeX. -->
+    <xsl:text> [</xsl:text>
+      <xsl:value-of select="replace(current(), '#', '\\#')"/>
+    <xsl:text>] </xsl:text>
+  </xsl:template>
+
 </xsl:stylesheet>
