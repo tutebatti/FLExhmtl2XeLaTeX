@@ -7,13 +7,22 @@
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />
     <xsl:strip-space elements="*"/>
-    <xsl:variable name="apo">'</xsl:variable> <!-- needed to use single quotation mark in filters etc. -->
+
+    <!-- needed to use single quotation mark in filters etc. -->
+
+    <xsl:variable name="apo">'</xsl:variable>
+
+    <!-- identitiy transformation -->
 
     <xsl:template match="node()|@*">
         <xsl:copy>
             <xsl:apply-templates select="node()|@id|@entryguid|@intref"/>
         </xsl:copy>
     </xsl:template>
+
+    <!-- handling of ortography: -->
+    <!-- 1) parent "orthography" introduced -->
+    <!-- 2) copies of respective elements inside parent inserted -->
 
     <xsl:template match="phono-received-pronunciation">
         <xsl:copy>
@@ -36,6 +45,8 @@
         </xsl:element>
     </xsl:template>
 
+    <!-- because of copies (above), elements are excluded from identity transformation -->
+
     <xsl:template match="
     orth-estrangela|
     orth-serto|
@@ -45,6 +56,12 @@
     dots-supralinear|
     dots-supralinear-label"
     />
+
+    <!-- Rearrangement of entire etymologies section -->
+    <!-- 1) Parent etymologies introduced -->
+    <!-- 2) Children for each language introduced -->
+    <!-- 3) Copies of "before"/"after" elements inserted at beginning/end -->
+    <!-- 4) Only elements with languages belonging to the respective block are matched -->
 
     <xsl:template match="etymologies">
       <xsl:element name="etymologies">
@@ -68,6 +85,10 @@ matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
         </xsl:element>
       </xsl:element>
 
+    <!-- Introduction of parent "morphology" -->
+    <!-- 1) Test if morphology elements are present -->
+    <!-- 2) Copy respective elements inside -->
+
       <xsl:if test="
           following-sibling::compmorphperf or
           following-sibling::compmorphimpf or
@@ -87,6 +108,8 @@ matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
       </xsl:if>
     </xsl:template>
 
+    <!-- because of copies (above), elements are excluded from identity transformation -->
+
     <xsl:template match="
     etymaramaicbefore|
     etymsemiticbefore|
@@ -103,19 +126,30 @@ matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
     compmorphtable"
     />
 
+    <!-- Further processing of stem-gloss combinations in etymologies -->
+    <!-- 1) Match strings against list of possible stem abbreviations -->
+    <!-- 2) Put into respective elements -->
+
     <xsl:template match="etymology-gloss-stem">
+
         <xsl:variable name="stemabbreviations">
             <xsl:value-of select="'(It|Š|Št|G|Gt|Gtn|L|Lt|N|Nt|Ntn|D|Dt|H|C|CD|CG|I|II|IIt|III|IV|V|VI|VII|VIII|IX|X)'"/>
         </xsl:variable>
+
         <xsl:element name="stemglosspair">
+
             <xsl:analyze-string select="." regex="{$stemabbreviations}(, | )">
+
                 <xsl:matching-substring>
                     <xsl:element name="stem">
                         <xsl:value-of select="regex-group(1)"/>
                     </xsl:element>
                 </xsl:matching-substring>
+
                 <xsl:non-matching-substring>
+
                     <xsl:analyze-string select="." regex="(.* of) ({$stemabbreviations})">
+
                         <xsl:matching-substring>
                             <xsl:element name="pseudo-gloss">
                                 <xsl:value-of select="regex-group(1)"/>
@@ -124,13 +158,17 @@ matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
                                 </xsl:element>
                             </xsl:element>
                         </xsl:matching-substring>
+
                         <xsl:non-matching-substring>
                             <xsl:element name="gloss">
                                 <xsl:value-of select="."/>
                             </xsl:element>
                         </xsl:non-matching-substring>
+
                     </xsl:analyze-string>
+
                 </xsl:non-matching-substring>
+
             </xsl:analyze-string>
         </xsl:element>
     </xsl:template>
