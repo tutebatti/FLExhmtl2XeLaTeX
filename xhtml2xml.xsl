@@ -7,7 +7,12 @@
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />
     <xsl:strip-space elements="*"/>
-    <xsl:variable name="apo">'</xsl:variable> <!-- needed to use single quotation mark in filters etc. -->
+
+    <!-- needed to use single quotation mark in filters etc. -->
+
+    <xsl:variable name="apo">'</xsl:variable>
+
+    <!-- identity transformation template -->
 
     <xsl:template match="node()|@*">
         <xsl:copy>
@@ -19,19 +24,27 @@
         <xsl:apply-templates select="node()"/>
     </xsl:template>
 
+    <!-- root element in transformed document will be "entries" -->
+
     <xsl:template match="xhtml:body">
         <xsl:element name="entries">
           <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
 
+    <!-- head is removed -->
+
     <xsl:template match="xhtml:head"/>
+
+    <!-- letterHead element for letter headings -->
 
     <xsl:template match="xhtml:div[@class='letHead']">
         <xsl:element name="letterHead">
           <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
+
+    <!-- entry and minorentrycomplex with @id attribute (for internal references) -->
 
     <xsl:template match="xhtml:div[@class='entry']|xhtml:div[@class='minorentrycomplex']">
         <xsl:element name="{@class}">
@@ -41,6 +54,8 @@
             <xsl:apply-templates select="node()|@*[id]"/> <!-- check why "id" is needed to avoid copying of @class attribute -->
         </xsl:element>
     </xsl:template>
+
+    <!-- list of classes of span elements transformed to elements with name of respective class -->
 
     <xsl:template match="xhtml:span[
                 @class='mainheadword' or
@@ -148,14 +163,18 @@
                 @class='lxx'
                   ]">
         <xsl:element name="{@class}">
+
             <xsl:if test="@entryguid">
                 <xsl:attribute name="entryguid">
                     <xsl:value-of select="./@entryguid"/>
                 </xsl:attribute>
             </xsl:if>
+
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
+
+    <!-- pictures and captions (separate template because divs, not spans) -->
 
     <xsl:template match="xhtml:div[@class='picture' or @class='captionContent']">
         <xsl:element name="{@class}">
@@ -163,11 +182,15 @@
         </xsl:element>
     </xsl:template>
 
+    <!-- "subentries" is not a class on its own (rather, "subentries mainentrysubentries"), so this template matches -->
+
     <xsl:template match="xhtml:span[contains(@class, 'subentries ')]">
         <xsl:element name="subentries">
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
+
+    <!-- "subentry" is not a class on its own (rather, "subentry mainentrysubentry"), so this template matches -->
 
     <xsl:template match="xhtml:span[contains(@class, 'subentry ')]">
         <xsl:element name="subentry">
@@ -197,20 +220,23 @@
                   not(descendant::xhtml:span[@style=concat('font-family:',$apo,'Abyssinica SIL',$apo,',serif;font-size:10pt;')])
                   ]">
         <xsl:choose>
+
             <xsl:when test="@style='background-color:#CFC;'">
                 <xsl:element name="highlightedsyriac">
                     <xsl:apply-templates select="node()"/>
                 </xsl:element>
             </xsl:when>
+
             <xsl:otherwise>
                 <xsl:element name="syriac">
                     <xsl:apply-templates select="node()"/>
                 </xsl:element>
             </xsl:otherwise>
+
         </xsl:choose>
     </xsl:template>
 
-    <!-- handle homograph entry numbering [is that a good term for this?] -->
+    <!-- homograph entry numbering -->
 
     <xsl:template match="xhtml:span[@style='font-size:10pt;font-weight:bold;font-size:58%;position:relative;top:0.3em;']">
         <xsl:element name="homographentrynumber">
@@ -252,29 +278,6 @@
         <xsl:element name="greek"><xsl:apply-templates/></xsl:element>
     </xsl:template>
 
-    <!-- handle multiple verb stems of etymology entries -->
-
-    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span[not(@style='font-style:italic;')]">
-        <xsl:variable name="number-of-children">
-            <xsl:value-of select="count(./xhtml:span)"/>
-        </xsl:variable>
-        <xsl:choose>
-            <xsl:when test="./xhtml:span[1]/text() = 'id.'">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:when test="$number-of-children > 1">
-                <xsl:for-each select="tokenize(.,'; ')">
-                    <xsl:element name='etymology-gloss-stem'>
-                        <xsl:value-of select="normalize-space()"/>
-                    </xsl:element>
-                </xsl:for-each>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
     <!-- superscript -->
 
     <xsl:template match="xhtml:span[@style='font-size:58%;position:relative;top:-0.6em;']">
@@ -304,6 +307,35 @@
             <xsl:value-of select="@href"/>
         </xsl:attribute>
         <xsl:apply-templates select="node()"/>
+    </xsl:template>
+
+    <!-- handle multiple verb stems of etymology entries -->
+
+    <xsl:template match="xhtml:span[@class='gloss']/xhtml:span[not(@style='font-style:italic;')]">
+
+        <xsl:variable name="number-of-children">
+            <xsl:value-of select="count(./xhtml:span)"/>
+        </xsl:variable>
+
+        <xsl:choose>
+
+            <xsl:when test="./xhtml:span[1]/text() = 'id.'">
+                <xsl:apply-templates/>
+            </xsl:when>
+
+            <xsl:when test="$number-of-children > 1">
+                <xsl:for-each select="tokenize(.,'; ')">
+                    <xsl:element name='etymology-gloss-stem'>
+                        <xsl:value-of select="normalize-space()"/>
+                    </xsl:element>
+                </xsl:for-each>
+            </xsl:when>
+
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+
+        </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>
