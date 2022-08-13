@@ -4,6 +4,8 @@
     version="2.0"
     >
 
+    <!-- Match root element and insert LaTeX preamble at top -->
+
     <xsl:template match="/">
       <xsl:text>
 \documentclass[10pt, a4paper, twocolumn, twoside]{book}

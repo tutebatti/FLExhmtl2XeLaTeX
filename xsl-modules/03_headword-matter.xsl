@@ -23,7 +23,10 @@
 
   <!-- headword -->
 
-  <xsl:template match="mainheadword|minorentrycomplex/headword">
+  <xsl:template match="
+    (mainheadword|
+    minorentrycomplex)
+    /headword">
     <xsl:text>\hypertarget{</xsl:text>
       <xsl:value-of select="ancestor::entry/@id"/>
       <xsl:value-of select="ancestor::minorentrycomplex/@id"/>

@@ -5,6 +5,7 @@
     >
 
   <!-- Syriac -->
+  <!-- Insert internal references if applicable -->
 
   <xsl:template match="syriac[@intref]">
     <xsl:text>\hyperlink{</xsl:text>
@@ -64,7 +65,8 @@
   </xsl:template>
 
   <!-- RTL -->
-  <!-- The tex command \RLE ensures rtl direction. -->
+  <!-- The tex command \RLE ensures rtl direction -->
+  <!-- Insert internal references if applicable -->
 
   <xsl:template match="rtl[@intref]">
     <xsl:text>\hyperlink{</xsl:text>
@@ -111,7 +113,7 @@
   </xsl:template>
 
   <!-- superscript -->
-  <!-- The conditional ensures subscript to be in italics if surrounded by italic text. -->
+  <!-- The conditional ensures superscript to be in italics if surrounded by italic text. -->
 
   <xsl:template match="superscript">
     <xsl:choose>
