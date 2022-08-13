@@ -25,6 +25,8 @@
     <xsl:value-of select="false()"/>
   </xsl:variable>
 
+  <!-- include modules -->
+
   <xsl:include href="./xsl-modules/01_root-element.xsl"/>
   <xsl:include href="./xsl-modules/02_scripts-and-fonts.xsl"/>
   <xsl:include href="./xsl-modules/03_headword-matter.xsl"/>
