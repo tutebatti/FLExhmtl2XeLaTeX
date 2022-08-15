@@ -24,17 +24,15 @@
   <!-- headword -->
 
   <xsl:template match="
-    (mainheadword|
-    minorentrycomplex)
-    /headword">
+    (minorentrycomplex
+    /headword)|
+    mainheadword">
     <xsl:text>\hypertarget{</xsl:text>
       <xsl:value-of select="ancestor::entry/@id"/>
       <xsl:value-of select="ancestor::minorentrycomplex/@id"/>
-    <xsl:text>}{}
-
-    \bigskip{}\begin{huge}</xsl:text>
+    <xsl:text>}{}\section{</xsl:text>
       <xsl:apply-templates/>
-    <xsl:text>\end{huge}</xsl:text>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- Sedra ID -->

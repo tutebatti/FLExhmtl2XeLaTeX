@@ -8,11 +8,29 @@
   <!-- Insert internal references if applicable -->
 
   <xsl:template match="syriac[@intref]">
-    <xsl:text>\hyperlink{</xsl:text>
-      <xsl:value-of select="substring-after(@intref, '#')"/>
-    <xsl:text>}{\textsyriac{</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>}}</xsl:text>
+    <xsl:variable name="grandparent">
+      <xsl:value-of select="../../name()"/>
+    </xsl:variable>
+
+    <xsl:choose>
+
+      <!-- avoid referencing if syriac is part of \section -->
+      <xsl:when test="
+      $grandparent = 'entry' or
+      $grandparent = 'minorentrycomplex'
+      ">
+        <xsl:apply-templates/>
+      </xsl:when>
+
+      <xsl:otherwise>
+        <xsl:text>\hyperlink{</xsl:text>
+          <xsl:value-of select="substring-after(@intref, '#')"/>
+        <xsl:text>}{\textsyriac{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
+      </xsl:otherwise>
+
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="*[not(self::example)]/*/syriac[not(@intref)]">
@@ -69,11 +87,32 @@
   <!-- Insert internal references if applicable -->
 
   <xsl:template match="rtl[@intref]">
-    <xsl:text>\hyperlink{</xsl:text>
-      <xsl:value-of select="substring-after(@intref, '#')"/>
-    <xsl:text>}{\RLE{</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>}}</xsl:text>
+
+    <xsl:variable name="greatgrandparent">
+      <xsl:value-of select="../../../name()"/>
+    </xsl:variable>
+
+    <xsl:choose>
+
+      <!-- avoid referencing if rtl is part of \section -->
+      <xsl:when test="
+      $greatgrandparent = 'entry' or
+      $greatgrandparent = 'minorentrycomplex'
+      ">
+        <xsl:text>\RLE{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}</xsl:text>
+      </xsl:when>
+
+      <xsl:otherwise>
+        <xsl:text>\hyperlink{</xsl:text>
+          <xsl:value-of select="substring-after(@intref, '#')"/>
+        <xsl:text>}{\RLE{</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>}}</xsl:text>
+      </xsl:otherwise>
+
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="rtl">

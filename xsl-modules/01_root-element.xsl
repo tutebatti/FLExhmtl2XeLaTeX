@@ -52,6 +52,7 @@
 
 % formatting of chapter/section headings, cf. docs of package titlesec
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge\center}
+\titleformat{\section}[runin]{\normalfont\bfseries}{}{0pt}{\huge}
 
 \begin{document}
     </xsl:text>
