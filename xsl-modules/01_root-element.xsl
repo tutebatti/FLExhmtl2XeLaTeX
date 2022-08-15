@@ -7,8 +7,9 @@
     <!-- Match root element and insert LaTeX preamble at top -->
 
     <xsl:template match="/">
-      <xsl:text>
-\documentclass[10pt, a4paper, twocolumn, twoside]{book}
+      <xsl:text>\documentclass[10pt, a4paper, twocolumn, twoside]{book}
+
+\usepackage{titlesec} % used for formatting of chapter/section headings etc.
 
 \usepackage{polyglossia, xunicode}
 
@@ -49,6 +50,9 @@
 
 \setlength{\parindent}{0pt} % deactivate automatic indentation in new lines
 
+% formatting of chapter/section headings, cf. docs of package titlesec
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge\center}
+
 \begin{document}
     </xsl:text>
       <xsl:apply-templates/>
@@ -60,11 +64,9 @@
   <!-- Letter Heads -->
 
   <xsl:template match="letterHead">
-    <xsl:text>\bigskip
-
-    \begin{center}\begin{Huge}</xsl:text>
+    <xsl:text>\chapter{</xsl:text>
       <xsl:apply-templates/>
-    <xsl:text>\end{Huge}\end{center}\bigskip</xsl:text>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
