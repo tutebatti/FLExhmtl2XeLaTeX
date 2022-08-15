@@ -172,7 +172,8 @@
 
   <xsl:template match="
     (entry|
-    minorentrycomplex)
+    minorentrycomplex|
+    subentry)
     /bibliography">
     <!-- Number sign is masked for LaTeX. -->
     <xsl:text> [</xsl:text>
