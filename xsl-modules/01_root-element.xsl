@@ -55,6 +55,7 @@
 \titleformat{\section}[runin]{\normalfont\bfseries}{}{0pt}{\huge}
 
 \begin{document}
+\tableofcontents
     </xsl:text>
       <xsl:apply-templates/>
     <xsl:text>
