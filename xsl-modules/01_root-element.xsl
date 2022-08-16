@@ -11,6 +11,23 @@
 
 \usepackage{titlesec} % used for formatting of chapter/section headings etc., needs to be loaded before bidi
 
+\usepackage{fancyhdr} % custom headers
+\pagestyle{fancy}
+
+% For the following, cf. the docs of fancyhdr in the section on dictionary style
+\renewcommand{\chaptermark}[1]{}
+\renewcommand{\sectionmark}[1]{}
+
+\usepackage{ifthen} % needed for following "\ifthenelse" command
+\newcommand{\mymarks}{
+  \ifthenelse{\equal{\leftmark}{\rightmark}}
+  {\rightmark} % if equal
+  {\LRE{\rightmark{} --– \leftmark{}}}} % if not equal
+
+    \fancyhead[LE,RO]{\mymarks}
+    \fancyhead[LO,RE]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+
 \usepackage{polyglossia, xunicode}
 
 \usepackage[dvipsnames]{xcolor} % used for coloring, option 'dvipsnames' provides extended color names

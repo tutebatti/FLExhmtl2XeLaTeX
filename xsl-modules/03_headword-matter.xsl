@@ -30,7 +30,13 @@
     <xsl:text>\hypertarget{</xsl:text>
       <xsl:value-of select="ancestor::entry/@id"/>
       <xsl:value-of select="ancestor::minorentrycomplex/@id"/>
-    <xsl:text>}{}\section{</xsl:text>
+    <xsl:text>}{}</xsl:text>
+    <xsl:text>\markboth{\textsyriac{</xsl:text>
+      <xsl:value-of select="."/>
+    <xsl:text>}}{\textsyriac{</xsl:text>
+      <xsl:value-of select="."/>
+    <xsl:text>}}</xsl:text>
+    <xsl:text>\section{</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
   </xsl:template>
