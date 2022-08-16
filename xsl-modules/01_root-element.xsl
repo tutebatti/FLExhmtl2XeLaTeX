@@ -9,7 +9,7 @@
     <xsl:template match="/">
       <xsl:text>\documentclass[10pt, a4paper, twocolumn, twoside]{book}
 
-\usepackage{titlesec} % used for formatting of chapter/section headings etc.
+\usepackage{titlesec} % used for formatting of chapter/section headings etc., needs to be loaded before bidi
 
 \usepackage{polyglossia, xunicode}
 
@@ -51,6 +51,7 @@
 \setlength{\parindent}{0pt} % deactivate automatic indentation in new lines
 
 % formatting of chapter/section headings, cf. docs of package titlesec
+\setcounter{secnumdepth}{-1} % avoids chapter and section numbering
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge\center}
 \titleformat{\section}[runin]{\normalfont\bfseries}{}{0pt}{\huge}
 
