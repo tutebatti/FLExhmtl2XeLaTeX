@@ -13,6 +13,12 @@
     <xsl:value-of select="true()"/>
   </xsl:variable>
 
+  <!-- variable to switch creators on/off -->
+
+  <xsl:variable name="showcreators">
+    <xsl:value-of select="true()"/>
+  </xsl:variable>
+
   <!-- variable to switch dates on/off -->
 
   <xsl:variable name="showdates">

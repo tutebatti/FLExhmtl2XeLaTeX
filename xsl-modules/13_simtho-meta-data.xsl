@@ -11,9 +11,17 @@
     simtho-ex-created-by)
     /abbreviation
     ">
-    <xsl:text> \textcolor{Dandelion}{(</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>)}</xsl:text>
+    <xsl:choose>
+
+      <xsl:when test="$showcreators = true()">
+        <xsl:text> \textcolor{Dandelion}{(</xsl:text>
+          <xsl:apply-templates/>
+        <xsl:text>)}</xsl:text>
+      </xsl:when>
+
+      <xsl:otherwise/>
+
+    </xsl:choose>
   </xsl:template>
 
   <!-- simtho contributor -->
@@ -21,25 +29,35 @@
   <xsl:template match="simtho-contributor/abbreviation">
     <xsl:choose>
 
-      <xsl:when test="$compactlayout = true()">
-        <xsl:text> \textcolor{Dandelion}{</xsl:text>
-          <xsl:apply-templates/>
+      <xsl:when test="$showcreators = true()">
+        <xsl:choose>
 
-          <xsl:if test="count(../following-sibling::simtho-contributor) != 0">
-            <xsl:text>; </xsl:text>
-          </xsl:if>
-        <xsl:text>}</xsl:text>
+          <xsl:when test="$compactlayout = true()">
+            <xsl:text> \textcolor{Dandelion}{</xsl:text>
+              <xsl:apply-templates/>
+
+              <xsl:if test="count(../following-sibling::simtho-contributor) != 0">
+                <xsl:text>; </xsl:text>
+              </xsl:if>
+            <xsl:text>}</xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:text>
+
+            \textcolor{Dandelion}{</xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>}</xsl:text>
+          </xsl:otherwise>
+
+        </xsl:choose>
+
       </xsl:when>
 
-      <xsl:otherwise>
-        <xsl:text>
-
-        \textcolor{Dandelion}{</xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>}</xsl:text>
-      </xsl:otherwise>
+      <xsl:otherwise/>
 
     </xsl:choose>
+
   </xsl:template>
 
   <!-- dates -->
