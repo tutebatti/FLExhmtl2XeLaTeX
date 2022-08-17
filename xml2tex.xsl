@@ -49,33 +49,6 @@
   <xsl:include href="./xsl-modules/14_comments.xsl"/>
   <xsl:include href="./xsl-modules/15_corpus-data.xsl"/>
   <xsl:include href="./xsl-modules/16_sources.xsl"/>
-
-  <!-- minimallexreferences: move to which module? -->
-
-  <xsl:template match = "minimallexreferences">
-    <xsl:text> (</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>) </xsl:text>
-  </xsl:template>
-
-  <xsl:template match = "minimallexreference/ownertype_abbreviation">
-    <xsl:text>\textit{</xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>} </xsl:text>
-  </xsl:template>
-
-  <xsl:template match = "minimallexreferences_derivatives-adjs-etc-">
-    <xsl:text>
-
-    </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text></xsl:text>
-  </xsl:template>
-
-  <xsl:template match = "minimallexreference_derivatives-adjs-etc-/ownertype_name">
-    <xsl:text></xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text>: </xsl:text>
-  </xsl:template>
+  <xsl:include href="./xsl-modules/17_references.xsl"/>
 
 </xsl:stylesheet>
