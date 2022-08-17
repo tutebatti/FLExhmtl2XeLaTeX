@@ -48,6 +48,7 @@
   <xsl:include href="./xsl-modules/13_simtho-meta-data.xsl"/>
   <xsl:include href="./xsl-modules/14_comments.xsl"/>
   <xsl:include href="./xsl-modules/15_corpus-data.xsl"/>
+  <xsl:include href="./xsl-modules/16_sources.xsl"/>
 
   <!-- minimallexreferences: move to which module? -->
 
@@ -75,16 +76,6 @@
     <xsl:text></xsl:text>
       <xsl:apply-templates/>
     <xsl:text>: </xsl:text>
-  </xsl:template>
-
-  <!-- lxx (?) -->
-
-  <xsl:template match = "lxx">
-    <xsl:text>
-
-    LXX: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text></xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
