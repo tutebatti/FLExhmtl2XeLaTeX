@@ -4,24 +4,91 @@
     version="2.0"
     >
 
-  <!-- simtho sense/ex created by -->
+  <!-- simtho sense created by -->
 
-  <xsl:template match="
-    (simtho-sense-created-by|
-    simtho-ex-created-by)
-    /abbreviation
-    ">
+  <xsl:template match="simtho-sense-created-by/abbreviation">
     <xsl:choose>
 
       <xsl:when test="$showcreators = true()">
-        <xsl:text> \textcolor{Dandelion}{(</xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>)}</xsl:text>
+        <xsl:choose>
+
+          <xsl:when test="$compactlayout = true()">
+            <xsl:text> \textcolor{Dandelion}{(sense © by </xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>)}</xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:text>
+
+            \textcolor{Dandelion}{Sense © by </xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>.}</xsl:text>
+          </xsl:otherwise>
+
+        </xsl:choose>
       </xsl:when>
 
       <xsl:otherwise/>
 
     </xsl:choose>
+  </xsl:template>
+
+  <!-- simtho ex created by -->
+
+  <xsl:template match="simtho-ex-created-by/abbreviation">
+    <xsl:choose>
+
+      <xsl:when test="$showcreators = true()">
+        <xsl:choose>
+
+          <xsl:when test="$compactlayout = true()">
+            <xsl:text>\textcolor{Dandelion}{(example © by </xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>)}</xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:text>
+
+            \textcolor{Dandelion}{Example © by </xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>.}</xsl:text>
+          </xsl:otherwise>
+
+        </xsl:choose>
+      </xsl:when>
+
+      <xsl:otherwise/>
+
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- simtho contributors -->
+
+  <xsl:template match="simtho-contributors">
+    <xsl:choose>
+
+      <xsl:when test="$showcreators = true()">
+        <xsl:choose>
+
+          <xsl:when test="$compactlayout = true()">
+            <xsl:text> \textcolor{Dandelion}{(</xsl:text>
+              <xsl:apply-templates/>
+            <xsl:text>)}</xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:apply-templates/>
+          </xsl:otherwise>
+
+        </xsl:choose>
+      </xsl:when>
+
+      <xsl:otherwise/>
+
+    </xsl:choose>
+
   </xsl:template>
 
   <!-- simtho contributor -->
@@ -33,12 +100,16 @@
         <xsl:choose>
 
           <xsl:when test="$compactlayout = true()">
-            <xsl:text> \textcolor{Dandelion}{</xsl:text>
-              <xsl:apply-templates/>
+            <xsl:text>\textcolor{Dandelion}{</xsl:text>
+              <xsl:variable name="replacedparenthesis">
+                <xsl:value-of select="replace(.,' [(]',', ')"/>
+              </xsl:variable>
+              <xsl:value-of select="replace($replacedparenthesis,'[)]','')"/>
 
               <xsl:if test="count(../following-sibling::simtho-contributor) != 0">
                 <xsl:text>; </xsl:text>
               </xsl:if>
+
             <xsl:text>}</xsl:text>
           </xsl:when>
 
