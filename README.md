@@ -1,4 +1,4 @@
-# FLEx2LaTeX
+# FLEx2XeLaTeX
 
 This repository provides code and documentation to transform FLEx dictionary output in XHTML format to LaTeX via XSLT.
 The project is carried out by [Beth Mardutho](bethmardutho.org).
