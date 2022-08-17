@@ -47,6 +47,7 @@
   <xsl:include href="./xsl-modules/12_sidebars.xsl"/>
   <xsl:include href="./xsl-modules/13_simtho-meta-data.xsl"/>
   <xsl:include href="./xsl-modules/14_comments.xsl"/>
+  <xsl:include href="./xsl-modules/15_corpus-data.xsl"/>
 
   <!-- minimallexreferences: move to which module? -->
 
@@ -74,16 +75,6 @@
     <xsl:text></xsl:text>
       <xsl:apply-templates/>
     <xsl:text>: </xsl:text>
-  </xsl:template>
-
-  <!-- Simtho TKM (?) -->
-
-  <xsl:template match = "simtho-tkm">
-    <xsl:text>
-
-    Simtho-TKM: </xsl:text>
-      <xsl:apply-templates/>
-    <xsl:text></xsl:text>
   </xsl:template>
 
   <!-- lxx (?) -->
