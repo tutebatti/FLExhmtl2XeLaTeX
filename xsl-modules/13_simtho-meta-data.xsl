@@ -133,70 +133,107 @@
 
   <!-- dates -->
 
-  <xsl:template match="datecreated">
+  <xsl:template match="
+    (entry|
+    minorentrycomplex)
+    /datecreated
+    ">
+
+    <xsl:variable name="nextelement">
+      <xsl:value-of select="(following-sibling::*[1])/name()"/>
+    </xsl:variable>
+
     <xsl:choose>
+
       <xsl:when test="$showdates = true()">
         <xsl:text>
 
-        \begin{scriptsize}\textcolor{Dandelion}{(entry created: </xsl:text>
+        \begin{scriptsize}\textcolor{YellowGreen}{(entry created: </xsl:text>
           <xsl:apply-templates/>
-        <xsl:text>)}\end{scriptsize}</xsl:text>
+        <xsl:choose>
+
+          <xsl:when test="following-sibling::datemodified">
+            <xsl:text>; </xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:text>)</xsl:text>
+          </xsl:otherwise>
+
+        </xsl:choose>
+        <xsl:text>}\end{scriptsize}</xsl:text>
+
       </xsl:when>
+
       <xsl:otherwise/>
+
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="
     (entry|
     minorentrycomplex)
-    /datecreated">
+    /datemodified
+    ">
     <xsl:choose>
-      <xsl:when test="$showdates = true()">
-        <xsl:text>
 
-        \begin{scriptsize}\textcolor{YellowGreen}{(entry created: </xsl:text>
+      <xsl:when test="$showdates = true()">
+        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{entry modified: </xsl:text>
           <xsl:apply-templates/>
         <xsl:text>)}\end{scriptsize}</xsl:text>
       </xsl:when>
+
       <xsl:otherwise/>
+
     </xsl:choose>
   </xsl:template>
 
-    <xsl:template match="
-    (entry|
-    minorentrycomplex)
-    /datemodified">
+  <xsl:template match="
+    (subentry|
+    subentry_verbal-stems-measures)/
+    datecreated
+    ">
     <xsl:choose>
-      <xsl:when test="$showdates = true()">
-        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (entry modified: </xsl:text>
-          <xsl:apply-templates/>
-        <xsl:text>)}\end{scriptsize}</xsl:text>
-      </xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
-  </xsl:template>
 
-  <xsl:template match="(subentry|subentry_verbal-stems-measures)/datecreated">
-    <xsl:choose>
       <xsl:when test="$showdates = true()">
         <xsl:text>
 
         \begin{scriptsize}\textcolor{YellowGreen}{(subentry created: </xsl:text>
           <xsl:apply-templates/>
-        <xsl:text>)}\end{scriptsize}</xsl:text>
+        <xsl:choose>
+
+          <xsl:when test="following-sibling::datemodified">
+            <xsl:text>; </xsl:text>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:text>)</xsl:text>
+          </xsl:otherwise>
+
+        </xsl:choose>
+        <xsl:text>}\end{scriptsize}</xsl:text>
       </xsl:when>
+
       <xsl:otherwise/>
+
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="(subentry|subentry_verbal-stems-measures)/datemodified">
+  <xsl:template match="
+    (subentry|
+    subentry_verbal-stems-measures)/
+    datemodified
+    ">
     <xsl:choose>
+
       <xsl:when test="$showdates = true()">
-        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{, (subentry modified: </xsl:text>
+        <xsl:text>\begin{scriptsize}\textcolor{YellowGreen}{subentry modified: </xsl:text>
           <xsl:apply-templates/>
         <xsl:text>)}\end{scriptsize}</xsl:text>
       </xsl:when>
+
       <xsl:otherwise/>
+
     </xsl:choose>
   </xsl:template>
 
