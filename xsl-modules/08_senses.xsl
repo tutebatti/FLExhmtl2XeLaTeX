@@ -162,7 +162,12 @@
   </xsl:template>
 
   <xsl:template match="configtarget">
+
+  <!-- avoid space if child of root reference -->
+  <xsl:if test="../../minimallexreference_root">
     <xsl:text> </xsl:text>
+  </xsl:if>
+
       <xsl:apply-templates/>
     <xsl:if test="position() != last()">
       <xsl:text>, </xsl:text>
