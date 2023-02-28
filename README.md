@@ -1,7 +1,7 @@
 # FLEx2XeLaTeX
 
 This repository provides code and documentation to transform FLEx dictionary output in XHTML format to LaTeX via XSLT.
-The project is carried out by [Beth Mardutho](bethmardutho.org).
+The project is carried out by [Beth Mardutho](https://bethmardutho.org/).
 
 ## Content of Repository
 
@@ -35,8 +35,9 @@ Further, internal references (i.e., one entry referring to another one) are crea
 The only attributes in the original XHTML file that are kept as such in the output are the `@id` attributes for internal referencing.
 More complex transformations based on conditionals is the handling of nested elements for Syriac as well as the handling of verb stems in etymology entries.
 
-Future adaption will probably need to include additional `@class` attributes of `<span>` (or `div`) elements not
-Another problem might be possible changes in FLEx and, accordingly, its output (e.g., different style for certain elements), which, however, should be easily adaptable.
+Future adaption will probably need to include additional `@class` attributes of `<span>` (or `div`) elements.
+Another problem might be possible changes in FLEx and, accordingly, its output (e.g., different style for certain elements).
+The latter, however, should be easily adaptable.
 
 2) A second XSLT file, `xml2xml.xsl`, is mainly meant to rearrange the elements in a more concise order, including the introduction of new parent elements which are not present in the original FLEx output.
 This file, too, uses identity transformation.
@@ -79,7 +80,7 @@ Further switches can be introduced following the same or similar method.
 2) Delete the created css files
 3) Create a prettified version via `prettyxhtml.sh`
 
-### Actual Transformation (see [] above)
+### Actual Transformation (see [## Basic idea and how to adapt] above)
 
 1) Transform the XHTML file using `xhtml2xml`
 2) Transform the result using `xml2xml`
