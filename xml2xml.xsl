@@ -75,7 +75,7 @@ matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Arm|OA|OfA|QA|JA|NA|
           <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
           <xsl:apply-templates select="etymology[
 matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Sem|Akk|Ebl|Hbr|Pho/Pun|Ugr|Arb|(Mo)|(Min)|Qat|Sab|Gez|Hrs|Jib|(Mhr))')]"/>
-          <xsl:copy-of select="ancestor::entry//etymsemiticcafter"/>
+          <xsl:copy-of select="ancestor::entry//etymsemiticafter"/>
         </xsl:element>
         <xsl:element name="etymgreek">
           <xsl:copy-of select="ancestor::entry//etymgreekbefore"/>
