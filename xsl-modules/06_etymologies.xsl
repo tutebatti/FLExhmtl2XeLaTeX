@@ -140,16 +140,16 @@
       )">
         <xsl:text> </xsl:text>
           <xsl:apply-templates select="(arabic | hebrew | geez | greek)"/>
-        <xsl:text> \textit{</xsl:text>
+        <xsl:text> \textbf{\textit{</xsl:text>
           <xsl:apply-templates select="text()"/>
-        <xsl:text>}</xsl:text>
+        <xsl:text>}}</xsl:text>
       </xsl:when>
 
       <xsl:otherwise>
         <!-- Interpunctuation is set in upright case. -->
-        <xsl:text> \textit{</xsl:text>
-          <xsl:value-of select="replace(.,'([,()])','\\textup{$1}')"/>
-        <xsl:text>}</xsl:text>
+        <xsl:text> \textbf{\textit{</xsl:text>
+          <xsl:value-of select="replace(.,'([,()]+)','\\textup{$1}')"/>
+        <xsl:text>}}</xsl:text>
       </xsl:otherwise>
 
     </xsl:choose>
@@ -234,9 +234,16 @@
     </xsl:template>
 
   <xsl:template match="etymology/comment">
-    <xsl:text> &gt;\textit{</xsl:text>
-      <xsl:apply-templates/>}
+    <xsl:text> </xsl:text>
+      <xsl:apply-templates/>
     <xsl:text></xsl:text>
+  </xsl:template>
+
+    <xsl:template match="etymology/comment/italic">
+    <xsl:text>\textit{</xsl:text>
+      <!-- Interpunctuation is set in upright case. -->
+      <xsl:value-of select="replace(.,'([,()]+)','\\textup{$1}')"/>
+    <xsl:text>}</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
