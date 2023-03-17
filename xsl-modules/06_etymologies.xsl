@@ -9,7 +9,7 @@
       <xsl:text>
 
       \smallskip
-      \textbf{Aramaic etymologies}</xsl:text>
+      \textbf{Aramaic etymology}</xsl:text>
         <xsl:apply-templates/>
       <xsl:text></xsl:text>
     </xsl:if>
@@ -20,7 +20,7 @@
       <xsl:text>
 
       \smallskip
-      \textbf{Semitic etymologies}</xsl:text>
+      \textbf{Semitic etymology}</xsl:text>
         <xsl:apply-templates/>
       <xsl:text></xsl:text>
     </xsl:if>
