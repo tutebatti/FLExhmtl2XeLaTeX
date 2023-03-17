@@ -290,6 +290,12 @@
         <xsl:element name="subscript"><xsl:apply-templates/></xsl:element>
     </xsl:template>
 
+    <!-- bold -->
+
+    <xsl:template match="xhtml:span[@style='font-weight:bold;']">
+        <xsl:element name="bold"><xsl:apply-templates/></xsl:element>
+    </xsl:template>
+
     <!-- italics -->
 
     <xsl:template match="xhtml:span[@style='font-style:italic;']">
