@@ -58,7 +58,7 @@
     />
 
     <!-- Rearrangement of entire etymologies section -->
-    <!-- 1) Parent etymologies introduced -->
+    <!-- 1) Parent <etymologies> introduced -->
     <!-- 2) Children for each language introduced -->
     <!-- 3) Copies of "before"/"after" elements inserted at beginning/end -->
     <!-- 4) Only elements with languages belonging to the respective block are matched -->
@@ -66,22 +66,22 @@
     <xsl:template match="etymologies">
       <xsl:element name="etymologies">
         <xsl:element name="etymaramaic">
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymaramaicbefore"/>
-          <xsl:apply-templates select="etymology[
-matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Arm|OA|OfA|QA|JA|NA|PA|BA|TO|HA|SA|JPA|JBA|CPA|M[^(&gt;)hio]|CU|WNA|NM|T|(TVW[2])|ŠS|JNA|JNAB|B)')]"/>
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymaramaicafter"/>
+            <xsl:apply-templates select="etymology[
+            matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Arm|OA|OfA|QA|JA|NA|PA|BA|TO|HA|SA|JPA|JBA|CPA|M[^(&gt;)hio]|CU|WNA|NM|T|(TVW[2])|ŠS|JNA|JNAB|B)')]"/>
+          <xsl:copy-of select="ancestor::entry//etymaramaicbefore"/>
+          <xsl:copy-of select="ancestor::entry//etymaramaicafter"/>
         </xsl:element>
         <xsl:element name="etymsemitic">
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymsemiticbefore"/>
-          <xsl:apply-templates select="etymology[
-matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Sem|Akk|Ebl|Hbr|Pho/Pun|Ugr|Arb|(Mo)|(Min)|Qat|Sab|Gez|Hrs|Jib|(Mhr))')]"/>
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymsemiticafter"/>
+            <xsl:apply-templates select="etymology[
+            matches(languages/language[1]/abbreviation/text(), '(Cf. )?(Sem|Akk|Ebl|Hbr|Pho/Pun|Ugr|Arb|(Mo)|(Min)|Qat|Sab|Gez|Hrs|Jib|(Mhr))')]"/>
+          <xsl:copy-of select="ancestor::entry//etymsemiticbefore"/>
+          <xsl:copy-of select="ancestor::entry//etymsemiticafter"/>
         </xsl:element>
         <xsl:element name="etymgreek">
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymgreekbefore"/>
             <xsl:apply-templates select="etymology[
-matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
-          <xsl:copy-of select="ancestor::minorentrycomplex//etymgreekafter"/>
+            matches(languages/language[1]/abbreviation/text(), '&lt; Gr')]"/>
+          <xsl:copy-of select="ancestor::entry//etymgreekbefore"/>
+          <xsl:copy-of select="ancestor::entry//etymgreekafter"/>
         </xsl:element>
       </xsl:element>
 
