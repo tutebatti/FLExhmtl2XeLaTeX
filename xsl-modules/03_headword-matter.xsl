@@ -52,7 +52,7 @@
   <xsl:template match="sedra-id">
     <xsl:text> [\href{https://sedra.bethmardutho.org/lexeme/get/</xsl:text>
       <xsl:apply-templates/>
-    <xsl:text>}{Sedra-ID </xsl:text>
+    <xsl:text>}{Sedra ID </xsl:text>
       <xsl:apply-templates/>
     <xsl:text>}]</xsl:text>
   </xsl:template>
