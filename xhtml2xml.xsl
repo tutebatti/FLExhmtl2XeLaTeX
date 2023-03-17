@@ -299,7 +299,7 @@
     <!-- italics -->
 
     <xsl:template match="xhtml:span[@style='font-style:italic;']">
-        <xsl:element name="italics"><xsl:apply-templates/></xsl:element>
+        <xsl:element name="italic"><xsl:apply-templates/></xsl:element>
     </xsl:template>
 
     <xsl:template match="xhtml:span">

@@ -121,9 +121,17 @@
     <xsl:text>}</xsl:text>
   </xsl:template>
 
-  <!-- italics -->
+  <!-- bold -->
 
-  <xsl:template match="italics">
+  <xsl:template match="bold">
+    <xsl:text>\textbf{</xsl:text>
+      <xsl:apply-templates/>
+    <xsl:text>}</xsl:text>
+  </xsl:template>
+
+    <!-- italics -->
+
+  <xsl:template match="italic">
     <xsl:text>\textit{</xsl:text>
       <xsl:apply-templates/>
     <xsl:text>}</xsl:text>
